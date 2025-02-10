@@ -1,0 +1,26 @@
+[
+        {
+                "data_len": 1
+        },
+        [
+                {
+                        "id": "pretrain_python_data_5015569",
+                        "content": "def download_file( url, file_name):\nimport urllib.request, urllib.error, urllib.parse\nu = urllib.request.urlopen(url)\nf = open(file_name, 'wb')\nmeta = u.info()\nfile_size = int(meta.getheaders(\"Content-Length\")[0])\nprint(\"Downloading: %s Bytes: %s\" % (file_name, file_size))\nfile_size_dl = 0\nblock_sz = 8192\nwhile True:\nfile_buffer = u.read(block_sz)\nif not file_buffer:\nbreak\nfile_size_dl += len(file_buffer)\nf.write(file_buffer)\nstatus = r\"%10d  [%3.2f%%]\" % (file_size_dl, file_size_dl * 100. / file_size)\nstatus += chr(8) * (len(status) + 1)\nprint(status, end=' ')\nf.close()\n",
+                        "max_stars_repo_path": "spa/management/commands/helpers.py",
+                        "max_stars_repo_name": "fergalmoran/dss.api",
+                        "max_stars_count": 0,
+                        "__cluster__": 2406
+                },
+                {
+                        "id": "test_conala_curated_data__question_id_22676_our_unique_id_2407",
+                        "content": "download a file over HTTP\nu = urllib.request.urlopen(url)\nf = open(file_name, 'wb')\nmeta = u.info()\nfile_size = int(meta.getheaders('Content-Length')[0])\nprint(('Downloading: %s Bytes: %s' % (file_name, file_size)))\nfile_size_dl = 0\nblock_sz = 8192\nwhile True:\nbuffer = u.read(block_sz)\nif (not buffer):\nbreak\nfile_size_dl += len(buffer)\nf.write(buffer)\nstatus = ('%10d  [%3.2f%%]' % (file_size_dl, ((file_size_dl * 100.0) / file_size)))\nstatus = (status + (chr(8) * (len(status) + 1)))\nprint(status, end=' ')\nf.close()",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "__cluster__": 2406
+                },
+                {
+                        "real_dup": 2
+                }
+        ]
+]

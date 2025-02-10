@@ -1,0 +1,486 @@
+[
+        {
+                "data_len": 21
+        },
+        [
+                {
+                        "id": "pretrain_c_data_1685256",
+                        "content": "asmlinkage long CVE_2014_0038_PATCHED_compat_sys_recvmmsg(int fd, struct compat_mmsghdr __user *mmsg,\nunsigned int vlen, unsigned int flags,\nstruct compat_timespec __user *timeout)\n{\nint datagrams;\nstruct timespec ktspec;\nif (flags & MSG_CMSG_COMPAT)\nreturn -EINVAL;\nif (timeout == NULL)\nreturn __sys_recvmmsg(fd, (struct mmsghdr __user *)mmsg, vlen,\nflags | MSG_CMSG_COMPAT, NULL);\nif (compat_get_timespec(&ktspec, timeout))\nreturn -EFAULT;\ndatagrams = __sys_recvmmsg(fd, (struct mmsghdr __user *)mmsg, vlen,\nflags | MSG_CMSG_COMPAT, &ktspec);\nif (datagrams > 0 && compat_put_timespec(&ktspec, timeout))\ndatagrams = -EFAULT;\nreturn datagrams;\n}",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "kppw99/enVAS",
+                        "max_stars_repo_path": "dataset/source/NVD/CVE_2014_0038_PATCHED_compat_sys_recvmmsg.c",
+                        "__cluster__": 1333
+                },
+                {
+                        "id": "test_big-vul-cvefix-repair_data_1334",
+                        "content": "CWE-20 asmlinkage long compat_sys_recvmmsg ( int fd , struct compat_mmsghdr __user * mmsg , unsigned int vlen , unsigned int flags , struct compat_timespec __user * timeout ) { int datagrams ; struct timespec ktspec ; if ( flags & MSG_CMSG_COMPAT ) return - EINVAL ; <S2SV_StartBug> if ( COMPAT_USE_64BIT_TIME ) <S2SV_EndBug> return __sys_recvmmsg ( fd , ( struct mmsghdr __user * ) mmsg , vlen , flags | MSG_CMSG_COMPAT , ( struct timespec * ) timeout ) ; if ( timeout == NULL ) return __sys_recvmmsg ( fd , ( struct mmsghdr __user * ) mmsg , vlen , flags | MSG_CMSG_COMPAT , NULL ) ; <S2SV_StartBug> if ( get_compat_timespec ( & ktspec , timeout ) ) <S2SV_EndBug> return - EFAULT ; datagrams = __sys_recvmmsg ( fd , ( struct mmsghdr __user * ) mmsg , vlen , flags | MSG_CMSG_COMPAT , & ktspec ) ; <S2SV_StartBug> if ( datagrams > 0 && put_compat_timespec ( & ktspec , timeout ) ) <S2SV_EndBug> datagrams = - EFAULT ; return datagrams ; }\nCWE-20\n<S2SV_ModStart> ; if ( <S2SV_ModEnd> timeout == NULL <S2SV_ModStart> ; if ( compat_get_timespec <S2SV_ModEnd> ( & ktspec <S2SV_ModStart> > 0 && compat_put_timespec <S2SV_ModEnd> ( & ktspec",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 1333
+                },
+                {
+                        "real_dup": "1"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "pretrain_c_data_6681737",
+                        "content": "<gh_stars>0\nstatic int CVE_2013_4511_VULN_au1200fb_fb_mmap(struct fb_info *info, struct vm_area_struct *vma)\n{\nunsigned int len;\nunsigned long start=0, off;\nstruct au1200fb_device *fbdev = info->par;\nif (vma->vm_pgoff > (~0UL >> PAGE_SHIFT)) {\nreturn -EINVAL;\n}\nstart = fbdev->fb_phys & PAGE_MASK;\nlen = PAGE_ALIGN((start & ~PAGE_MASK) + fbdev->fb_len);\noff = vma->vm_pgoff << PAGE_SHIFT;\nif ((vma->vm_end - vma->vm_start + off) > len) {\nreturn -EINVAL;\n}\noff += start;\nvma->vm_pgoff = off >> PAGE_SHIFT;\nvma->vm_page_prot = pgprot_noncached(vma->vm_page_prot);\npgprot_val(vma->vm_page_prot) |= _CACHE_MASK; /* CCA=7 */\nreturn io_remap_pfn_range(vma, vma->vm_start, off >> PAGE_SHIFT,\nvma->vm_end - vma->vm_start,\nvma->vm_page_prot);\n}",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "kppw99/enVAS",
+                        "max_stars_repo_path": "dataset/source/NVD/CVE_2013_4511_VULN_au1200fb_fb_mmap.c",
+                        "__cluster__": 517
+                },
+                {
+                        "id": "test_big-vul-cvefix-repair_data_518",
+                        "content": "CWE-119 static int au1200fb_fb_mmap ( struct fb_info * info , struct vm_area_struct * vma ) { <S2SV_StartBug> unsigned int len ; <S2SV_EndBug> unsigned long start = 0 , off ; <S2SV_StartBug> struct au1200fb_device * fbdev = info -> par ; <S2SV_EndBug> if ( vma -> vm_pgoff > ( ~ 0UL >> PAGE_SHIFT ) ) { return - EINVAL ; } start = fbdev -> fb_phys & PAGE_MASK ; len = PAGE_ALIGN ( ( start & ~ PAGE_MASK ) + fbdev -> fb_len ) ; off = vma -> vm_pgoff << PAGE_SHIFT ; if ( ( vma -> vm_end - vma -> vm_start + off ) > len ) { return - EINVAL ; } off += start ; vma -> vm_pgoff = off >> PAGE_SHIFT ; vma -> vm_page_prot = pgprot_noncached ( vma -> vm_page_prot ) ; pgprot_val ( vma -> vm_page_prot ) |= _CACHE_MASK ; <S2SV_StartBug> return io_remap_pfn_range ( vma , vma -> vm_start , off >> PAGE_SHIFT , <S2SV_EndBug> vma -> vm_end - vma -> vm_start , vma -> vm_page_prot ) ; }\nCWE-119\n<S2SV_ModStart> vma ) { <S2SV_ModEnd> struct au1200fb_device * <S2SV_ModStart> info -> par <S2SV_ModEnd> ; vma -> <S2SV_ModStart> _CACHE_MASK ; return vm_iomap_memory <S2SV_ModEnd> ( vma , <S2SV_ModStart> ( vma , fbdev -> fb_phys , fbdev -> fb_len <S2SV_ModEnd> ) ; }",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 517
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "pretrain_c_data_5145752",
+                        "content": "<reponame>kppw99/enVAS\nstatic int CVE_2013_4129_PATCHED___br_mdb_del(struct net_bridge *br, struct br_mdb_entry *entry)\n{\nstruct net_bridge_mdb_htable *mdb;\nstruct net_bridge_mdb_entry *mp;\nstruct net_bridge_port_group *p;\nstruct net_bridge_port_group __rcu **pp;\nstruct br_ip ip;\nint err = -EINVAL;\nif (!netif_running(br->dev) || br->multicast_disabled)\nreturn -EINVAL;\nif (timer_pending(&br->multicast_querier_timer))\nreturn -EBUSY;\nip.proto = entry->addr.proto;\nif (ip.proto == htons(ETH_P_IP))\nip.u.ip4 = entry->addr.u.ip4;\n#if IS_ENABLED(CONFIG_IPV6)\nelse\nip.u.ip6 = entry->addr.u.ip6;\n#endif\nspin_lock_bh(&br->multicast_lock);\nmdb = mlock_dereference(br->mdb, br);\nmp = br_mdb_ip_get(mdb, &ip);\nif (!mp)\ngoto unlock;\nfor (pp = &mp->ports;\n(p = mlock_dereference(*pp, br)) != NULL;\npp = &p->next) {\nif (!p->port || p->port->dev->ifindex != entry->ifindex)\ncontinue;\nif (p->port->state == BR_STATE_DISABLED)\ngoto unlock;\nrcu_assign_pointer(*pp, p->next);\nhlist_del_init(&p->mglist);\ndel_timer(&p->timer);\ncall_rcu_bh(&p->rcu, br_multicast_free_pg);\nerr = 0;\nif (!mp->ports && !mp->mglist && mp->timer_armed &&\nnetif_running(br->dev))\nmod_timer(&mp->timer, jiffies);\nbreak;\n}\nunlock:\nspin_unlock_bh(&br->multicast_lock);\nreturn err;\n}",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "kppw99/enVAS",
+                        "max_stars_repo_path": "dataset/source/NVD/CVE_2013_4129_PATCHED___br_mdb_del.c",
+                        "__cluster__": 419
+                },
+                {
+                        "id": "test_big-vul-cvefix-repair_data_420",
+                        "content": "CWE-20 static int __br_mdb_del ( struct net_bridge * br , struct br_mdb_entry * entry ) { struct net_bridge_mdb_htable * mdb ; struct net_bridge_mdb_entry * mp ; struct net_bridge_port_group * p ; struct net_bridge_port_group __rcu * * pp ; struct br_ip ip ; int err = - EINVAL ; if ( ! netif_running ( br -> dev ) || br -> multicast_disabled ) return - EINVAL ; if ( timer_pending ( & br -> multicast_querier_timer ) ) return - EBUSY ; ip . proto = entry -> addr . proto ; if ( ip . proto == htons ( ETH_P_IP ) ) ip . u . ip4 = entry -> addr . u . ip4 ; # if IS_ENABLED ( CONFIG_IPV6 ) else ip . u . ip6 = entry -> addr . u . ip6 ; # endif spin_lock_bh ( & br -> multicast_lock ) ; mdb = mlock_dereference ( br -> mdb , br ) ; mp = br_mdb_ip_get ( mdb , & ip ) ; if ( ! mp ) goto unlock ; for ( pp = & mp -> ports ; ( p = mlock_dereference ( * pp , br ) ) != NULL ; pp = & p -> next ) { if ( ! p -> port || p -> port -> dev -> ifindex != entry -> ifindex ) continue ; if ( p -> port -> state == BR_STATE_DISABLED ) goto unlock ; rcu_assign_pointer ( * pp , p -> next ) ; hlist_del_init ( & p -> mglist ) ; del_timer ( & p -> timer ) ; call_rcu_bh ( & p -> rcu , br_multicast_free_pg ) ; err = 0 ; <S2SV_StartBug> if ( ! mp -> ports && ! mp -> mglist && <S2SV_EndBug> netif_running ( br -> dev ) ) mod_timer ( & mp -> timer , jiffies ) ; break ; } unlock : spin_unlock_bh ( & br -> multicast_lock ) ; return err ; }\nCWE-20\n<S2SV_ModStart> -> mglist && mp -> timer_armed &&",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 419
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_big-vul-cvefix-repair_data_330",
+                        "content": "CWE-20 static unsigned long ioapic_read_indirect ( struct kvm_ioapic * ioapic , unsigned long addr , unsigned long length ) { unsigned long result = 0 ; switch ( ioapic -> ioregsel ) { case IOAPIC_REG_VERSION : result = ( ( ( ( IOAPIC_NUM_PINS - 1 ) & 0xff ) << 16 ) | ( IOAPIC_VERSION_ID & 0xff ) ) ; break ; case IOAPIC_REG_APIC_ID : case IOAPIC_REG_ARB_ID : result = ( ( ioapic -> id & 0xf ) << 24 ) ; break ; default : { u32 redir_index = ( ioapic -> ioregsel - 0x10 ) >> 1 ; u64 redir_content ; <S2SV_StartBug> ASSERT ( redir_index < IOAPIC_NUM_PINS ) ; <S2SV_EndBug> <S2SV_StartBug> redir_content = ioapic -> redirtbl [ redir_index ] . bits ; <S2SV_EndBug> result = ( ioapic -> ioregsel & 0x1 ) ? ( redir_content >> 32 ) & 0xffffffff : redir_content & 0xffffffff ; break ; } } return result ; }\nCWE-20\n<S2SV_ModStart> u64 redir_content ; if <S2SV_ModEnd> ( redir_index < <S2SV_ModStart> < IOAPIC_NUM_PINS ) <S2SV_ModEnd> redir_content = ioapic <S2SV_ModStart> ] . bits ; else redir_content = ~ 0ULL",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 329
+                },
+                {
+                        "id": "pretrain_c_data_3781580",
+                        "content": "<gh_stars>0\nstatic unsigned long CVE_2013_1798_PATCHED_ioapic_read_indirect(struct kvm_ioapic *ioapic,\nunsigned long addr,\nunsigned long length)\n{\nunsigned long result = 0;\nswitch (ioapic->ioregsel) {\ncase IOAPIC_REG_VERSION:\nresult = ((((IOAPIC_NUM_PINS - 1) & 0xff) << 16)\n| (IOAPIC_VERSION_ID & 0xff));\nbreak;\ncase IOAPIC_REG_APIC_ID:\ncase IOAPIC_REG_ARB_ID:\nresult = ((ioapic->id & 0xf) << 24);\nbreak;\ndefault:\n{\nu32 redir_index = (ioapic->ioregsel - 0x10) >> 1;\nu64 redir_content;\nif (redir_index < IOAPIC_NUM_PINS)\nredir_content =\nioapic->redirtbl[redir_index].bits;\nelse\nredir_content = ~0ULL;\nresult = (ioapic->ioregsel & 0x1) ?\n(redir_content >> 32) & 0xffffffff :\nredir_content & 0xffffffff;\nbreak;\n}\n}\nreturn result;\n}",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "kppw99/enVAS",
+                        "max_stars_repo_path": "dataset/source/NVD/CVE_2013_1798_PATCHED_ioapic_read_indirect.c",
+                        "__cluster__": 329
+                },
+                {
+                        "real_dup": "1"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "pretrain_c_data_2500675",
+                        "content": "static int CVE_2013_2547_VULN_crypto_report_one(struct crypto_alg *alg,\nstruct crypto_user_alg *ualg, struct sk_buff *skb)\n{\nmemcpy(&ualg->cru_name, &alg->cra_name, sizeof(ualg->cru_name));\nmemcpy(&ualg->cru_driver_name, &alg->cra_driver_name,\nsizeof(ualg->cru_driver_name));\nmemcpy(&ualg->cru_module_name, module_name(alg->cra_module),\nCRYPTO_MAX_ALG_NAME);\nualg->cru_flags = alg->cra_flags;\nualg->cru_refcnt = atomic_read(&alg->cra_refcnt);\nif (nla_put_u32(skb, CRYPTOCFGA_PRIORITY_VAL, alg->cra_priority))\ngoto nla_put_failure;\nif (alg->cra_flags & CRYPTO_ALG_LARVAL) {\nstruct crypto_report_larval rl;\nsnprintf(rl.type, CRYPTO_MAX_ALG_NAME, \"%s\", \"larval\");\nif (nla_put(skb, CRYPTOCFGA_REPORT_LARVAL,\nsizeof(struct crypto_report_larval), &rl))\ngoto nla_put_failure;\ngoto out;\n}\nif (alg->cra_type && alg->cra_type->report) {\nif (alg->cra_type->report(skb, alg))\ngoto nla_put_failure;\ngoto out;\n}\nswitch (alg->cra_flags & (CRYPTO_ALG_TYPE_MASK | CRYPTO_ALG_LARVAL)) {\ncase CRYPTO_ALG_TYPE_CIPHER:\nif (crypto_report_cipher(skb, alg))\ngoto nla_put_failure;\nbreak;\ncase CRYPTO_ALG_TYPE_COMPRESS:\nif (crypto_report_comp(skb, alg))\ngoto nla_put_failure;\nbreak;\n}\nout:\nreturn 0;\nnla_put_failure:\nreturn -EMSGSIZE;\n}",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "kppw99/enVAS",
+                        "max_stars_repo_path": "dataset/source/NVD/CVE_2013_2547_VULN_crypto_report_one.c",
+                        "__cluster__": 1839
+                },
+                {
+                        "id": "test_big-vul-cvefix-repair_data_1840",
+                        "content": "CWE-310 static int crypto_report_one ( struct crypto_alg * alg , struct crypto_user_alg * ualg , struct sk_buff * skb ) { <S2SV_StartBug> memcpy ( & ualg -> cru_name , & alg -> cra_name , sizeof ( ualg -> cru_name ) ) ; <S2SV_EndBug> <S2SV_StartBug> memcpy ( & ualg -> cru_driver_name , & alg -> cra_driver_name , <S2SV_EndBug> sizeof ( ualg -> cru_driver_name ) ) ; <S2SV_StartBug> memcpy ( & ualg -> cru_module_name , module_name ( alg -> cra_module ) , <S2SV_EndBug> <S2SV_StartBug> CRYPTO_MAX_ALG_NAME ) ; <S2SV_EndBug> ualg -> cru_flags = alg -> cra_flags ; ualg -> cru_refcnt = atomic_read ( & alg -> cra_refcnt ) ; if ( nla_put_u32 ( skb , CRYPTOCFGA_PRIORITY_VAL , alg -> cra_priority ) ) goto nla_put_failure ; if ( alg -> cra_flags & CRYPTO_ALG_LARVAL ) { struct crypto_report_larval rl ; <S2SV_StartBug> snprintf ( rl . type , CRYPTO_MAX_ALG_NAME , \"%s\" , \"larval\" ) ; <S2SV_EndBug> if ( nla_put ( skb , CRYPTOCFGA_REPORT_LARVAL , sizeof ( struct crypto_report_larval ) , & rl ) ) goto nla_put_failure ; goto out ; } if ( alg -> cra_type && alg -> cra_type -> report ) { if ( alg -> cra_type -> report ( skb , alg ) ) goto nla_put_failure ; goto out ; } switch ( alg -> cra_flags & ( CRYPTO_ALG_TYPE_MASK | CRYPTO_ALG_LARVAL ) ) { case CRYPTO_ALG_TYPE_CIPHER : if ( crypto_report_cipher ( skb , alg ) ) goto nla_put_failure ; break ; case CRYPTO_ALG_TYPE_COMPRESS : if ( crypto_report_comp ( skb , alg ) ) goto nla_put_failure ; break ; } out : return 0 ; nla_put_failure : return - EMSGSIZE ; }\nCWE-310\n<S2SV_ModStart> skb ) { strncpy ( <S2SV_ModEnd> ualg -> cru_name <S2SV_ModStart> -> cru_name , <S2SV_ModEnd> alg -> cra_name <S2SV_ModStart> ) ) ; strncpy ( <S2SV_ModEnd> ualg -> cru_driver_name <S2SV_ModStart> -> cru_driver_name , <S2SV_ModEnd> alg -> cra_driver_name <S2SV_ModStart> ) ) ; strncpy ( <S2SV_ModEnd> ualg -> cru_module_name <S2SV_ModStart> cra_module ) , sizeof ( ualg -> cru_module_name ) ) ; ualg -> cru_type = 0 ; ualg -> cru_mask = 0 <S2SV_ModEnd> ; ualg -> <S2SV_ModStart> crypto_report_larval rl ; strncpy <S2SV_ModEnd> ( rl . <S2SV_ModStart> . type , \"larval\" , sizeof ( rl . type ) <S2SV_ModEnd> ) ; if",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 1839
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "pretrain_c_data_5702800",
+                        "content": "static int CVE_2011_0716_PATCHED_br_multicast_add_group(struct net_bridge *br,\nstruct net_bridge_port *port,\nstruct br_ip *group)\n{\nstruct net_bridge_mdb_entry *mp;\nstruct net_bridge_port_group *p;\nstruct net_bridge_port_group **pp;\nunsigned long now = jiffies;\nint err;\nspin_lock(&br->multicast_lock);\nif (!netif_running(br->dev) ||\n(port && port->state == BR_STATE_DISABLED))\ngoto out;\nmp = br_multicast_new_group(br, port, group);\nerr = PTR_ERR(mp);\nif (unlikely(IS_ERR(mp) || !mp))\ngoto err;\nif (!port) {\nif (hlist_unhashed(&mp->mglist))\nhlist_add_head(&mp->mglist, &br->mglist);\nmod_timer(&mp->timer, now + br->multicast_membership_interval);\ngoto out;\n}\nfor (pp = &mp->ports; (p = *pp); pp = &p->next) {\nif (p->port == port)\ngoto found;\nif ((unsigned long)p->port < (unsigned long)port)\nbreak;\n}\np = kzalloc(sizeof(*p), GFP_ATOMIC);\nerr = -ENOMEM;\nif (unlikely(!p))\ngoto err;\np->addr = *group;\np->port = port;\np->next = *pp;\nhlist_add_head(&p->mglist, &port->mglist);\nsetup_timer(&p->timer, br_multicast_port_group_expired,\n(unsigned long)p);\nsetup_timer(&p->query_timer, br_multicast_port_group_query_expired,\n(unsigned long)p);\nrcu_assign_pointer(*pp, p);\nfound:\nmod_timer(&p->timer, now + br->multicast_membership_interval);\nout:\nerr = 0;\nerr:\nspin_unlock(&br->multicast_lock);\nreturn err;\n}",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "kppw99/enVAS",
+                        "max_stars_repo_path": "dataset/source/NVD/CVE_2011_0716_PATCHED_br_multicast_add_group.c",
+                        "__cluster__": 486
+                },
+                {
+                        "id": "test_big-vul-cvefix-repair_data_487",
+                        "content": "CWE-399 static int br_multicast_add_group ( struct net_bridge * br , struct net_bridge_port * port , struct br_ip * group ) { struct net_bridge_mdb_entry * mp ; struct net_bridge_port_group * p ; struct net_bridge_port_group __rcu * * pp ; unsigned long now = jiffies ; int err ; spin_lock ( & br -> multicast_lock ) ; if ( ! netif_running ( br -> dev ) || ( port && port -> state == BR_STATE_DISABLED ) ) goto out ; mp = br_multicast_new_group ( br , port , group ) ; err = PTR_ERR ( mp ) ; if ( IS_ERR ( mp ) ) goto err ; if ( ! port ) { <S2SV_StartBug> hlist_add_head ( & mp -> mglist , & br -> mglist ) ; <S2SV_EndBug> mod_timer ( & mp -> timer , now + br -> multicast_membership_interval ) ; goto out ; } for ( pp = & mp -> ports ; ( p = mlock_dereference ( * pp , br ) ) != NULL ; pp = & p -> next ) { if ( p -> port == port ) goto found ; if ( ( unsigned long ) p -> port < ( unsigned long ) port ) break ; } p = kzalloc ( sizeof ( * p ) , GFP_ATOMIC ) ; err = - ENOMEM ; if ( unlikely ( ! p ) ) goto err ; p -> addr = * group ; p -> port = port ; p -> next = * pp ; hlist_add_head ( & p -> mglist , & port -> mglist ) ; setup_timer ( & p -> timer , br_multicast_port_group_expired , ( unsigned long ) p ) ; setup_timer ( & p -> query_timer , br_multicast_port_group_query_expired , ( unsigned long ) p ) ; rcu_assign_pointer ( * pp , p ) ; found : mod_timer ( & p -> timer , now + br -> multicast_membership_interval ) ; out : err = 0 ; err : spin_unlock ( & br -> multicast_lock ) ; return err ; }\nCWE-399\n<S2SV_ModStart> port ) { if ( hlist_unhashed ( & mp -> mglist ) )",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 486
+                },
+                {
+                        "real_dup": "1"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "pretrain_c_data_4330032",
+                        "content": "<gh_stars>0\nstatic void\nCVE_2014_9683_PATCHED_ecryptfs_decode_from_filename(unsigned char *dst, size_t *dst_size,\nconst unsigned char *src, size_t src_size)\n{\nu8 current_bit_offset = 0;\nsize_t src_byte_offset = 0;\nsize_t dst_byte_offset = 0;\nif (dst == NULL) {\n(*dst_size) = ecryptfs_max_decoded_size(src_size);\ngoto out;\n}\nwhile (src_byte_offset < src_size) {\nunsigned char src_byte =\nfilename_rev_map[(int)src[src_byte_offset]];\nswitch (current_bit_offset) {\ncase 0:\ndst[dst_byte_offset] = (src_byte << 2);\ncurrent_bit_offset = 6;\nbreak;\ncase 6:\ndst[dst_byte_offset++] |= (src_byte >> 4);\ndst[dst_byte_offset] = ((src_byte & 0xF)\n<< 4);\ncurrent_bit_offset = 4;\nbreak;\ncase 4:\ndst[dst_byte_offset++] |= (src_byte >> 2);\ndst[dst_byte_offset] = (src_byte << 6);\ncurrent_bit_offset = 2;\nbreak;\ncase 2:\ndst[dst_byte_offset++] |= (src_byte);\ncurrent_bit_offset = 0;\nbreak;\n}\nsrc_byte_offset++;\n}\n(*dst_size) = dst_byte_offset;\nout:\nreturn;\n}",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "kppw99/enVAS",
+                        "max_stars_repo_path": "dataset/source/NVD/CVE_2014_9683_PATCHED_ecryptfs_decode_from_filename.c",
+                        "__cluster__": 435
+                },
+                {
+                        "id": "test_big-vul-cvefix-repair_data_436",
+                        "content": "CWE-189 static void ecryptfs_decode_from_filename ( unsigned char * dst , size_t * dst_size , const unsigned char * src , size_t src_size ) { u8 current_bit_offset = 0 ; size_t src_byte_offset = 0 ; size_t dst_byte_offset = 0 ; if ( dst == NULL ) { ( * dst_size ) = ecryptfs_max_decoded_size ( src_size ) ; goto out ; } while ( src_byte_offset < src_size ) { unsigned char src_byte = filename_rev_map [ ( int ) src [ src_byte_offset ] ] ; switch ( current_bit_offset ) { case 0 : dst [ dst_byte_offset ] = ( src_byte << 2 ) ; current_bit_offset = 6 ; break ; case 6 : dst [ dst_byte_offset ++ ] |= ( src_byte >> 4 ) ; dst [ dst_byte_offset ] = ( ( src_byte & 0xF ) << 4 ) ; current_bit_offset = 4 ; break ; case 4 : dst [ dst_byte_offset ++ ] |= ( src_byte >> 2 ) ; dst [ dst_byte_offset ] = ( src_byte << 6 ) ; current_bit_offset = 2 ; break ; case 2 : dst [ dst_byte_offset ++ ] |= ( src_byte ) ; <S2SV_StartBug> dst [ dst_byte_offset ] = 0 ; <S2SV_EndBug> current_bit_offset = 0 ; break ; } src_byte_offset ++ ; } ( * dst_size ) = dst_byte_offset ; out : return ; }\nCWE-189\n<S2SV_ModStart> src_byte ) ; <S2SV_ModEnd> current_bit_offset = 0",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 435
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_big-vul-cvefix-repair_data_1723",
+                        "content": "CWE-362 static int snd_ctl_elem_add ( struct snd_ctl_file * file , struct snd_ctl_elem_info * info , int replace ) { struct snd_card * card = file -> card ; struct snd_kcontrol kctl , * _kctl ; unsigned int access ; long private_size ; struct user_element * ue ; int idx , err ; if ( ! replace && card -> user_ctl_count >= MAX_USER_CONTROLS ) return - ENOMEM ; if ( info -> count < 1 ) return - EINVAL ; access = info -> access == 0 ? SNDRV_CTL_ELEM_ACCESS_READWRITE : ( info -> access & ( SNDRV_CTL_ELEM_ACCESS_READWRITE | SNDRV_CTL_ELEM_ACCESS_INACTIVE | SNDRV_CTL_ELEM_ACCESS_TLV_READWRITE ) ) ; info -> id . numid = 0 ; memset ( & kctl , 0 , sizeof ( kctl ) ) ; down_write ( & card -> controls_rwsem ) ; _kctl = snd_ctl_find_id ( card , & info -> id ) ; err = 0 ; if ( _kctl ) { if ( replace ) err = snd_ctl_remove ( card , _kctl ) ; else err = - EBUSY ; } else { if ( replace ) err = - ENOENT ; } up_write ( & card -> controls_rwsem ) ; if ( err < 0 ) return err ; memcpy ( & kctl . id , & info -> id , sizeof ( info -> id ) ) ; kctl . count = info -> owner ? info -> owner : 1 ; access |= SNDRV_CTL_ELEM_ACCESS_USER ; if ( info -> type == SNDRV_CTL_ELEM_TYPE_ENUMERATED ) kctl . info = snd_ctl_elem_user_enum_info ; else kctl . info = snd_ctl_elem_user_info ; if ( access & SNDRV_CTL_ELEM_ACCESS_READ ) kctl . get = snd_ctl_elem_user_get ; if ( access & SNDRV_CTL_ELEM_ACCESS_WRITE ) kctl . put = snd_ctl_elem_user_put ; if ( access & SNDRV_CTL_ELEM_ACCESS_TLV_READWRITE ) { kctl . tlv . c = snd_ctl_elem_user_tlv ; access |= SNDRV_CTL_ELEM_ACCESS_TLV_CALLBACK ; } switch ( info -> type ) { case SNDRV_CTL_ELEM_TYPE_BOOLEAN : case SNDRV_CTL_ELEM_TYPE_INTEGER : private_size = sizeof ( long ) ; if ( info -> count > 128 ) return - EINVAL ; break ; case SNDRV_CTL_ELEM_TYPE_INTEGER64 : private_size = sizeof ( long long ) ; if ( info -> count > 64 ) return - EINVAL ; break ; case SNDRV_CTL_ELEM_TYPE_ENUMERATED : private_size = sizeof ( unsigned int ) ; if ( info -> count > 128 || info -> value . enumerated . items == 0 ) return - EINVAL ; break ; case SNDRV_CTL_ELEM_TYPE_BYTES : private_size = sizeof ( unsigned char ) ; if ( info -> count > 512 ) return - EINVAL ; break ; case SNDRV_CTL_ELEM_TYPE_IEC958 : private_size = sizeof ( struct snd_aes_iec958 ) ; if ( info -> count != 1 ) return - EINVAL ; break ; default : return - EINVAL ; } private_size *= info -> count ; ue = kzalloc ( sizeof ( struct user_element ) + private_size , GFP_KERNEL ) ; if ( ue == NULL ) return - ENOMEM ; <S2SV_StartBug> ue -> info = * info ; <S2SV_EndBug> ue -> info . access = 0 ; ue -> elem_data = ( char * ) ue + sizeof ( * ue ) ; ue -> elem_data_size = private_size ; if ( ue -> info . type == SNDRV_CTL_ELEM_TYPE_ENUMERATED ) { err = snd_ctl_elem_init_enum_names ( ue ) ; if ( err < 0 ) { kfree ( ue ) ; return err ; } } kctl . private_free = snd_ctl_elem_user_free ; _kctl = snd_ctl_new ( & kctl , access ) ; if ( _kctl == NULL ) { kfree ( ue -> priv_data ) ; kfree ( ue ) ; return - ENOMEM ; } _kctl -> private_data = ue ; for ( idx = 0 ; idx < _kctl -> count ; idx ++ ) _kctl -> vd [ idx ] . owner = file ; err = snd_ctl_add ( card , _kctl ) ; if ( err < 0 ) return err ; down_write ( & card -> controls_rwsem ) ; card -> user_ctl_count ++ ; up_write ( & card -> controls_rwsem ) ; return 0 ; }\nCWE-362\n<S2SV_ModStart> ; ue -> card = card ; ue ->",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 319
+                },
+                {
+                        "id": "pretrain_c_data_5978179",
+                        "content": "<reponame>kppw99/enVAS\nstatic int CVE_2014_4655_PATCHED_snd_ctl_elem_add(struct snd_ctl_file *file,\nstruct snd_ctl_elem_info *info, int replace)\n{\nstruct snd_card *card = file->card;\nstruct snd_kcontrol kctl, *_kctl;\nunsigned int access;\nlong private_size;\nstruct user_element *ue;\nint idx, err;\nif (info->count < 1)\nreturn -EINVAL;\naccess = info->access == 0 ? SNDRV_CTL_ELEM_ACCESS_READWRITE :\n(info->access & (SNDRV_CTL_ELEM_ACCESS_READWRITE|\nSNDRV_CTL_ELEM_ACCESS_INACTIVE|\nSNDRV_CTL_ELEM_ACCESS_TLV_READWRITE));\ninfo->id.numid = 0;\nmemset(&kctl, 0, sizeof(kctl));\nif (replace) {\nerr = snd_ctl_remove_user_ctl(file, &info->id);\nif (err)\nreturn err;\n}\nif (card->user_ctl_count >= MAX_USER_CONTROLS)\nreturn -ENOMEM;\nmemcpy(&kctl.id, &info->id, sizeof(info->id));\nkctl.count = info->owner ? info->owner : 1;\naccess |= SNDRV_CTL_ELEM_ACCESS_USER;\nif (info->type == SNDRV_CTL_ELEM_TYPE_ENUMERATED)\nkctl.info = snd_ctl_elem_user_enum_info;\nelse\nkctl.info = snd_ctl_elem_user_info;\nif (access & SNDRV_CTL_ELEM_ACCESS_READ)\nkctl.get = snd_ctl_elem_user_get;\nif (access & SNDRV_CTL_ELEM_ACCESS_WRITE)\nkctl.put = snd_ctl_elem_user_put;\nif (access & SNDRV_CTL_ELEM_ACCESS_TLV_READWRITE) {\nkctl.tlv.c = snd_ctl_elem_user_tlv;\naccess |= SNDRV_CTL_ELEM_ACCESS_TLV_CALLBACK;\n}\nswitch (info->type) {\ncase SNDRV_CTL_ELEM_TYPE_BOOLEAN:\ncase SNDRV_CTL_ELEM_TYPE_INTEGER:\nprivate_size = sizeof(long);\nif (info->count > 128)\nreturn -EINVAL;\nbreak;\ncase SNDRV_CTL_ELEM_TYPE_INTEGER64:\nprivate_size = sizeof(long long);\nif (info->count > 64)\nreturn -EINVAL;\nbreak;\ncase SNDRV_CTL_ELEM_TYPE_ENUMERATED:\nprivate_size = sizeof(unsigned int);\nif (info->count > 128 || info->value.enumerated.items == 0)\nreturn -EINVAL;\nbreak;\ncase SNDRV_CTL_ELEM_TYPE_BYTES:\nprivate_size = sizeof(unsigned char);\nif (info->count > 512)\nreturn -EINVAL;\nbreak;\ncase SNDRV_CTL_ELEM_TYPE_IEC958:\nprivate_size = sizeof(struct snd_aes_iec958);\nif (info->count != 1)\nreturn -EINVAL;\nbreak;\ndefault:\nreturn -EINVAL;\n}\nprivate_size *= info->count;\nue = kzalloc(sizeof(struct user_element) + private_size, GFP_KERNEL);\nif (ue == NULL)\nreturn -ENOMEM;\nue->info = *info;\nue->info.access = 0;\nue->elem_data = (char *)ue + sizeof(*ue);\nue->elem_data_size = private_size;\nif (ue->info.type == SNDRV_CTL_ELEM_TYPE_ENUMERATED) {\nerr = snd_ctl_elem_init_enum_names(ue);\nif (err < 0) {\nkfree(ue);\nreturn err;\n}\n}\nkctl.private_free = snd_ctl_elem_user_free;\n_kctl = snd_ctl_new(&kctl, access);\nif (_kctl == NULL) {\nkfree(ue->priv_data);\nkfree(ue);\nreturn -ENOMEM;\n}\n_kctl->private_data = ue;\nfor (idx = 0; idx < _kctl->count; idx++)\n_kctl->vd[idx].owner = file;\nerr = snd_ctl_add(card, _kctl);\nif (err < 0)\nreturn err;\ndown_write(&card->controls_rwsem);\ncard->user_ctl_count++;\nup_write(&card->controls_rwsem);\nreturn 0;\n}",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "kppw99/enVAS",
+                        "max_stars_repo_path": "dataset/source/NVD/CVE_2014_4655_PATCHED_snd_ctl_elem_add.c",
+                        "__cluster__": 319
+                },
+                {
+                        "real_dup": "1"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_big-vul-cvefix-repair_data_320",
+                        "content": "CWE-190 static int snd_ctl_elem_add ( struct snd_ctl_file * file , struct snd_ctl_elem_info * info , int replace ) { struct snd_card * card = file -> card ; struct snd_kcontrol kctl , * _kctl ; unsigned int access ; long private_size ; struct user_element * ue ; int idx , err ; <S2SV_StartBug> if ( ! replace && card -> user_ctl_count >= MAX_USER_CONTROLS ) <S2SV_EndBug> <S2SV_StartBug> return - ENOMEM ; <S2SV_EndBug> if ( info -> count < 1 ) return - EINVAL ; access = info -> access == 0 ? SNDRV_CTL_ELEM_ACCESS_READWRITE : ( info -> access & ( SNDRV_CTL_ELEM_ACCESS_READWRITE | SNDRV_CTL_ELEM_ACCESS_INACTIVE | SNDRV_CTL_ELEM_ACCESS_TLV_READWRITE ) ) ; info -> id . numid = 0 ; memset ( & kctl , 0 , sizeof ( kctl ) ) ; down_write ( & card -> controls_rwsem ) ; _kctl = snd_ctl_find_id ( card , & info -> id ) ; err = 0 ; if ( _kctl ) { if ( replace ) err = snd_ctl_remove ( card , _kctl ) ; else err = - EBUSY ; } else { if ( replace ) err = - ENOENT ; } up_write ( & card -> controls_rwsem ) ; if ( err < 0 ) return err ; memcpy ( & kctl . id , & info -> id , sizeof ( info -> id ) ) ; kctl . count = info -> owner ? info -> owner : 1 ; access |= SNDRV_CTL_ELEM_ACCESS_USER ; if ( info -> type == SNDRV_CTL_ELEM_TYPE_ENUMERATED ) kctl . info = snd_ctl_elem_user_enum_info ; else kctl . info = snd_ctl_elem_user_info ; if ( access & SNDRV_CTL_ELEM_ACCESS_READ ) kctl . get = snd_ctl_elem_user_get ; if ( access & SNDRV_CTL_ELEM_ACCESS_WRITE ) kctl . put = snd_ctl_elem_user_put ; if ( access & SNDRV_CTL_ELEM_ACCESS_TLV_READWRITE ) { kctl . tlv . c = snd_ctl_elem_user_tlv ; access |= SNDRV_CTL_ELEM_ACCESS_TLV_CALLBACK ; } switch ( info -> type ) { case SNDRV_CTL_ELEM_TYPE_BOOLEAN : case SNDRV_CTL_ELEM_TYPE_INTEGER : private_size = sizeof ( long ) ; if ( info -> count > 128 ) return - EINVAL ; break ; case SNDRV_CTL_ELEM_TYPE_INTEGER64 : private_size = sizeof ( long long ) ; if ( info -> count > 64 ) return - EINVAL ; break ; case SNDRV_CTL_ELEM_TYPE_ENUMERATED : private_size = sizeof ( unsigned int ) ; if ( info -> count > 128 || info -> value . enumerated . items == 0 ) return - EINVAL ; break ; case SNDRV_CTL_ELEM_TYPE_BYTES : private_size = sizeof ( unsigned char ) ; if ( info -> count > 512 ) return - EINVAL ; break ; case SNDRV_CTL_ELEM_TYPE_IEC958 : private_size = sizeof ( struct snd_aes_iec958 ) ; if ( info -> count != 1 ) return - EINVAL ; break ; default : return - EINVAL ; } private_size *= info -> count ; ue = kzalloc ( sizeof ( struct user_element ) + private_size , GFP_KERNEL ) ; if ( ue == NULL ) return - ENOMEM ; ue -> card = card ; ue -> info = * info ; ue -> info . access = 0 ; ue -> elem_data = ( char * ) ue + sizeof ( * ue ) ; ue -> elem_data_size = private_size ; if ( ue -> info . type == SNDRV_CTL_ELEM_TYPE_ENUMERATED ) { err = snd_ctl_elem_init_enum_names ( ue ) ; if ( err < 0 ) { kfree ( ue ) ; return err ; } } kctl . private_free = snd_ctl_elem_user_free ; _kctl = snd_ctl_new ( & kctl , access ) ; if ( _kctl == NULL ) { kfree ( ue -> priv_data ) ; kfree ( ue ) ; return - ENOMEM ; } _kctl -> private_data = ue ; for ( idx = 0 ; idx < _kctl -> count ; idx ++ ) _kctl -> vd [ idx ] . owner = file ; err = snd_ctl_add ( card , _kctl ) ; if ( err < 0 ) return err ; down_write ( & card -> controls_rwsem ) ; card -> user_ctl_count ++ ; up_write ( & card -> controls_rwsem ) ; return 0 ; }\nCWE-190\n<S2SV_ModStart> ; if ( info -> count < 1 ) return - EINVAL ; access = info -> access == 0 ? SNDRV_CTL_ELEM_ACCESS_READWRITE : ( info -> access & ( SNDRV_CTL_ELEM_ACCESS_READWRITE | SNDRV_CTL_ELEM_ACCESS_INACTIVE | SNDRV_CTL_ELEM_ACCESS_TLV_READWRITE ) ) ; info -> id . numid = 0 ; memset ( & kctl , 0 , sizeof ( kctl ) ) ; if ( replace ) { err = snd_ctl_remove_user_ctl ( file , & info -> id ) ; if ( err ) return err ; } if ( <S2SV_ModEnd> card -> user_ctl_count <S2SV_ModStart> return - ENOMEM <S2SV_ModEnd> ; memcpy (",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 319
+                },
+                {
+                        "id": "pretrain_c_data_5978179",
+                        "content": "<reponame>kppw99/enVAS\nstatic int CVE_2014_4655_PATCHED_snd_ctl_elem_add(struct snd_ctl_file *file,\nstruct snd_ctl_elem_info *info, int replace)\n{\nstruct snd_card *card = file->card;\nstruct snd_kcontrol kctl, *_kctl;\nunsigned int access;\nlong private_size;\nstruct user_element *ue;\nint idx, err;\nif (info->count < 1)\nreturn -EINVAL;\naccess = info->access == 0 ? SNDRV_CTL_ELEM_ACCESS_READWRITE :\n(info->access & (SNDRV_CTL_ELEM_ACCESS_READWRITE|\nSNDRV_CTL_ELEM_ACCESS_INACTIVE|\nSNDRV_CTL_ELEM_ACCESS_TLV_READWRITE));\ninfo->id.numid = 0;\nmemset(&kctl, 0, sizeof(kctl));\nif (replace) {\nerr = snd_ctl_remove_user_ctl(file, &info->id);\nif (err)\nreturn err;\n}\nif (card->user_ctl_count >= MAX_USER_CONTROLS)\nreturn -ENOMEM;\nmemcpy(&kctl.id, &info->id, sizeof(info->id));\nkctl.count = info->owner ? info->owner : 1;\naccess |= SNDRV_CTL_ELEM_ACCESS_USER;\nif (info->type == SNDRV_CTL_ELEM_TYPE_ENUMERATED)\nkctl.info = snd_ctl_elem_user_enum_info;\nelse\nkctl.info = snd_ctl_elem_user_info;\nif (access & SNDRV_CTL_ELEM_ACCESS_READ)\nkctl.get = snd_ctl_elem_user_get;\nif (access & SNDRV_CTL_ELEM_ACCESS_WRITE)\nkctl.put = snd_ctl_elem_user_put;\nif (access & SNDRV_CTL_ELEM_ACCESS_TLV_READWRITE) {\nkctl.tlv.c = snd_ctl_elem_user_tlv;\naccess |= SNDRV_CTL_ELEM_ACCESS_TLV_CALLBACK;\n}\nswitch (info->type) {\ncase SNDRV_CTL_ELEM_TYPE_BOOLEAN:\ncase SNDRV_CTL_ELEM_TYPE_INTEGER:\nprivate_size = sizeof(long);\nif (info->count > 128)\nreturn -EINVAL;\nbreak;\ncase SNDRV_CTL_ELEM_TYPE_INTEGER64:\nprivate_size = sizeof(long long);\nif (info->count > 64)\nreturn -EINVAL;\nbreak;\ncase SNDRV_CTL_ELEM_TYPE_ENUMERATED:\nprivate_size = sizeof(unsigned int);\nif (info->count > 128 || info->value.enumerated.items == 0)\nreturn -EINVAL;\nbreak;\ncase SNDRV_CTL_ELEM_TYPE_BYTES:\nprivate_size = sizeof(unsigned char);\nif (info->count > 512)\nreturn -EINVAL;\nbreak;\ncase SNDRV_CTL_ELEM_TYPE_IEC958:\nprivate_size = sizeof(struct snd_aes_iec958);\nif (info->count != 1)\nreturn -EINVAL;\nbreak;\ndefault:\nreturn -EINVAL;\n}\nprivate_size *= info->count;\nue = kzalloc(sizeof(struct user_element) + private_size, GFP_KERNEL);\nif (ue == NULL)\nreturn -ENOMEM;\nue->info = *info;\nue->info.access = 0;\nue->elem_data = (char *)ue + sizeof(*ue);\nue->elem_data_size = private_size;\nif (ue->info.type == SNDRV_CTL_ELEM_TYPE_ENUMERATED) {\nerr = snd_ctl_elem_init_enum_names(ue);\nif (err < 0) {\nkfree(ue);\nreturn err;\n}\n}\nkctl.private_free = snd_ctl_elem_user_free;\n_kctl = snd_ctl_new(&kctl, access);\nif (_kctl == NULL) {\nkfree(ue->priv_data);\nkfree(ue);\nreturn -ENOMEM;\n}\n_kctl->private_data = ue;\nfor (idx = 0; idx < _kctl->count; idx++)\n_kctl->vd[idx].owner = file;\nerr = snd_ctl_add(card, _kctl);\nif (err < 0)\nreturn err;\ndown_write(&card->controls_rwsem);\ncard->user_ctl_count++;\nup_write(&card->controls_rwsem);\nreturn 0;\n}",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "kppw99/enVAS",
+                        "max_stars_repo_path": "dataset/source/NVD/CVE_2014_4655_PATCHED_snd_ctl_elem_add.c",
+                        "__cluster__": 319
+                },
+                {
+                        "real_dup": "1"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_big-vul-cvefix-repair_data_1185",
+                        "content": "CWE-119 static int logi_dj_ll_raw_request ( struct hid_device * hid , unsigned char reportnum , __u8 * buf , size_t count , unsigned char report_type , int reqtype ) { struct dj_device * djdev = hid -> driver_data ; struct dj_receiver_dev * djrcv_dev = djdev -> dj_receiver_dev ; u8 * out_buf ; int ret ; if ( buf [ 0 ] != REPORT_TYPE_LEDS ) return - EINVAL ; out_buf = kzalloc ( DJREPORT_SHORT_LENGTH , GFP_ATOMIC ) ; if ( ! out_buf ) return - ENOMEM ; <S2SV_StartBug> if ( count < DJREPORT_SHORT_LENGTH - 2 ) <S2SV_EndBug> count = DJREPORT_SHORT_LENGTH - 2 ; out_buf [ 0 ] = REPORT_ID_DJ_SHORT ; out_buf [ 1 ] = djdev -> device_index ; memcpy ( out_buf + 2 , buf , count ) ; ret = hid_hw_raw_request ( djrcv_dev -> hdev , out_buf [ 0 ] , out_buf , DJREPORT_SHORT_LENGTH , report_type , reqtype ) ; kfree ( out_buf ) ; return ret ; }\nCWE-119\n<S2SV_ModStart> if ( count > <S2SV_ModEnd> DJREPORT_SHORT_LENGTH - 2",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 1184
+                },
+                {
+                        "id": "pretrain_c_data_2931756",
+                        "content": "static int CVE_2014_3183_PATCHED_logi_dj_ll_raw_request(struct hid_device *hid,\nunsigned char reportnum, __u8 *buf,\nsize_t count, unsigned char report_type,\nint reqtype)\n{\nstruct dj_device *djdev = hid->driver_data;\nstruct dj_receiver_dev *djrcv_dev = djdev->dj_receiver_dev;\nu8 *out_buf;\nint ret;\nif (buf[0] != REPORT_TYPE_LEDS)\nreturn -EINVAL;\nout_buf = kzalloc(DJREPORT_SHORT_LENGTH, GFP_ATOMIC);\nif (!out_buf)\nreturn -ENOMEM;\nif (count > DJREPORT_SHORT_LENGTH - 2)\ncount = DJREPORT_SHORT_LENGTH - 2;\nout_buf[0] = REPORT_ID_DJ_SHORT;\nout_buf[1] = djdev->device_index;\nmemcpy(out_buf + 2, buf, count);\nret = hid_hw_raw_request(djrcv_dev->hdev, out_buf[0], out_buf,\nDJREPORT_SHORT_LENGTH, report_type, reqtype);\nkfree(out_buf);\nreturn ret;\n}",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "kppw99/enVAS",
+                        "max_stars_repo_path": "dataset/source/NVD/CVE_2014_3183_PATCHED_logi_dj_ll_raw_request.c",
+                        "__cluster__": 1184
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_big-vul-cvefix-repair_data_1277",
+                        "content": "CWE-000 void ff_jpeg2000_cleanup ( Jpeg2000Component * comp , Jpeg2000CodingStyle * codsty ) { int reslevelno , bandno , precno ; for ( reslevelno = 0 ; comp -> reslevel && reslevelno < codsty -> nreslevels ; reslevelno ++ ) { Jpeg2000ResLevel * reslevel = comp -> reslevel + reslevelno ; for ( bandno = 0 ; bandno < reslevel -> nbands ; bandno ++ ) { Jpeg2000Band * band = reslevel -> band + bandno ; for ( precno = 0 ; precno < reslevel -> num_precincts_x * reslevel -> num_precincts_y ; precno ++ ) { <S2SV_StartBug> Jpeg2000Prec * prec = band -> prec + precno ; <S2SV_EndBug> av_freep ( & prec -> zerobits ) ; av_freep ( & prec -> cblkincl ) ; av_freep ( & prec -> cblk ) ; } <S2SV_StartBug> av_freep ( & band -> prec ) ; <S2SV_EndBug> } av_freep ( & reslevel -> band ) ; } ff_dwt_destroy ( & comp -> dwt ) ; av_freep ( & comp -> reslevel ) ; av_freep ( & comp -> i_data ) ; av_freep ( & comp -> f_data ) ; }\nCWE-000\n<S2SV_ModStart> ++ ) { if ( band -> prec ) { <S2SV_ModStart> ) ; } }",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 1276
+                },
+                {
+                        "id": "pretrain_c_data_4656834",
+                        "content": "void CVE_2013_7017_PATCHED_ff_jpeg2000_cleanup(Jpeg2000Component *comp, Jpeg2000CodingStyle *codsty)\n{\nint reslevelno, bandno, precno;\nfor (reslevelno = 0;\ncomp->reslevel && reslevelno < codsty->nreslevels;\nreslevelno++) {\nJpeg2000ResLevel *reslevel = comp->reslevel + reslevelno;\nfor (bandno = 0; bandno < reslevel->nbands; bandno++) {\nJpeg2000Band *band = reslevel->band + bandno;\nfor (precno = 0; precno < reslevel->num_precincts_x * reslevel->num_precincts_y; precno++) {\nif (band->prec) {\nJpeg2000Prec *prec = band->prec + precno;\nav_freep(&prec->zerobits);\nav_freep(&prec->cblkincl);\nav_freep(&prec->cblk);\n}\n}\nav_freep(&band->prec);\n}\nav_freep(&reslevel->band);\n}\nff_dwt_destroy(&comp->dwt);\nav_freep(&comp->reslevel);\nav_freep(&comp->i_data);\nav_freep(&comp->f_data);\n}",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "kppw99/enVAS",
+                        "max_stars_repo_path": "dataset/source/NVD/CVE_2013_7017_PATCHED_ff_jpeg2000_cleanup.c",
+                        "__cluster__": 1276
+                },
+                {
+                        "real_dup": "1"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_big-vul-cvefix-repair_data_826",
+                        "content": "CWE-000 static int translate_desc ( struct vhost_dev * dev , u64 addr , u32 len , struct iovec iov [ ] , int iov_size ) { const struct vhost_memory_region * reg ; struct vhost_memory * mem ; struct iovec * _iov ; u64 s = 0 ; int ret = 0 ; rcu_read_lock ( ) ; mem = rcu_dereference ( dev -> memory ) ; while ( ( u64 ) len > s ) { u64 size ; if ( unlikely ( ret >= iov_size ) ) { ret = - ENOBUFS ; break ; } reg = find_region ( mem , addr , len ) ; if ( unlikely ( ! reg ) ) { ret = - EFAULT ; break ; } _iov = iov + ret ; size = reg -> memory_size - addr + reg -> guest_phys_addr ; <S2SV_StartBug> _iov -> iov_len = min ( ( u64 ) len , size ) ; <S2SV_EndBug> _iov -> iov_base = ( void __user * ) ( unsigned long ) ( reg -> userspace_addr + addr - reg -> guest_phys_addr ) ; s += size ; addr += size ; ++ ret ; } rcu_read_unlock ( ) ; return ret ; }\nCWE-000\n<S2SV_ModStart> u64 ) len - s",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 825
+                },
+                {
+                        "id": "pretrain_c_data_6278033",
+                        "content": "static int CVE_2013_0311_PATCHED_translate_desc(struct vhost_dev *dev, u64 addr, u32 len,\nstruct iovec iov[], int iov_size)\n{\nconst struct vhost_memory_region *reg;\nstruct vhost_memory *mem;\nstruct iovec *_iov;\nu64 s = 0;\nint ret = 0;\nrcu_read_lock();\nmem = rcu_dereference(dev->memory);\nwhile ((u64)len > s) {\nu64 size;\nif (unlikely(ret >= iov_size)) {\nret = -ENOBUFS;\nbreak;\n}\nreg = find_region(mem, addr, len);\nif (unlikely(!reg)) {\nret = -EFAULT;\nbreak;\n}\n_iov = iov + ret;\nsize = reg->memory_size - addr + reg->guest_phys_addr;\n_iov->iov_len = min((u64)len - s, size);\n_iov->iov_base = (void __user *)(unsigned long)\n(reg->userspace_addr + addr - reg->guest_phys_addr);\ns += size;\naddr += size;\n++ret;\n}\nrcu_read_unlock();\nreturn ret;\n}",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "kppw99/enVAS",
+                        "max_stars_repo_path": "dataset/source/NVD/CVE_2013_0311_PATCHED_translate_desc.c",
+                        "__cluster__": 825
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+        [
+                {
+                        "id": "pretrain_cpp_data_4008674",
+                        "content": "static int encrypt(struct blkcipher_desc *desc,\nstruct scatterlist *dst, struct scatterlist *src,\nunsigned int nbytes)\n{\nstruct blkcipher_walk walk;\nstruct crypto_blkcipher *tfm = desc->tfm;\nstruct salsa20_ctx *ctx = crypto_blkcipher_ctx(tfm);\nint err;\nblkcipher_walk_init(&walk, dst, src, nbytes);\nerr = blkcipher_walk_virt_block(desc, &walk, 64);\nsalsa20_ivsetup(ctx, walk.iv);\nif (likely(walk.nbytes == nbytes))\n{\nsalsa20_encrypt_bytes(ctx, walk.dst.virt.addr,\nwalk.src.virt.addr, nbytes);\nreturn blkcipher_walk_done(desc, &walk, 0);\n}\nwhile (walk.nbytes >= 64) {\nsalsa20_encrypt_bytes(ctx, walk.dst.virt.addr,\nwalk.src.virt.addr,\nwalk.nbytes - (walk.nbytes % 64));\nerr = blkcipher_walk_done(desc, &walk, walk.nbytes % 64);\n}\nif (walk.nbytes) {\nsalsa20_encrypt_bytes(ctx, walk.dst.virt.addr,\nwalk.src.virt.addr, walk.nbytes);\nerr = blkcipher_walk_done(desc, &walk, 0);\n}\nreturn err;\n}",
+                        "max_stars_repo_path": "cppcheck/data/c_files/154.cpp",
+                        "max_stars_repo_name": "awsm-research/LineVul",
+                        "max_stars_count": 2.0,
+                        "__cluster__": 1798
+                },
+                {
+                        "id": "test_big-vul-cvefix-repair_data_1799",
+                        "content": "CWE-20 static int encrypt ( struct blkcipher_desc * desc , struct scatterlist * dst , struct scatterlist * src , unsigned int nbytes ) { struct blkcipher_walk walk ; struct crypto_blkcipher * tfm = desc -> tfm ; struct salsa20_ctx * ctx = crypto_blkcipher_ctx ( tfm ) ; int err ; blkcipher_walk_init ( & walk , dst , src , nbytes ) ; err = blkcipher_walk_virt_block ( desc , & walk , 64 ) ; salsa20_ivsetup ( ctx , walk . iv ) ; <S2SV_StartBug> if ( likely ( walk . nbytes == nbytes ) ) <S2SV_EndBug> { salsa20_encrypt_bytes ( ctx , walk . src . virt . addr , walk . dst . virt . addr , nbytes ) ; return blkcipher_walk_done ( desc , & walk , 0 ) ; } while ( walk . nbytes >= 64 ) { salsa20_encrypt_bytes ( ctx , walk . src . virt . addr , walk . dst . virt . addr , walk . nbytes - ( walk . nbytes % 64 ) ) ; err = blkcipher_walk_done ( desc , & walk , walk . nbytes % 64 ) ; } if ( walk . nbytes ) { salsa20_encrypt_bytes ( ctx , walk . src . virt . addr , walk . dst . virt . addr , walk . nbytes ) ; err = blkcipher_walk_done ( desc , & walk , 0 ) ; } return err ; }\nCWE-20\n<S2SV_ModStart> iv ) ; <S2SV_ModEnd> while ( walk",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 1798
+                },
+                {
+                        "real_dup": "1"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "pretrain_cpp_data_3371910",
+                        "content": "static int hash_recvmsg(struct kiocb *unused, struct socket *sock,\nstruct msghdr *msg, size_t len, int flags)\n{\nstruct sock *sk = sock->sk;\nstruct alg_sock *ask = alg_sk(sk);\nstruct hash_ctx *ctx = ask->private;\nunsigned ds = crypto_ahash_digestsize(crypto_ahash_reqtfm(&ctx->req));\nint err;\nif (len > ds)\nlen = ds;\nelse if (len < ds)\nmsg->msg_flags |= MSG_TRUNC;\nmsg->msg_namelen = 0;\nlock_sock(sk);\nif (ctx->more) {\nctx->more = 0;\nahash_request_set_crypt(&ctx->req, NULL, ctx->result, 0);\nerr = af_alg_wait_for_completion(crypto_ahash_final(&ctx->req),\n&ctx->completion);\nif (err)\ngoto unlock;\n}\nerr = memcpy_toiovec(msg->msg_iov, ctx->result, len);\nunlock:\nrelease_sock(sk);\nreturn err ?: len;\n}",
+                        "max_stars_repo_path": "cppcheck/data/c_files/542.cpp",
+                        "max_stars_repo_name": "awsm-research/LineVul",
+                        "max_stars_count": 2.0,
+                        "__cluster__": 1388
+                },
+                {
+                        "id": "test_big-vul-cvefix-repair_data_1389",
+                        "content": "CWE-20 static int hash_recvmsg ( struct kiocb * unused , struct socket * sock , struct msghdr * msg , size_t len , int flags ) { struct sock * sk = sock -> sk ; struct alg_sock * ask = alg_sk ( sk ) ; struct hash_ctx * ctx = ask -> private ; unsigned ds = crypto_ahash_digestsize ( crypto_ahash_reqtfm ( & ctx -> req ) ) ; int err ; if ( len > ds ) len = ds ; else if ( len < ds ) msg -> msg_flags |= MSG_TRUNC ; <S2SV_StartBug> msg -> msg_namelen = 0 ; <S2SV_EndBug> lock_sock ( sk ) ; if ( ctx -> more ) { ctx -> more = 0 ; ahash_request_set_crypt ( & ctx -> req , NULL , ctx -> result , 0 ) ; err = af_alg_wait_for_completion ( crypto_ahash_final ( & ctx -> req ) , & ctx -> completion ) ; if ( err ) goto unlock ; } err = memcpy_toiovec ( msg -> msg_iov , ctx -> result , len ) ; unlock : release_sock ( sk ) ; return err ? : len ; }\nCWE-20\n<S2SV_ModStart> |= MSG_TRUNC ; <S2SV_ModEnd> lock_sock ( sk",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 1388
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_big-vul-cvefix-repair_data_1299",
+                        "content": "CWE-78 static char * construct_command_line ( struct manager_ctx * manager , struct server * server ) { static char cmd [ BUF_SIZE ] ; <S2SV_StartBug> char * method = manager -> method ; <S2SV_EndBug> int i ; <S2SV_StartBug> build_config ( working_dir , server ) ; <S2SV_EndBug> if ( server -> method ) method = server -> method ; memset ( cmd , 0 , BUF_SIZE ) ; snprintf ( cmd , BUF_SIZE , <S2SV_StartBug> \"%s<S2SV_blank>-m<S2SV_blank>%s<S2SV_blank>--manager-address<S2SV_blank>%s<S2SV_blank>-f<S2SV_blank>%s/.shadowsocks_%s.pid<S2SV_blank>-c<S2SV_blank>%s/.shadowsocks_%s.conf\" , <S2SV_EndBug> <S2SV_StartBug> executable , method , manager -> manager_address , <S2SV_EndBug> <S2SV_StartBug> working_dir , server -> port , working_dir , server -> port ) ; <S2SV_EndBug> if ( manager -> acl != NULL ) { int len = strlen ( cmd ) ; snprintf ( cmd + len , BUF_SIZE - len , \"<S2SV_blank>--acl<S2SV_blank>%s\" , manager -> acl ) ; } if ( manager -> timeout != NULL ) { int len = strlen ( cmd ) ; snprintf ( cmd + len , BUF_SIZE - len , \"<S2SV_blank>-t<S2SV_blank>%s\" , manager -> timeout ) ; } # ifdef HAVE_SETRLIMIT if ( manager -> nofile ) { int len = strlen ( cmd ) ; snprintf ( cmd + len , BUF_SIZE - len , \"<S2SV_blank>-n<S2SV_blank>%d\" , manager -> nofile ) ; } # endif if ( manager -> user != NULL ) { int len = strlen ( cmd ) ; snprintf ( cmd + len , BUF_SIZE - len , \"<S2SV_blank>-a<S2SV_blank>%s\" , manager -> user ) ; } if ( manager -> verbose ) { int len = strlen ( cmd ) ; snprintf ( cmd + len , BUF_SIZE - len , \"<S2SV_blank>-v\" ) ; } if ( server -> mode == NULL && manager -> mode == UDP_ONLY ) { int len = strlen ( cmd ) ; snprintf ( cmd + len , BUF_SIZE - len , \"<S2SV_blank>-U\" ) ; } if ( server -> mode == NULL && manager -> mode == TCP_AND_UDP ) { int len = strlen ( cmd ) ; snprintf ( cmd + len , BUF_SIZE - len , \"<S2SV_blank>-u\" ) ; } if ( server -> fast_open [ 0 ] == 0 && manager -> fast_open ) { int len = strlen ( cmd ) ; snprintf ( cmd + len , BUF_SIZE - len , \"<S2SV_blank>--fast-open\" ) ; } if ( manager -> ipv6first ) { int len = strlen ( cmd ) ; snprintf ( cmd + len , BUF_SIZE - len , \"<S2SV_blank>-6\" ) ; } if ( manager -> mtu ) { int len = strlen ( cmd ) ; snprintf ( cmd + len , BUF_SIZE - len , \"<S2SV_blank>--mtu<S2SV_blank>%d\" , manager -> mtu ) ; } if ( server -> plugin == NULL && manager -> plugin ) { int len = strlen ( cmd ) ; snprintf ( cmd + len , BUF_SIZE - len , \"<S2SV_blank>--plugin<S2SV_blank>\\\\\"%s\\\\\"\" , manager -> plugin ) ; } if ( server -> plugin_opts == NULL && manager -> plugin_opts ) { int len = strlen ( cmd ) ; snprintf ( cmd + len , BUF_SIZE - len , \"<S2SV_blank>--plugin-opts<S2SV_blank>\\\\\"%s\\\\\"\" , manager -> plugin_opts ) ; } for ( i = 0 ; i < manager -> nameserver_num ; i ++ ) { int len = strlen ( cmd ) ; snprintf ( cmd + len , BUF_SIZE - len , \"<S2SV_blank>-d<S2SV_blank>%s\" , manager -> nameservers [ i ] ) ; } for ( i = 0 ; i < manager -> host_num ; i ++ ) { int len = strlen ( cmd ) ; snprintf ( cmd + len , BUF_SIZE - len , \"<S2SV_blank>-s<S2SV_blank>%s\" , manager -> hosts [ i ] ) ; } { int len = strlen ( cmd ) ; snprintf ( cmd + len , BUF_SIZE - len , \"<S2SV_blank>--reuse-port\" ) ; } if ( verbose ) { LOGI ( \"cmd:<S2SV_blank>%s\" , cmd ) ; } return cmd ; }\nCWE-78\n<S2SV_ModStart> BUF_SIZE ] ; int i ; int port ; port = atoi ( server -> port ) <S2SV_ModEnd> ; build_config ( <S2SV_ModStart> ( working_dir , manager , server ) <S2SV_ModEnd> ; memset ( <S2SV_ModStart> , BUF_SIZE , \"%s<S2SV_blank>--manager-address<S2SV_blank>%s<S2SV_blank>-f<S2SV_blank>%s/.shadowsocks_%d.pid<S2SV_blank>-c<S2SV_blank>%s/.shadowsocks_%d.conf\" <S2SV_ModEnd> , executable , <S2SV_ModStart> , executable , <S2SV_ModEnd> manager -> manager_address <S2SV_ModStart> , working_dir , <S2SV_ModEnd> port , working_dir <S2SV_ModStart> , working_dir , <S2SV_ModEnd> port ) ;",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 1298
+                },
+                {
+                        "id": "pretrain_cpp_data_4183547",
+                        "content": "construct_command_line(struct manager_ctx *manager, struct server *server)\n{\nstatic char cmd[BUF_SIZE];\nchar *method = manager->method;\nint i;\nbuild_config(working_dir, server);\nif (server->method) method = server->method;\nmemset(cmd, 0, BUF_SIZE);\nsnprintf(cmd, BUF_SIZE,\n\"%s -m %s --manager-address %s -f %s/.shadowsocks_%s.pid -c %s/.shadowsocks_%s.conf\",\nexecutable, method, manager->manager_address,\nworking_dir, server->port, working_dir, server->port);\nif (manager->acl != NULL) {\nint len = strlen(cmd);\nsnprintf(cmd + len, BUF_SIZE - len, \" --acl %s\", manager->acl);\n}\nif (manager->timeout != NULL) {\nint len = strlen(cmd);\nsnprintf(cmd + len, BUF_SIZE - len, \" -t %s\", manager->timeout);\n}\n#ifdef HAVE_SETRLIMIT\nif (manager->nofile) {\nint len = strlen(cmd);\nsnprintf(cmd + len, BUF_SIZE - len, \" -n %d\", manager->nofile);\n}\n#endif\nif (manager->user != NULL) {\nint len = strlen(cmd);\nsnprintf(cmd + len, BUF_SIZE - len, \" -a %s\", manager->user);\n}\nif (manager->verbose) {\nint len = strlen(cmd);\nsnprintf(cmd + len, BUF_SIZE - len, \" -v\");\n}\nif (server->mode == NULL && manager->mode == UDP_ONLY) {\nint len = strlen(cmd);\nsnprintf(cmd + len, BUF_SIZE - len, \" -U\");\n}\nif (server->mode == NULL && manager->mode == TCP_AND_UDP) {\nint len = strlen(cmd);\nsnprintf(cmd + len, BUF_SIZE - len, \" -u\");\n}\nif (server->fast_open[0] == 0 && manager->fast_open) {\nint len = strlen(cmd);\nsnprintf(cmd + len, BUF_SIZE - len, \" --fast-open\");\n}\nif (manager->ipv6first) {\nint len = strlen(cmd);\nsnprintf(cmd + len, BUF_SIZE - len, \" -6\");\n}\nif (manager->mtu) {\nint len = strlen(cmd);\nsnprintf(cmd + len, BUF_SIZE - len, \" --mtu %d\", manager->mtu);\n}\nif (server->plugin == NULL && manager->plugin) {\nint len = strlen(cmd);\nsnprintf(cmd + len, BUF_SIZE - len, \" --plugin \\\"%s\\\"\", manager->plugin);\n}\nif (server->plugin_opts == NULL && manager->plugin_opts) {\nint len = strlen(cmd);\nsnprintf(cmd + len, BUF_SIZE - len, \" --plugin-opts \\\"%s\\\"\", manager->plugin_opts);\n}\nfor (i = 0; i < manager->nameserver_num; i++) {\nint len = strlen(cmd);\nsnprintf(cmd + len, BUF_SIZE - len, \" -d %s\", manager->nameservers[i]);\n}\nfor (i = 0; i < manager->host_num; i++) {\nint len = strlen(cmd);\nsnprintf(cmd + len, BUF_SIZE - len, \" -s %s\", manager->hosts[i]);\n}\n// Always enable reuse port\n{\nint len = strlen(cmd);\nsnprintf(cmd + len, BUF_SIZE - len, \" --reuse-port\");\n}\nif (verbose) {\nLOGI(\"cmd: %s\", cmd);\n}\nreturn cmd;\n}",
+                        "max_stars_repo_path": "cppcheck/data/c_files/606.cpp",
+                        "max_stars_repo_name": "awsm-research/LineVul",
+                        "max_stars_count": 2.0,
+                        "__cluster__": 1298
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_big-vul-cvefix-repair_data_30",
+                        "content": "CWE-264 long arch_ptrace ( struct task_struct * child , long request , unsigned long addr , unsigned long data ) { int ret ; unsigned long __user * datap = ( unsigned long __user * ) data ; switch ( request ) { case PTRACE_PEEKUSR : ret = ptrace_read_user ( child , addr , datap ) ; break ; case PTRACE_POKEUSR : ret = ptrace_write_user ( child , addr , data ) ; break ; case PTRACE_GETREGS : ret = copy_regset_to_user ( child , & user_arm_view , REGSET_GPR , 0 , sizeof ( struct pt_regs ) , datap ) ; break ; case PTRACE_SETREGS : ret = copy_regset_from_user ( child , & user_arm_view , REGSET_GPR , 0 , sizeof ( struct pt_regs ) , datap ) ; break ; case PTRACE_GETFPREGS : ret = copy_regset_to_user ( child , & user_arm_view , REGSET_FPR , 0 , sizeof ( union fp_state ) , datap ) ; break ; case PTRACE_SETFPREGS : ret = copy_regset_from_user ( child , & user_arm_view , REGSET_FPR , 0 , sizeof ( union fp_state ) , datap ) ; break ; # ifdef CONFIG_IWMMXT case PTRACE_GETWMMXREGS : ret = ptrace_getwmmxregs ( child , datap ) ; break ; case PTRACE_SETWMMXREGS : ret = ptrace_setwmmxregs ( child , datap ) ; break ; # endif case PTRACE_GET_THREAD_AREA : <S2SV_StartBug> ret = put_user ( task_thread_info ( child ) -> tp_value , <S2SV_EndBug> datap ) ; break ; case PTRACE_SET_SYSCALL : task_thread_info ( child ) -> syscall = data ; ret = 0 ; break ; # ifdef CONFIG_CRUNCH case PTRACE_GETCRUNCHREGS : ret = ptrace_getcrunchregs ( child , datap ) ; break ; case PTRACE_SETCRUNCHREGS : ret = ptrace_setcrunchregs ( child , datap ) ; break ; # endif # ifdef CONFIG_VFP case PTRACE_GETVFPREGS : ret = copy_regset_to_user ( child , & user_arm_view , REGSET_VFP , 0 , ARM_VFPREGS_SIZE , datap ) ; break ; case PTRACE_SETVFPREGS : ret = copy_regset_from_user ( child , & user_arm_view , REGSET_VFP , 0 , ARM_VFPREGS_SIZE , datap ) ; break ; # endif # ifdef CONFIG_HAVE_HW_BREAKPOINT case PTRACE_GETHBPREGS : if ( ptrace_get_breakpoints ( child ) < 0 ) return - ESRCH ; ret = ptrace_gethbpregs ( child , addr , ( unsigned long __user * ) data ) ; ptrace_put_breakpoints ( child ) ; break ; case PTRACE_SETHBPREGS : if ( ptrace_get_breakpoints ( child ) < 0 ) return - ESRCH ; ret = ptrace_sethbpregs ( child , addr , ( unsigned long __user * ) data ) ; ptrace_put_breakpoints ( child ) ; break ; # endif default : ret = ptrace_request ( child , request , addr , data ) ; break ; } return ret ; }\nCWE-264\n<S2SV_ModStart> ) -> tp_value [ 0 ]",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 29
+                },
+                {
+                        "id": "pretrain_cpp_data_1009289",
+                        "content": "<filename>cppcheck/data/c_files/560.cpp\nlong arch_ptrace(struct task_struct *child, long request,\nunsigned long addr, unsigned long data)\n{\nint ret;\nunsigned long __user *datap = (unsigned long __user *) data;\nswitch (request) {\ncase PTRACE_PEEKUSR:\nret = ptrace_read_user(child, addr, datap);\nbreak;\ncase PTRACE_POKEUSR:\nret = ptrace_write_user(child, addr, data);\nbreak;\ncase PTRACE_GETREGS:\nret = copy_regset_to_user(child,\n&user_arm_view, REGSET_GPR,\n0, sizeof(struct pt_regs),\ndatap);\nbreak;\ncase PTRACE_SETREGS:\nret = copy_regset_from_user(child,\n&user_arm_view, REGSET_GPR,\n0, sizeof(struct pt_regs),\ndatap);\nbreak;\ncase PTRACE_GETFPREGS:\nret = copy_regset_to_user(child,\n&user_arm_view, REGSET_FPR,\n0, sizeof(union fp_state),\ndatap);\nbreak;\ncase PTRACE_SETFPREGS:\nret = copy_regset_from_user(child,\n&user_arm_view, REGSET_FPR,\n0, sizeof(union fp_state),\ndatap);\nbreak;\n#ifdef CONFIG_IWMMXT\ncase PTRACE_GETWMMXREGS:\nret = ptrace_getwmmxregs(child, datap);\nbreak;\ncase PTRACE_SETWMMXREGS:\nret = ptrace_setwmmxregs(child, datap);\nbreak;\n#endif\ncase PTRACE_GET_THREAD_AREA:\nret = put_user(task_thread_info(child)->tp_value,\ndatap);\nbreak;\ncase PTRACE_SET_SYSCALL:\ntask_thread_info(child)->syscall = data;\nret = 0;\nbreak;\n#ifdef CONFIG_CRUNCH\ncase PTRACE_GETCRUNCHREGS:\nret = ptrace_getcrunchregs(child, datap);\nbreak;\ncase PTRACE_SETCRUNCHREGS:\nret = ptrace_setcrunchregs(child, datap);\nbreak;\n#endif\n#ifdef CONFIG_VFP\ncase PTRACE_GETVFPREGS:\nret = copy_regset_to_user(child,\n&user_arm_view, REGSET_VFP,\n0, ARM_VFPREGS_SIZE,\ndatap);\nbreak;\ncase PTRACE_SETVFPREGS:\nret = copy_regset_from_user(child,\n&user_arm_view, REGSET_VFP,\n0, ARM_VFPREGS_SIZE,\ndatap);\nbreak;\n#endif\n#ifdef CONFIG_HAVE_HW_BREAKPOINT\ncase PTRACE_GETHBPREGS:\nif (ptrace_get_breakpoints(child) < 0)\nreturn -ESRCH;\nret = ptrace_gethbpregs(child, addr,\n(unsigned long __user *)data);\nptrace_put_breakpoints(child);\nbreak;\ncase PTRACE_SETHBPREGS:\nif (ptrace_get_breakpoints(child) < 0)\nreturn -ESRCH;\nret = ptrace_sethbpregs(child, addr,\n(unsigned long __user *)data);\nptrace_put_breakpoints(child);\nbreak;\n#endif\ndefault:\nret = ptrace_request(child, request, addr, data);\nbreak;\n}\nreturn ret;\n}",
+                        "max_stars_repo_path": "cppcheck/data/c_files/560.cpp",
+                        "max_stars_repo_name": "awsm-research/LineVul",
+                        "max_stars_count": 2.0,
+                        "__cluster__": 29
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_big-vul-cvefix-repair_data_217",
+                        "content": "CWE-476 static int dnxhd_find_frame_end ( DNXHDParserContext * dctx , const uint8_t * buf , int buf_size ) { ParseContext * pc = & dctx -> pc ; uint64_t state = pc -> state64 ; int pic_found = pc -> frame_start_found ; int i = 0 ; if ( ! pic_found ) { for ( i = 0 ; i < buf_size ; i ++ ) { state = ( state << 8 ) | buf [ i ] ; if ( ff_dnxhd_check_header_prefix ( state & 0xffffffffff00LL ) != 0 ) { i ++ ; pic_found = 1 ; dctx -> cur_byte = 0 ; dctx -> remaining = 0 ; break ; } } } if ( pic_found && ! dctx -> remaining ) { if ( ! buf_size ) return 0 ; for ( ; i < buf_size ; i ++ ) { dctx -> cur_byte ++ ; state = ( state << 8 ) | buf [ i ] ; if ( dctx -> cur_byte == 24 ) { dctx -> h = ( state >> 32 ) & 0xFFFF ; } else if ( dctx -> cur_byte == 26 ) { dctx -> w = ( state >> 32 ) & 0xFFFF ; } else if ( dctx -> cur_byte == 42 ) { int cid = ( state >> 32 ) & 0xFFFFFFFF ; <S2SV_StartBug> if ( cid <= 0 ) <S2SV_EndBug> continue ; <S2SV_StartBug> dctx -> remaining = avpriv_dnxhd_get_frame_size ( cid ) ; <S2SV_EndBug> <S2SV_StartBug> if ( dctx -> remaining <= 0 ) { <S2SV_EndBug> <S2SV_StartBug> dctx -> remaining = dnxhd_get_hr_frame_size ( cid , dctx -> w , dctx -> h ) ; <S2SV_EndBug> <S2SV_StartBug> if ( dctx -> remaining <= 0 ) <S2SV_EndBug> <S2SV_StartBug> return dctx -> remaining ; <S2SV_EndBug> } if ( buf_size - i + 47 >= dctx -> remaining ) { int remaining = dctx -> remaining ; pc -> frame_start_found = 0 ; pc -> state64 = - 1 ; dctx -> cur_byte = 0 ; dctx -> remaining = 0 ; return remaining ; } else { dctx -> remaining -= buf_size ; } } } } else if ( pic_found ) { if ( dctx -> remaining > buf_size ) { dctx -> remaining -= buf_size ; } else { int remaining = dctx -> remaining ; pc -> frame_start_found = 0 ; pc -> state64 = - 1 ; dctx -> cur_byte = 0 ; dctx -> remaining = 0 ; return remaining ; } } pc -> frame_start_found = pic_found ; pc -> state64 = state ; return END_NOT_FOUND ; }\nCWE-476\n<S2SV_ModStart> & 0xFFFFFFFF ; int remaining ; <S2SV_ModStart> ) continue ; <S2SV_ModEnd> remaining = avpriv_dnxhd_get_frame_size <S2SV_ModStart> ; if ( <S2SV_ModEnd> remaining <= 0 <S2SV_ModStart> 0 ) { <S2SV_ModEnd> remaining = dnxhd_get_hr_frame_size <S2SV_ModStart> ; if ( <S2SV_ModEnd> remaining <= 0 <S2SV_ModStart> <= 0 ) continue ; } dctx -> remaining = remaining ; <S2SV_ModEnd> if ( buf_size",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 216
+                },
+                {
+                        "id": "pretrain_cpp_data_1200847",
+                        "content": "<gh_stars>1-10\nstatic int dnxhd_find_frame_end(DNXHDParserContext *dctx,\nconst uint8_t *buf, int buf_size)\n{\nParseContext *pc = &dctx->pc;\nuint64_t state = pc->state64;\nint pic_found = pc->frame_start_found;\nint i = 0;\nif (!pic_found) {\nfor (i = 0; i < buf_size; i++) {\nstate = (state << 8) | buf[i];\nif (ff_dnxhd_check_header_prefix(state & 0xffffffffff00LL) != 0) {\ni++;\npic_found = 1;\ndctx->cur_byte = 0;\ndctx->remaining = 0;\nbreak;\n}\n}\n}\nif (pic_found && !dctx->remaining) {\nif (!buf_size) /* EOF considered as end of frame */\nreturn 0;\nfor (; i < buf_size; i++) {\ndctx->cur_byte++;\nstate = (state << 8) | buf[i];\nif (dctx->cur_byte == 24) {\ndctx->h = (state >> 32) & 0xFFFF;\n} else if (dctx->cur_byte == 26) {\ndctx->w = (state >> 32) & 0xFFFF;\n} else if (dctx->cur_byte == 42) {\nint cid = (state >> 32) & 0xFFFFFFFF;\nif (cid <= 0)\ncontinue;\ndctx->remaining = avpriv_dnxhd_get_frame_size(cid);\nif (dctx->remaining <= 0) {\ndctx->remaining = dnxhd_get_hr_frame_size(cid, dctx->w, dctx->h);\nif (dctx->remaining <= 0)\nreturn dctx->remaining;\n}\nif (buf_size - i + 47 >= dctx->remaining) {\nint remaining = dctx->remaining;\npc->frame_start_found = 0;\npc->state64 = -1;\ndctx->cur_byte = 0;\ndctx->remaining = 0;\nreturn remaining;\n} else {\ndctx->remaining -= buf_size;\n}\n}\n}\n} else if (pic_found) {\nif (dctx->remaining > buf_size) {\ndctx->remaining -= buf_size;\n} else {\nint remaining = dctx->remaining;\npc->frame_start_found = 0;\npc->state64 = -1;\ndctx->cur_byte = 0;\ndctx->remaining = 0;\nreturn remaining;\n}\n}\npc->frame_start_found = pic_found;\npc->state64 = state;\nreturn END_NOT_FOUND;\n}",
+                        "max_stars_repo_path": "cppcheck/data/c_files/396.cpp",
+                        "max_stars_repo_name": "awsm-research/LineVul",
+                        "max_stars_count": 2.0,
+                        "__cluster__": 216
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_big-vul-cvefix-repair_data_386",
+                        "content": "CWE-000 static struct nfs4_opendata * nfs4_opendata_alloc ( struct path * path , <S2SV_StartBug> struct nfs4_state_owner * sp , int flags , <S2SV_EndBug> const struct iattr * attrs ) { struct dentry * parent = dget_parent ( path -> dentry ) ; struct inode * dir = parent -> d_inode ; struct nfs_server * server = NFS_SERVER ( dir ) ; struct nfs4_opendata * p ; p = kzalloc ( sizeof ( * p ) , GFP_KERNEL ) ; if ( p == NULL ) goto err ; p -> o_arg . seqid = nfs_alloc_seqid ( & sp -> so_seqid ) ; if ( p -> o_arg . seqid == NULL ) goto err_free ; p -> path . mnt = mntget ( path -> mnt ) ; p -> path . dentry = dget ( path -> dentry ) ; p -> dir = parent ; p -> owner = sp ; atomic_inc ( & sp -> so_count ) ; p -> o_arg . fh = NFS_FH ( dir ) ; <S2SV_StartBug> p -> o_arg . open_flags = flags , <S2SV_EndBug> p -> o_arg . clientid = server -> nfs_client -> cl_clientid ; p -> o_arg . id = sp -> so_owner_id . id ; p -> o_arg . name = & p -> path . dentry -> d_name ; p -> o_arg . server = server ; p -> o_arg . bitmask = server -> attr_bitmask ; p -> o_arg . claim = NFS4_OPEN_CLAIM_NULL ; if ( flags & O_EXCL ) { u32 * s = ( u32 * ) p -> o_arg . u . verifier . data ; s [ 0 ] = jiffies ; s [ 1 ] = current -> pid ; } else if ( flags & O_CREAT ) { p -> o_arg . u . attrs = & p -> attrs ; memcpy ( & p -> attrs , attrs , sizeof ( p -> attrs ) ) ; } p -> c_arg . fh = & p -> o_res . fh ; p -> c_arg . stateid = & p -> o_res . stateid ; p -> c_arg . seqid = p -> o_arg . seqid ; nfs4_init_opendata_res ( p ) ; kref_init ( & p -> kref ) ; return p ; err_free : kfree ( p ) ; err : dput ( parent ) ; return NULL ; }\nCWE-000\n<S2SV_ModStart> nfs4_state_owner * sp , fmode_t fmode <S2SV_ModStart> open_flags = flags ; p -> o_arg . fmode = fmode & ( FMODE_READ | FMODE_WRITE ) ; <S2SV_ModEnd> p -> o_arg",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 385
+                },
+                {
+                        "id": "pretrain_cpp_data_4436722",
+                        "content": "<filename>cppcheck/data/c_files/397.cpp\nstatic struct nfs4_opendata *nfs4_opendata_alloc(struct path *path,\nstruct nfs4_state_owner *sp, int flags,\nconst struct iattr *attrs)\n{\nstruct dentry *parent = dget_parent(path->dentry);\nstruct inode *dir = parent->d_inode;\nstruct nfs_server *server = NFS_SERVER(dir);\nstruct nfs4_opendata *p;\np = kzalloc(sizeof(*p), GFP_KERNEL);\nif (p == NULL)\ngoto err;\np->o_arg.seqid = nfs_alloc_seqid(&sp->so_seqid);\nif (p->o_arg.seqid == NULL)\ngoto err_free;\np->path.mnt = mntget(path->mnt);\np->path.dentry = dget(path->dentry);\np->dir = parent;\np->owner = sp;\natomic_inc(&sp->so_count);\np->o_arg.fh = NFS_FH(dir);\np->o_arg.open_flags = flags,\np->o_arg.clientid = server->nfs_client->cl_clientid;\np->o_arg.id = sp->so_owner_id.id;\np->o_arg.name = &p->path.dentry->d_name;\np->o_arg.server = server;\np->o_arg.bitmask = server->attr_bitmask;\np->o_arg.claim = NFS4_OPEN_CLAIM_NULL;\nif (flags & O_EXCL) {\nu32 *s = (u32 *) p->o_arg.u.verifier.data;\ns[0] = jiffies;\ns[1] = current->pid;\n} else if (flags & O_CREAT) {\np->o_arg.u.attrs = &p->attrs;\nmemcpy(&p->attrs, attrs, sizeof(p->attrs));\n}\np->c_arg.fh = &p->o_res.fh;\np->c_arg.stateid = &p->o_res.stateid;\np->c_arg.seqid = p->o_arg.seqid;\nnfs4_init_opendata_res(p);\nkref_init(&p->kref);\nreturn p;\nerr_free:\nkfree(p);\nerr:\ndput(parent);\nreturn NULL;\n}",
+                        "max_stars_repo_path": "cppcheck/data/c_files/397.cpp",
+                        "max_stars_repo_name": "awsm-research/LineVul",
+                        "max_stars_count": 2.0,
+                        "__cluster__": 385
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_big-vul-cvefix-repair_data_1619",
+                        "content": "CWE-476 static OM_uint32 acc_ctx_cont ( OM_uint32 * minstat , gss_buffer_t buf , gss_ctx_id_t * ctx , gss_buffer_t * responseToken , gss_buffer_t * mechListMIC , OM_uint32 * negState , send_token_flag * return_token ) { OM_uint32 ret , tmpmin ; gss_OID supportedMech ; spnego_gss_ctx_id_t sc ; unsigned int len ; unsigned char * ptr , * bufstart ; sc = ( spnego_gss_ctx_id_t ) * ctx ; ret = GSS_S_DEFECTIVE_TOKEN ; * negState = REJECT ; * minstat = 0 ; supportedMech = GSS_C_NO_OID ; * return_token = ERROR_TOKEN_SEND ; * responseToken = * mechListMIC = GSS_C_NO_BUFFER ; ptr = bufstart = buf -> value ; # define REMAIN ( buf -> length - ( ptr - bufstart ) ) <S2SV_StartBug> if ( REMAIN > INT_MAX ) <S2SV_EndBug> return GSS_S_DEFECTIVE_TOKEN ; if ( * ptr == HEADER_ID ) { ret = g_verify_token_header ( gss_mech_spnego , & len , & ptr , 0 , REMAIN ) ; if ( ret ) { * minstat = ret ; return GSS_S_DEFECTIVE_TOKEN ; } } if ( * ptr != ( CONTEXT | 0x01 ) ) { return GSS_S_DEFECTIVE_TOKEN ; } ret = get_negTokenResp ( minstat , ptr , REMAIN , negState , & supportedMech , responseToken , mechListMIC ) ; if ( ret != GSS_S_COMPLETE ) goto cleanup ; if ( * responseToken == GSS_C_NO_BUFFER && * mechListMIC == GSS_C_NO_BUFFER ) { ret = GSS_S_DEFECTIVE_TOKEN ; goto cleanup ; } if ( supportedMech != GSS_C_NO_OID ) { ret = GSS_S_DEFECTIVE_TOKEN ; goto cleanup ; } sc -> firstpass = 0 ; * negState = ACCEPT_INCOMPLETE ; * return_token = CONT_TOKEN_SEND ; cleanup : if ( supportedMech != GSS_C_NO_OID ) { generic_gss_release_oid ( & tmpmin , & supportedMech ) ; } return ret ; # undef REMAIN }\nCWE-476\n<S2SV_ModStart> if ( REMAIN == 0 || REMAIN",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 1618
+                },
+                {
+                        "id": "pretrain_cpp_data_2281332",
+                        "content": "acc_ctx_cont(OM_uint32 *minstat,\ngss_buffer_t buf,\ngss_ctx_id_t *ctx,\ngss_buffer_t *responseToken,\ngss_buffer_t *mechListMIC,\nOM_uint32 *negState,\nsend_token_flag *return_token)\n{\nOM_uint32 ret, tmpmin;\ngss_OID supportedMech;\nspnego_gss_ctx_id_t sc;\nunsigned int len;\nunsigned char *ptr, *bufstart;\nsc = (spnego_gss_ctx_id_t)*ctx;\nret = GSS_S_DEFECTIVE_TOKEN;\n*negState = REJECT;\n*minstat = 0;\nsupportedMech = GSS_C_NO_OID;\n*return_token = ERROR_TOKEN_SEND;\n*responseToken = *mechListMIC = GSS_C_NO_BUFFER;\nptr = bufstart = buf->value;\n#define REMAIN (buf->length - (ptr - bufstart))\nif (REMAIN > INT_MAX)\nreturn GSS_S_DEFECTIVE_TOKEN;\n/*\n* Attempt to work with old Sun SPNEGO.\n*/\nif (*ptr == HEADER_ID) {\nret = g_verify_token_header(gss_mech_spnego,\n&len, &ptr, 0, REMAIN);\nif (ret) {\n*minstat = ret;\nreturn GSS_S_DEFECTIVE_TOKEN;\n}\n}\nif (*ptr != (CONTEXT | 0x01)) {\nreturn GSS_S_DEFECTIVE_TOKEN;\n}\nret = get_negTokenResp(minstat, ptr, REMAIN,\nnegState, &supportedMech,\nresponseToken, mechListMIC);\nif (ret != GSS_S_COMPLETE)\ngoto cleanup;\nif (*responseToken == GSS_C_NO_BUFFER &&\n*mechListMIC == GSS_C_NO_BUFFER) {\nret = GSS_S_DEFECTIVE_TOKEN;\ngoto cleanup;\n}\nif (supportedMech != GSS_C_NO_OID) {\nret = GSS_S_DEFECTIVE_TOKEN;\ngoto cleanup;\n}\nsc->firstpass = 0;\n*negState = ACCEPT_INCOMPLETE;\n*return_token = CONT_<PASSWORD>;\ncleanup:\nif (supportedMech != GSS_C_NO_OID) {\ngeneric_gss_release_oid(&tmpmin, &supportedMech);\n}\nreturn ret;\n#undef REMAIN\n}",
+                        "max_stars_repo_path": "cppcheck/data/c_files/416.cpp",
+                        "max_stars_repo_name": "awsm-research/LineVul",
+                        "max_stars_count": 2.0,
+                        "__cluster__": 1618
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_big-vul-cvefix-repair_data_1466",
+                        "content": "CWE-362 int ipc_addid ( struct ipc_ids * ids , struct kern_ipc_perm * new , int size ) { kuid_t euid ; kgid_t egid ; int id ; int next_id = ids -> next_id ; if ( size > IPCMNI ) size = IPCMNI ; if ( ids -> in_use >= size ) return - ENOSPC ; idr_preload ( GFP_KERNEL ) ; spin_lock_init ( & new -> lock ) ; new -> deleted = false ; rcu_read_lock ( ) ; spin_lock ( & new -> lock ) ; <S2SV_StartBug> id = idr_alloc ( & ids -> ipcs_idr , new , <S2SV_EndBug> ( next_id < 0 ) ? 0 : ipcid_to_idx ( next_id ) , 0 , GFP_NOWAIT ) ; idr_preload_end ( ) ; if ( id < 0 ) { spin_unlock ( & new -> lock ) ; rcu_read_unlock ( ) ; return id ; } ids -> in_use ++ ; <S2SV_StartBug> current_euid_egid ( & euid , & egid ) ; <S2SV_EndBug> new -> cuid = new -> uid = euid ; new -> gid = new -> cgid = egid ; if ( next_id < 0 ) { new -> seq = ids -> seq ++ ; if ( ids -> seq > IPCID_SEQ_MAX ) ids -> seq = 0 ; } else { new -> seq = ipcid_to_seqx ( next_id ) ; ids -> next_id = - 1 ; } new -> id = ipc_buildid ( id , new -> seq ) ; return id ; }\nCWE-362\n<S2SV_ModStart> lock ) ; current_euid_egid ( & euid , & egid ) ; new -> cuid = new -> uid = euid ; new -> gid = new -> cgid = egid ; <S2SV_ModStart> in_use ++ ; <S2SV_ModEnd> if ( next_id",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 1465
+                },
+                {
+                        "id": "pretrain_cpp_data_4604513",
+                        "content": "<gh_stars>1-10\nint ipc_addid(struct ipc_ids *ids, struct kern_ipc_perm *new, int size)\n{\nkuid_t euid;\nkgid_t egid;\nint id;\nint next_id = ids->next_id;\nif (size > IPCMNI)\nsize = IPCMNI;\nif (ids->in_use >= size)\nreturn -ENOSPC;\nidr_preload(GFP_KERNEL);\nspin_lock_init(&new->lock);\nnew->deleted = false;\nrcu_read_lock();\nspin_lock(&new->lock);\nid = idr_alloc(&ids->ipcs_idr, new,\n(next_id < 0) ? 0 : ipcid_to_idx(next_id), 0,\nGFP_NOWAIT);\nidr_preload_end();\nif (id < 0) {\nspin_unlock(&new->lock);\nrcu_read_unlock();\nreturn id;\n}\nids->in_use++;\ncurrent_euid_egid(&euid, &egid);\nnew->cuid = new->uid = euid;\nnew->gid = new->cgid = egid;\nif (next_id < 0) {\nnew->seq = ids->seq++;\nif (ids->seq > IPCID_SEQ_MAX)\nids->seq = 0;\n} else {\nnew->seq = ipcid_to_seqx(next_id);\nids->next_id = -1;\n}\nnew->id = ipc_buildid(id, new->seq);\nreturn id;\n}",
+                        "max_stars_repo_path": "cppcheck/data/c_files/493.cpp",
+                        "max_stars_repo_name": "awsm-research/LineVul",
+                        "max_stars_count": 2.0,
+                        "__cluster__": 1465
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_big-vul-cvefix-repair_data_1866",
+                        "content": "CWE-000 static int crypto_report_one ( struct crypto_alg * alg , struct crypto_user_alg * ualg , struct sk_buff * skb ) { <S2SV_StartBug> strlcpy ( ualg -> cru_name , alg -> cra_name , sizeof ( ualg -> cru_name ) ) ; <S2SV_EndBug> <S2SV_StartBug> strlcpy ( ualg -> cru_driver_name , alg -> cra_driver_name , <S2SV_EndBug> sizeof ( ualg -> cru_driver_name ) ) ; <S2SV_StartBug> strlcpy ( ualg -> cru_module_name , module_name ( alg -> cra_module ) , <S2SV_EndBug> sizeof ( ualg -> cru_module_name ) ) ; ualg -> cru_type = 0 ; ualg -> cru_mask = 0 ; ualg -> cru_flags = alg -> cra_flags ; ualg -> cru_refcnt = refcount_read ( & alg -> cra_refcnt ) ; if ( nla_put_u32 ( skb , CRYPTOCFGA_PRIORITY_VAL , alg -> cra_priority ) ) goto nla_put_failure ; if ( alg -> cra_flags & CRYPTO_ALG_LARVAL ) { struct crypto_report_larval rl ; <S2SV_StartBug> strlcpy ( rl . type , \"larval\" , sizeof ( rl . type ) ) ; <S2SV_EndBug> if ( nla_put ( skb , CRYPTOCFGA_REPORT_LARVAL , sizeof ( struct crypto_report_larval ) , & rl ) ) goto nla_put_failure ; goto out ; } if ( alg -> cra_type && alg -> cra_type -> report ) { if ( alg -> cra_type -> report ( skb , alg ) ) goto nla_put_failure ; goto out ; } switch ( alg -> cra_flags & ( CRYPTO_ALG_TYPE_MASK | CRYPTO_ALG_LARVAL ) ) { case CRYPTO_ALG_TYPE_CIPHER : if ( crypto_report_cipher ( skb , alg ) ) goto nla_put_failure ; break ; case CRYPTO_ALG_TYPE_COMPRESS : if ( crypto_report_comp ( skb , alg ) ) goto nla_put_failure ; break ; case CRYPTO_ALG_TYPE_ACOMPRESS : if ( crypto_report_acomp ( skb , alg ) ) goto nla_put_failure ; break ; case CRYPTO_ALG_TYPE_AKCIPHER : if ( crypto_report_akcipher ( skb , alg ) ) goto nla_put_failure ; break ; case CRYPTO_ALG_TYPE_KPP : if ( crypto_report_kpp ( skb , alg ) ) goto nla_put_failure ; break ; } out : return 0 ; nla_put_failure : return - EMSGSIZE ; }\nCWE-000\n<S2SV_ModStart> skb ) { strncpy <S2SV_ModEnd> ( ualg -> <S2SV_ModStart> ) ) ; strncpy <S2SV_ModEnd> ( ualg -> <S2SV_ModStart> ) ) ; strncpy <S2SV_ModEnd> ( ualg -> <S2SV_ModStart> crypto_report_larval rl ; strncpy <S2SV_ModEnd> ( rl .",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 1865
+                },
+                {
+                        "id": "pretrain_cpp_data_5455248",
+                        "content": "static int crypto_report_one(struct crypto_alg *alg,\nstruct crypto_user_alg *ualg, struct sk_buff *skb)\n{\nstrlcpy(ualg->cru_name, alg->cra_name, sizeof(ualg->cru_name));\nstrlcpy(ualg->cru_driver_name, alg->cra_driver_name,\nsizeof(ualg->cru_driver_name));\nstrlcpy(ualg->cru_module_name, module_name(alg->cra_module),\nsizeof(ualg->cru_module_name));\nualg->cru_type = 0;\nualg->cru_mask = 0;\nualg->cru_flags = alg->cra_flags;\nualg->cru_refcnt = refcount_read(&alg->cra_refcnt);\nif (nla_put_u32(skb, CRYPTOCFGA_PRIORITY_VAL, alg->cra_priority))\ngoto nla_put_failure;\nif (alg->cra_flags & CRYPTO_ALG_LARVAL) {\nstruct crypto_report_larval rl;\nstrlcpy(rl.type, \"larval\", sizeof(rl.type));\nif (nla_put(skb, CRYPTOCFGA_REPORT_LARVAL,\nsizeof(struct crypto_report_larval), &rl))\ngoto nla_put_failure;\ngoto out;\n}\nif (alg->cra_type && alg->cra_type->report) {\nif (alg->cra_type->report(skb, alg))\ngoto nla_put_failure;\ngoto out;\n}\nswitch (alg->cra_flags & (CRYPTO_ALG_TYPE_MASK | CRYPTO_ALG_LARVAL)) {\ncase CRYPTO_ALG_TYPE_CIPHER:\nif (crypto_report_cipher(skb, alg))\ngoto nla_put_failure;\nbreak;\ncase CRYPTO_ALG_TYPE_COMPRESS:\nif (crypto_report_comp(skb, alg))\ngoto nla_put_failure;\nbreak;\ncase CRYPTO_ALG_TYPE_ACOMPRESS:\nif (crypto_report_acomp(skb, alg))\ngoto nla_put_failure;\nbreak;\ncase CRYPTO_ALG_TYPE_AKCIPHER:\nif (crypto_report_akcipher(skb, alg))\ngoto nla_put_failure;\nbreak;\ncase CRYPTO_ALG_TYPE_KPP:\nif (crypto_report_kpp(skb, alg))\ngoto nla_put_failure;\nbreak;\n}\nout:\nreturn 0;\nnla_put_failure:\nreturn -EMSGSIZE;\n}",
+                        "max_stars_repo_path": "cppcheck/data/c_files/424.cpp",
+                        "max_stars_repo_name": "awsm-research/LineVul",
+                        "max_stars_count": 2.0,
+                        "__cluster__": 1865
+                },
+                {
+                        "real_dup": 2
+                }
+        ]
+
+]

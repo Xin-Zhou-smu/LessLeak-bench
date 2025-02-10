@@ -1,0 +1,72 @@
+[
+        {
+                "data_len": 3
+        },
+        [
+                {
+                        "id": "test_codereview_new_python_data_3946",
+                        "content": "\nfrom enum import Enum\nclass Aggregation(Enum):\nNOP = 0\nAVG = 1\nMAX = 2\nMIN = 3\nSUM = 4\nUNION = 5\nELEMENTWISE_AVG = 6\nELEMENTWISE_MIN = 7\nELEMENTWISE_MAX = 8\nELEMENTWISE_SUM = 9\nLATEST = 10\n\\ No newline at end of file\nexplain what does each aggregation do\nfrom enum import Enum\n+\nclass Aggregation(Enum):\n+    \"\"\"\n+    The built-in aggregation functions for LookupFeature\n+    \"\"\"\n+    # No operation\nNOP = 0\n+    # Average\nAVG = 1\nMAX = 2\nMIN = 3\nSUM = 4\nUNION = 5\n+    # Element-wise average, typically used in array type value, i.e. 1d dense tensor\nELEMENTWISE_AVG = 6\nELEMENTWISE_MIN = 7\nELEMENTWISE_MAX = 8\nELEMENTWISE_SUM = 9\n+    # Pick the latest value according to its timestamp\nLATEST = 10\n\\ No newline at end of file",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "__cluster__": 74
+                },
+                {
+                        "id": "pretrain_python_data_10176946",
+                        "content": "from enum import Enum\nclass Aggregation(Enum):\n\"\"\"\nThe built-in aggregation functions for LookupFeature\n\"\"\"\n# No operation\nNOP = 0\n# Average\nAVG = 1\nMAX = 2\nMIN = 3\nSUM = 4\nUNION = 5\n# Element-wise average, typically used in array type value, i.e. 1d dense tensor\nELEMENTWISE_AVG = 6\nELEMENTWISE_MIN = 7\nELEMENTWISE_MAX = 8\nELEMENTWISE_SUM = 9\n# Pick the latest value according to its timestamp\nLATEST = 10",
+                        "max_stars_count": 42,
+                        "max_stars_repo_path": "feathr_project/feathr/aggregation.py",
+                        "max_stars_repo_name": "xiaoyongzhu/feathr",
+                        "__cluster__": 74
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codereview_new_python_data_11060",
+                        "content": "\nfrom typing import Optional\nPlease add our standard copyright comment to all new .py files.\n+#\n+# This source file is part of the EdgeDB open source project.\n+#\n+# Copyright 2010-present MagicStack Inc. and the EdgeDB authors.\n+#\n+# Licensed under the Apache License, Version 2.0 (the \"License\");\n+# you may not use this file except in compliance with the License.\n+# You may obtain a copy of the License at\n+#\n+#     http://www.apache.org/licenses/LICENSE-2.0\n+#\n+# Unless required by applicable law or agreed to in writing, software\n+# distributed under the License is distributed on an \"AS IS\" BASIS,\n+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n+# See the License for the specific language governing permissions and\n+# limitations under the License.\n+#\n+\n+\nfrom typing import Optional\n",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "__cluster__": 1543
+                },
+                {
+                        "id": "pretrain_python_data_10147122",
+                        "content": "<gh_stars>1-10\n#\n# This source file is part of the EdgeDB open source project.\n#\n# Copyright 2016-present MagicStack Inc. and the EdgeDB authors.\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this file except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#     http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\n#\nfrom .base import TypeRules, BaseTypeMeta  # NOQA\nfrom .base import normalize_type  # NOQA\nfrom . import boolean  # NOQA\nfrom . import bytes  # NOQA\nfrom . import datetime  # NOQA\nfrom . import int  # NOQA\nfrom . import numeric  # NOQA\nfrom . import string  # NOQA\nfrom . import uuid  # NOQA",
+                        "max_stars_count": 2,
+                        "max_stars_repo_path": "edb/lang/schema/basetypes/__init__.py",
+                        "max_stars_repo_name": "mcaramma/edgedb",
+                        "__cluster__": 1543
+                },
+                {
+                        "real_dup": "1"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "pretrain_python_data_4531053",
+                        "content": "\"\"\"The MJPEG IP Camera integration.\"\"\"\nfrom homeassistant.config_entries import ConfigEntry\nfrom homeassistant.core import HomeAssistant\nfrom homeassistant.helpers.typing import ConfigType\nfrom .camera import MjpegCamera\nfrom .const import CONF_MJPEG_URL, CONF_STILL_IMAGE_URL, PLATFORMS\nfrom .util import filter_urllib3_logging\n__all__ = [\n\"CONF_MJPEG_URL\",\n\"CONF_STILL_IMAGE_URL\",\n\"MjpegCamera\",\n\"filter_urllib3_logging\",\n]\ndef setup(hass: HomeAssistant, config: ConfigType) -> bool:\n\"\"\"Set up the MJPEG IP Camera integration.\"\"\"\nfilter_urllib3_logging()\nreturn True\nasync def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:\n\"\"\"Set up from a config entry.\"\"\"\nhass.config_entries.async_setup_platforms(entry, PLATFORMS)\n# Reload entry when its updated.\nentry.async_on_unload(entry.add_update_listener(async_reload_entry))\nreturn True\nasync def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:\n\"\"\"Unload a config entry.\"\"\"\nreturn await hass.config_entries.async_unload_platforms(entry, PLATFORMS)\nasync def async_reload_entry(hass: HomeAssistant, entry: ConfigEntry) -> None:\n\"\"\"Reload the config entry when it changed.\"\"\"\nawait hass.config_entries.async_reload(entry.entry_id)",
+                        "max_stars_count": 30023,
+                        "max_stars_repo_path": "homeassistant/components/mjpeg/__init__.py",
+                        "max_stars_repo_name": "MrDelik/core",
+                        "__cluster__": 1087
+                },
+                {
+                        "id": "test_codereview_new_python_data_12889",
+                        "content": "\nfrom homeassistant.config_entries import ConfigEntry\nfrom homeassistant.core import HomeAssistant\n-from homeassistant.helpers.typing import ConfigType\n-from .const import CONF_OBIHAI_HOST, PLATFORMS\n-\n-__all__ = [\n-    \"CONF_OBIHAI_HOST\",\n-]\n-\n-\n-def setup(hass: HomeAssistant, config: ConfigType) -> bool:\n-    \"\"\"Set up the Obihai integration.\"\"\"\n-    return True\nasync def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:\n\"\"\"Set up from a config entry.\"\"\"\nawait hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)\n-    # Reload entry when its updated.\n-    entry.async_on_unload(entry.add_update_listener(async_reload_entry))\n-\nreturn True\nasync def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:\n\"\"\"Unload a config entry.\"\"\"\nreturn await hass.config_entries.async_unload_platforms(entry, PLATFORMS)\n-\n-\n-async def async_reload_entry(hass: HomeAssistant, entry: ConfigEntry) -> None:\n-    \"\"\"Reload the config entry when it changed.\"\"\"\n-    await hass.config_entries.async_reload(entry.entry_id)\nNo longer necessary\nfrom homeassistant.config_entries import ConfigEntry\nfrom homeassistant.core import HomeAssistant\n+from .const import PLATFORMS\nasync def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:\n\"\"\"Set up from a config entry.\"\"\"\nawait hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)\nreturn True\nasync def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:\n\"\"\"Unload a config entry.\"\"\"\nreturn await hass.config_entries.async_unload_platforms(entry, PLATFORMS)",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "__cluster__": 1087
+                },
+                {
+                        "real_dup": "0"
+                }
+        ]
+]

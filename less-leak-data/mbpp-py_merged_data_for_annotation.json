@@ -1,0 +1,95 @@
+[
+        {
+                "data_len": 4
+        },
+        [
+                {
+                        "id": "pretrain_python_data_9798284",
+                        "content": "'''4. Write a Python program to find the largest product of the pair of adjacent elements from a given list of integers.\nSample Output:\n30\n20\n6'''\ndef adjacent_num_product(list_nums):\nreturn max(a*b for a, b in zip(list_nums, list_nums[1:]))\nprint(adjacent_num_product([1,2,3,4,5,6]))\nprint(adjacent_num_product([1,2,3,4,5]))\nprint(adjacent_num_product([2,3]))\n#Reference: w3resource",
+                        "max_stars_count": 6,
+                        "max_stars_repo_name": "CodedLadiesInnovateTech/-python-challenge-solutions",
+                        "max_stars_repo_path": "Ekeopara_Praise/Phase 1/Python Basic 2/Day26 Tasks/Task4.py",
+                        "__cluster__": 729
+                },
+                {
+                        "id": "test_mbpp_data_366",
+                        "content": "Write a python function to find the largest product of the pair of adjacent elements from a given list of integers.\nassert adjacent_num_product([1,2,3,4,5,6]) == 30\nassert adjacent_num_product([1,2,3,4,5]) == 20\nassert adjacent_num_product([2,3]) == 6\ndef adjacent_num_product(list_nums):\nreturn max(a*b for a, b in zip(list_nums, list_nums[1:]))",
+                        "max_stars_count": 0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 729
+                },
+                {
+                        "real_dup": "3"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_mbpp_data_755",
+                        "content": "Write a function to find the second smallest number in a list.\nassert second_smallest([1, 2, -8, -2, 0, -2])==-2\nassert second_smallest([1, 1, -0.5, 0, 2, -2, -2])==-0.5\nassert second_smallest([2,2])==None\ndef second_smallest(numbers):\nif (len(numbers)<2):\nreturn\nif ((len(numbers)==2)  and (numbers[0] == numbers[1]) ):\nreturn\ndup_items = set()\nuniq_items = []\nfor x in numbers:\nif x not in dup_items:\nuniq_items.append(x)\ndup_items.add(x)\nuniq_items.sort()\nreturn  uniq_items[1]",
+                        "max_stars_count": 0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 154
+                },
+                {
+                        "id": "pretrain_python_data_10533043",
+                        "content": "#program to find the second smallest number in a list.\ndef second_smallest(numbers):\nif (len(numbers)<2):\nreturn\nif ((len(numbers)==2)  and (numbers[0] == numbers[1]) ):\nreturn\ndup_items = set()\nuniq_items = []\nfor x in numbers:\nif x not in dup_items:\nuniq_items.append(x)\ndup_items.add(x)\nuniq_items.sort()\nreturn  uniq_items[1]\nprint(second_smallest([1, 2, -8, -2, 0, -2]))\nprint(second_smallest([1, 1, 0, 0, 2, -2, -2]))\nprint(second_smallest([1, 1, 1, 0, 0, 0, 2, -2, -2]))\nprint(second_smallest([2,2]))\nprint(second_smallest([2]))",
+                        "max_stars_count": 6,
+                        "max_stars_repo_name": "CodedLadiesInnovateTech/-python-challenge-solutions",
+                        "max_stars_repo_path": "Darlington/phase2/LIST/day 41 solution/qtn7.py",
+                        "__cluster__": 154
+                },
+                {
+                        "real_dup": "3"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "pretrain_python_data_5867474",
+                        "content": "\ndef magic_square_test(my_matrix):\niSize = len(my_matrix[0])\nsum_list = []\n#Horizontal Part:\nsum_list.extend([sum (lines) for lines in my_matrix])\n#Vertical Part:\nfor col in range(iSize):\nsum_list.append(sum(row[col] for row in my_matrix))\n#Diagonals Part\nresult1 = 0\nfor i in range(0,iSize):\nresult1 +=my_matrix[i][i]\nsum_list.append(result1)\nresult2 = 0\nfor i in range(iSize-1,-1,-1):\nresult2 +=my_matrix[i][i]\nsum_list.append(result2)\nif len(set(sum_list))>1:\nreturn False\nreturn True\nm=[[7, 12, 1, 14], [2, 13, 8, 11], [16, 3, 10, 5], [9, 6, 15, 4]]\nprint(magic_square_test(m));\nm=[[2, 7, 6], [9, 5, 1], [4, 3, 8]]\nprint(magic_square_test(m));\nm=[[2, 7, 6], [9, 5, 1], [4, 3, 7]]\nprint(magic_square_test(m));",
+                        "max_stars_count": 1,
+                        "max_stars_repo_name": "Nitin-Diwakar/100-days-of-code",
+                        "max_stars_repo_path": "day50/problem.py",
+                        "__cluster__": 492
+                },
+                {
+                        "id": "test_mbpp_data_129",
+                        "content": "Write a function to calculate magic square.\nassert magic_square_test([[7, 12, 1, 14], [2, 13, 8, 11], [16, 3, 10, 5], [9, 6, 15, 4]])==True\nassert magic_square_test([[2, 7, 6], [9, 5, 1], [4, 3, 8]])==True\nassert magic_square_test([[2, 7, 6], [9, 5, 1], [4, 3, 7]])==False\ndef magic_square_test(my_matrix):\niSize = len(my_matrix[0])\nsum_list = []\nsum_list.extend([sum (lines) for lines in my_matrix])\nfor col in range(iSize):\nsum_list.append(sum(row[col] for row in my_matrix))\nresult1 = 0\nfor i in range(0,iSize):\nresult1 +=my_matrix[i][i]\nsum_list.append(result1)\nresult2 = 0\nfor i in range(iSize-1,-1,-1):\nresult2 +=my_matrix[i][i]\nsum_list.append(result2)\nif len(set(sum_list))>1:\nreturn False\nreturn True",
+                        "max_stars_count": 0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 492
+                },
+                {
+                        "real_dup": "3"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "pretrain_python_data_10629959",
+                        "content": "<gh_stars>1-10\n\"\"\"\nWrite a Python program to find the first repeated word in a given string.\n\"\"\"\ndef first_repeated_word(str1):\ntemp = set()\nfor word in str1.split():\nif word in temp:\nreturn word\nelse:\ntemp.add(word)\nreturn \"None\"\nprint(first_repeated_word(\"ab ca bc ab\"))",
+                        "max_stars_count": 6,
+                        "max_stars_repo_name": "CodedLadiesInnovateTech/-python-challenge-solutions",
+                        "max_stars_repo_path": "Aniyom Ebenezer/Phase 2/STRINGS/Day_34_Challenge_Solution/Question 5 Solution.py",
+                        "__cluster__": 900
+                },
+                {
+                        "id": "test_mbpp_data_537",
+                        "content": "Write a python function to find the first repeated word in a given string.\nassert first_repeated_word(\"ab ca bc ab\") == \"ab\"\nassert first_repeated_word(\"ab ca bc\") == 'None'\nassert first_repeated_word(\"ab ca bc ca ab bc\") == \"ca\"\ndef first_repeated_word(str1):\ntemp = set()\nfor word in str1.split():\nif word in temp:\nreturn word;\nelse:\ntemp.add(word)\nreturn 'None'",
+                        "max_stars_count": 0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 900
+                },
+                {
+                        "real_dup": "3"
+                }
+        ]
+]

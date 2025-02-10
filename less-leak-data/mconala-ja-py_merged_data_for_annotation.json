@@ -1,0 +1,26 @@
+[
+        {
+                "data_len": 1
+        },
+        [
+                {
+                        "id": "pretrain_python_data_9010772",
+                        "content": "a,b,c = map(int,input().split())\nprint((a+b)%c)\nprint(((a%c)+(b%c))%c)\nprint((a*b)%c)\nprint(((a%c)*(b%c))%c)",
+                        "max_stars_repo_name": "StudyForCoding/BEAKJOON",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "01_IO_Operation/Step10/yj.py",
+                        "__cluster__": 185
+                },
+                {
+                        "id": "test_mconala_ja_data__question_id_53030_our_unique_id_186",
+                        "content": "\u8907\u6570\u306e\u6570\u5024\u3092input\u3067\u4e00\u884c\u3067\u53d6\u5f97\u3057\u305f\u3044\na,b,c = map(int,input().split())",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 185
+                },
+                {
+                        "real_dup": "1"
+                }
+        ]
+]

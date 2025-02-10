@@ -1,0 +1,139 @@
+[
+        {
+                "data_len": 6
+        },
+         [
+                {
+                        "id": "pretrain_cpp_data_4087200",
+                        "content": "bool watermelon(int n)\n{\nif (n % 2 == 0 && n != 2)\nreturn true;\nreturn false;\n}",
+                        "max_stars_repo_name": "anishmo99/Competitive-Programming",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_path": "Codeforces/watermelon.cpp",
+                        "__cluster__": 122
+                },
+                {
+                        "id": "test_g-transeval-cpp_data_123",
+                        "content": "bool OnlyFirstAndLastAreSet ( int n ) { if ( n == 1 ) { return true ; } if ( n == 2 ) { return false ; } return ( ( n - 1 ) & ( n - 2 ) ) == 0 ; }",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 122
+                },
+                {
+                        "real_dup": "0"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_g-transeval-cpp_data_281",
+                        "content": "int SmallestChange ( vector < int > arr ) { int ans = 0 ; for ( int i = 0 ; i < arr . size ( ) / 2 ; i ++ ) { if ( arr [ i ] != arr [ arr . size ( ) - i - 1 ] ) { ans += 1 ; } } return ans ; }",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 162
+                },
+                {
+                        "id": "pretrain_cpp_data_4229946",
+                        "content": "int Solution::bulbs(vector<int> &arr) {\nint ans = 0;\nint n = arr.size();\nfor (int i = 0; i < n; i++) {\nif ((ans % 2 == 0 && arr[i] == 0) || (ans % 2 == 1 && arr[i] == 1)) {\nans++;\n}\n}\nreturn ans;\n}",
+                        "max_stars_repo_name": "Code-With-Aagam/competitive-programming",
+                        "max_stars_count": 2.0,
+                        "max_stars_repo_path": "InterviewBit/Greedy Algorithm/Bulbs.cpp",
+                        "__cluster__": 162
+                },
+                {
+                        "real_dup": "0"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_g-transeval-cpp_data_97",
+                        "content": "int SumOfDigits ( int n ) { int sum = 0 ; while ( n != 0 ) { sum += n % 10 ; n = n / 10 ; } return sum ; }",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 96
+                },
+                {
+                        "id": "pretrain_cpp_data_6125821",
+                        "content": "int digitSum(int n) {\nint sum = 0;\nwhile(n != 0) {\nsum += n % 10;\nsum /= 10;\n}\nreturn sum;\n}",
+                        "max_stars_repo_name": "montyanderson/euler",
+                        "max_stars_count": 1.0,
+                        "max_stars_repo_path": "src/digitSum.hpp",
+                        "__cluster__": 96
+                },
+                {
+                        "real_dup": "0"
+                }
+        ],
+        [
+                {
+                        "id": "test_g-transeval-cpp_data_11",
+                        "content": "int SumToN ( int n ) { int result = 0 ; for ( int i = 1 ; i <= n ; i ++ ) { result += i ; } return result ; }",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "__cluster__": 10
+                },
+                {
+                        "id": "pretrain_c_data_2077332",
+                        "content": "int factorial(int n) {\nint result = 1;\nfor (int i = 1; i <= n; ++i)\nresult *= i;\nreturn result;\n}",
+                        "max_stars_count": 2.0,
+                        "max_stars_repo_path": "lang/C/factorial-1.c",
+                        "max_stars_repo_name": "ethansaxenian/RosettaDecode",
+                        "__cluster__": 10
+                },
+                {
+                        "real_dup": "0"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_g-transeval-cpp_data_15",
+                        "content": "int ChooseNum ( int x , int y ) { if ( x > y ) { return -1 ; } if ( y % 2 == 0 ) { return y ; } if ( x == y ) { return -1 ; } return y - 1 ; }",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "__cluster__": 14
+                },
+                {
+                        "id": "pretrain_c_data_7277843",
+                        "content": "int main() {\nint y = 0;\nint x = 1;\nif (y > 0) {\nx += 2;\n}\ny = x;\nif (x > 0) {\nx += 3;\n}\nreturn x + y;\n}",
+                        "max_stars_count": 13.0,
+                        "max_stars_repo_path": "src/test/resources/spilling/noReloadLiveIn.c",
+                        "max_stars_repo_name": "slak44/ckompiler",
+                        "__cluster__": 14
+                },
+                {
+                        "real_dup": "0"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_g-transeval-cpp_data_27",
+                        "content": "int Multiply ( int x , int y ) { if ( y == 0 ) { return 0 ; } else if ( y > 0 ) { return x + Multiply ( x , y - 1 ) ; } else { return - Multiply ( x , - y ) ; } }",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "__cluster__": 26
+                },
+                {
+                        "id": "pretrain_c_data_7622867",
+                        "content": "int power(int x, int y)\n{\nif (y < 0)\nreturn (-1);\nelse if (y == 1)\nreturn (x);\nelse if (y == 0)\nreturn (1);\nelse if ((x * power(x, y-1)) < 0)\nreturn (-1);\nelse if ((x * power(x, y-1)) > 2147483647)\nreturn (-1);\nelse\nreturn (x * power(x, y-1));\n}",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_path": "let_s_go_deeper/1-power.c",
+                        "max_stars_repo_name": "joegreene12/holbertonschool-low_level_programming",
+                        "__cluster__": 26
+                },
+                {
+                        "real_dup": "0"
+                }
+        ]
+]

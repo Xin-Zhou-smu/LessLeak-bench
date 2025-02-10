@@ -1,0 +1,72 @@
+[
+        {
+                "data_len": 3
+        },
+        [
+                {
+                        "id": "pretrain_java_data_14485566",
+                        "content": "/**\n*\n* Input: [3,4,5,1,2],\n* Output: 1\n*\n*/\npublic class Code_27_FindMinimumInRotatedSortedArray {\npublic int findMin(int[] nums) {\nint l = 0;\nint h = nums.length - 1;\nwhile (l < h) {\nint mid = l + (h-l)/2;\n//\u6709\u987a\u5e8f \u4ece\u5c0f\u5230\u5927\u65f6\nif (nums[mid] <= nums[h]) {\nh = mid;\n} else {\nl = mid + 1;\n}\n}\nreturn nums[l];\n}\n}",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "TwoHundred/src/main/java/Code_27_FindMinimumInRotatedSortedArray.java",
+                        "max_stars_repo_name": "DanyBin/code_diary",
+                        "__cluster__": 15
+                },
+                {
+                        "id": "test_codeeditorbench_polish_plus_java_data_152",
+                        "content": "\nInput:\nnums = \\[3,4,5,1,2\\]\nOutput:\n1\n```java\npublic int findMin(int[] nums) {\nint left = 0, right = nums.length - 1;\nwhile (left < right) {\nint mid = left + (right - left) / 2;\nif (nums[mid] > nums[right]) {\nleft = mid + 1;\n} else {\nright = mid;\n}\n}\nreturn nums[left];\n}\n```",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "__cluster__": 15
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_polish_plus_java_data_71",
+                        "content": "\nInput:\nword1 =  \"horse \", word2 =  \"ros \"\nOutput:\n3\n```java\npublic int minDistance(String word1, String word2) {\nint m = word1.length();\nint n = word2.length();\nint[][] dp = new int[m + 1][n + 1];\nfor (int i = 0; i <= m; i++) {\nfor (int j = 0; j <= n; j++) {\nif (i == 0) {\ndp[i][j] = j;\n} else if (j == 0) {\ndp[i][j] = i;\n} else if (word1.charAt(i - 1) == word2.charAt(j - 1)) {\ndp[i][j] = dp[i - 1][j - 1];\n} else {\ndp[i][j] = Math.min(Math.min(dp[i - 1][j], dp[i][j - 1]), dp[i - 1][j - 1]) + 1;\n}\n}\n}\nreturn dp[m][n];\n}\n```",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "__cluster__": 11
+                },
+                {
+                        "id": "pretrain_java_data_10347510",
+                        "content": "class Solution {\npublic int minDistance(String word1, String word2) {\nint m = word1.length();\nint n = word2.length();\nint[][] dp = new int[m+1][n+1];\nfor(int i=0;i<=m;i++){\ndp[i][0] = i;\n}\nfor(int i=0;i<=n;i++){\ndp[0][i] = i;\n}\nfor(int i=1;i<=m;i++){\nfor(int j=1;j<=n;j++){\nif(word1.charAt(i-1) != word2.charAt(j-1)){\ndp[i][j] = Math.min(dp[i-1][j-1], Math.min(dp[i-1][j], dp[i][j-1]))+1;\n}else{\ndp[i][j] = dp[i-1][j-1];\n}\n}\n}\nreturn dp[m][n];\n}\n}",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "leetcode/72.java",
+                        "max_stars_repo_name": "Monster880/java-leetcode",
+                        "__cluster__": 11
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_polish_plus_java_data_554",
+                        "content": "\nInput:\nword1 =  \"sea \", word2 =  \"eat \"\nOutput:\n2\n```java\npublic int minDistance(String word1, String word2) {\nint m = word1.length(), n = word2.length();\nint[][] dp = new int[m+1][n+1];\nfor(int i = 0; i <= m; i++) {\nfor(int j = 0; j <= n; j++) {\nif(i == 0 || j == 0)\ndp[i][j] = i + j;\nelse if(word1.charAt(i-1) == word2.charAt(j-1))\ndp[i][j] = dp[i-1][j-1];\nelse\ndp[i][j] = 1 + Math.min(dp[i-1][j], dp[i][j-1]);\n}\n}\nreturn dp[m][n];\n}\n```",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "__cluster__": 11
+                },
+                {
+                        "id": "pretrain_java_data_10347510",
+                        "content": "class Solution {\npublic int minDistance(String word1, String word2) {\nint m = word1.length();\nint n = word2.length();\nint[][] dp = new int[m+1][n+1];\nfor(int i=0;i<=m;i++){\ndp[i][0] = i;\n}\nfor(int i=0;i<=n;i++){\ndp[0][i] = i;\n}\nfor(int i=1;i<=m;i++){\nfor(int j=1;j<=n;j++){\nif(word1.charAt(i-1) != word2.charAt(j-1)){\ndp[i][j] = Math.min(dp[i-1][j-1], Math.min(dp[i-1][j], dp[i][j-1]))+1;\n}else{\ndp[i][j] = dp[i-1][j-1];\n}\n}\n}\nreturn dp[m][n];\n}\n}",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "leetcode/72.java",
+                        "max_stars_repo_name": "Monster880/java-leetcode",
+                        "__cluster__": 11
+                },
+                {
+                        "real_dup": "2"
+                }
+        ]
+]

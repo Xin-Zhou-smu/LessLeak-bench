@@ -1,0 +1,26 @@
+[
+        {
+                "data_len": 1
+        },
+        [
+                {
+                        "id": "test_codeeditorbench_polish_plus_python_data_114",
+                        "content": "\nInput:\ns =  \"rabbbit \", t =  \"rabbit \"\nOutput:\n3\n```python\ndef numDistinct(s: str, t: str) -> int:\nm, n = len(s), len(t)\ndp = [[0] * (n + 1) for _ in range(m + 1)]\nfor i in range(m + 1):\ndp[i][0] = 1\nfor i in range(1, m + 1):\nfor j in range(1, n + 1):\nif s[i - 1] == t[j - 1]:\ndp[i][j] = dp[i - 1][j - 1] + dp[i - 1][j]\nelse:\ndp[i][j] = dp[i - 1][j]\nreturn dp[m][n]\n```",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 39
+                },
+                {
+                        "id": "pretrain_python_data_1615700",
+                        "content": "class Solution:\ndef numDistinct(self, s: str, t: str) -> int:\nm = len(s)\nn = len(t)\ndp = [[0] * (n + 1) for _ in range(m + 1)]\nfor i in range(m + 1):\ndp[i][0] = 1\nfor i in range(1, m + 1):\nfor j in range(1, n + 1):\nif s[i - 1] == t[j - 1]:\ndp[i][j] = dp[i - 1][j - 1] + dp[i - 1][j]\nelse:\ndp[i][j] = dp[i - 1][j]\nreturn dp[m][n]",
+                        "max_stars_repo_name": "Next-Gen-UI/Code-Dynamics",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "Leetcode/0115. Distinct Subsequences/0115.py",
+                        "__cluster__": 39
+                },
+                {
+                        "real_dup": "3"
+                }
+        ]
+]

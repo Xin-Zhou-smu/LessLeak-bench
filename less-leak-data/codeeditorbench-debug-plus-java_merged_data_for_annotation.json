@@ -1,0 +1,49 @@
+[
+        {
+                "data_len": 2
+        },
+        [
+                {
+                        "id": "pretrain_java_data_7278712",
+                        "content": "class Solution {\npublic boolean checkPerfectNumber(int num) {\nif (1 == num)\nreturn false;\nint sum = 0;\nfor (int i = 2; i*i <= num; i++) {\nif (num%i == 0) {\nsum += i;\nsum += num / i;\n}\n}\nsum++;\nreturn sum == num;\n}\n}",
+                        "max_stars_repo_path": "src/00507. Perfect Number.java",
+                        "max_stars_count": 7,
+                        "max_stars_repo_name": "xindoo/leetcode",
+                        "__cluster__": 36
+                },
+                {
+                        "id": "test_codeeditorbench_debug_plus_java_data_1411",
+                        "content": "\nInput:\nnum = 28\nOutput:\ntrue\nclass Solution {\npublic boolean checkPerfectNumber(int num) {\nif(num==1){\nreturn false;\n}\nint sum=1;\nfor(int i =2 ;i*i<=num;i++){\nif(num%i==0){\nsum+=i;\nif(i*i != num) {\nsum += num/i;\n}\n}\n}\nif(num==sum*2){\nreturn true;\n}\nreturn false;\n}\n}\nclass Solution {\npublic boolean checkPerfectNumber(int num) {\nif(num==1){\nreturn false;\n}\nint sum=1;\nfor(int i =2 ;i*i<=num;i++){\nif(num%i==0){\nsum+=i+ num/i;\n}\n}\nif(num==sum){\nreturn true;\n}\nreturn false;\n}\n}",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_name": "NA",
+                        "__cluster__": 36
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_java_data_1604",
+                        "content": "\nInput:\nlow = 3, high = 7\nOutput:\n3\nclass Solution {\npublic int countOdds(int low, int high) {\nif(low%2==0 && high%2==0)\nreturn (high-low)/2+1;\nelse\nreturn (high-low)/2+1;\n}\n}\nclass Solution {\npublic int countOdds(int low, int high) {\nif(low%2==0 && high%2==0)\nreturn (high-low)/2;\nelse\nreturn (high-low)/2+1;\n}\n}",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_name": "NA",
+                        "__cluster__": 114
+                },
+                {
+                        "id": "pretrain_java_data_9085657",
+                        "content": "class Solution {\npublic int countOdds(int low, int high) {\nif(low % 2 == 0 && high % 2 == 0)\nreturn (((high-low)/2));\nelse\nreturn (((high-low)/2+1));\n}\n}",
+                        "max_stars_repo_path": "Maths/Count Odd Numbers in an Interval Range/Solution.java",
+                        "max_stars_count": 1,
+                        "max_stars_repo_name": "matthew01lokiet/Algorithmic-exercises",
+                        "__cluster__": 114
+                },
+                {
+                        "real_dup": "3"
+                }
+        ]
+]

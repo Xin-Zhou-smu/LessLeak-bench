@@ -1,0 +1,26 @@
+[
+        {
+                "data_len": 1
+        },
+        [
+                {
+                        "id": "test_codeeditorbench_polish_plus_cpp_data_129",
+                        "content": "\nInput:\nboard = \\[\\[ \"X \", \"X \", \"X \", \"X \"\\],\\[ \"X \", \"O \", \"O \", \"X \"\\],\\[ \"X \", \"X \", \"O \", \"X \"\\],\\[ \"X \", \"O \", \"X \", \"X \"\\]\\]\nOutput:\n\\[\\[ \"X \", \"X \", \"X \", \"X \"\\],\\[ \"X \", \"X \", \"X \", \"X \"\\],\\[ \"X \", \"X \", \"X \", \"X \"\\],\\[ \"X \", \"O \", \"X \", \"X \"\\]\\]\n```cpp\n#include <vector>\nvoid dfs(std::vector<std::vector<char>> &board, int x, int y) {\nif (x < 0 || x >= board.size() || y < 0 || y >= board[0].size() || board[x][y] != 'O') {\nreturn;\n}\nboard[x][y] = '#';\ndfs(board, x - 1, y);\ndfs(board, x + 1, y);\ndfs(board, x, y - 1);\ndfs(board, x, y + 1);\n}\nvoid solve(std::vector<std::vector<char>>& board) {\nif (board.empty()) return;\nint m = board.size(), n = board[0].size();\nfor (int i = 0; i < m; ++i) {\ndfs(board, i, 0);\ndfs(board, i, n - 1);\n}\nfor (int i = 0; i < n; ++i) {\ndfs(board, 0, i);\ndfs(board, m - 1, i);\n}\nfor (int i = 0; i < m; ++i) {\nfor (int j = 0; j < n; ++j) {\nif (board[i][j] == '#') board[i][j] = 'O';\nelse if (board[i][j] == 'O') board[i][j] = 'X';\n}\n}\n}\n```",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 27
+                },
+                {
+                        "id": "pretrain_cpp_data_5288438",
+                        "content": "class Solution {\npublic:\nvoid solve(vector<vector<char>>& board) {\nif (empty(board) || empty(board[0])) return;\nint m = size(board);\nint n = size(board[0]);\nfor (int i = 0; i < m; ++i)\n{\ndfs(board, i, 0);\ndfs(board, i, n - 1);\n}\nfor (int i = 0; i < n; ++i)\n{\ndfs(board, 0, i);\ndfs(board, m - 1, i);\n}\nfor (auto& x : board)\n{\nfor (auto& y : x)\n{\nif (y == 'O')\n{\ny = 'X';\n}\nelse if (y == '#')\n{\ny = 'O';\n}\n}\n}\n}\nvoid dfs(vector<vector<char>>& board, int i, int j)\n{\nif (board[i][j] == 'O')\n{\nboard[i][j] = '#';\nif (i > 0) dfs(board, i - 1, j);\nif (i + 1 < size(board)) dfs(board, i + 1, j);\nif (j > 0) dfs(board, i, j - 1);\nif (j + 1 < size(board[0])) dfs(board, i, j + 1);\n}\n}\n};",
+                        "max_stars_repo_path": "src/0130.cpp",
+                        "max_stars_repo_name": "shuihan0555/LeetCode-Solutions-in-Cpp17",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 27
+                },
+                {
+                        "real_dup": "2"
+                }
+        ]
+]

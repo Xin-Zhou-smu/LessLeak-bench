@@ -1,0 +1,647 @@
+[
+        {
+                "data_len": 28
+        },
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_cpp_data_2730",
+                        "content": "\nInput:\nnums = \\[1,4,3,2\\]\nOutput:\n4\nclass Solution {\npublic\nint arrayPairSum(vector<int>& nums) {\nsort(nums.begin(),nums.end());\nint sum=0;\nfor(int i=0;i<nums.size();i++)\nsum+=nums[i];\nreturn sum;\n}\n};\nclass Solution {\npublic:\nint arrayPairSum(vector<int>& nums) {\nsort(nums.begin(),nums.end());\nint sum=0;\nfor(int i=0;i<nums.size();i+=2)\nsum+=nums[i];\nreturn sum;\n}\n};",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 86
+                },
+                {
+                        "id": "pretrain_cpp_data_4881255",
+                        "content": "class Solution {\npublic:\nint arrayPairSum(vector<int>& nums) {\nint n = nums.size();\nsort(nums.begin(), nums.end());\nint sum=0;\nfor(int i=0;i<n-1;i+=2){\nsum += nums[i];\n}\nreturn sum;\n}\n};",
+                        "max_stars_repo_path": "Assignments/array_partition.cpp",
+                        "max_stars_repo_name": "blog-a1/Data_Structure",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 86
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_cpp_data_1791",
+                        "content": "\nInput:\nnums = \\[1,4,3,2\\]\nOutput:\n4\nclass Solution {\npublic:\nint arrayPairSum(vector<int>& nums) {\nsort(nums.begin(),nums.end()+1);\nint sum=0;\nfor(int i=0;i<nums.size();i+=2)\nsum+=nums[i];\nreturn sum;\n}\n};\nclass Solution {\npublic:\nint arrayPairSum(vector<int>& nums) {\nsort(nums.begin(),nums.end());\nint sum=0;\nfor(int i=0;i<nums.size();i+=2)\nsum+=nums[i];\nreturn sum;\n}\n};",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 86
+                },
+                {
+                        "id": "pretrain_cpp_data_4881255",
+                        "content": "class Solution {\npublic:\nint arrayPairSum(vector<int>& nums) {\nint n = nums.size();\nsort(nums.begin(), nums.end());\nint sum=0;\nfor(int i=0;i<n-1;i+=2){\nsum += nums[i];\n}\nreturn sum;\n}\n};",
+                        "max_stars_repo_path": "Assignments/array_partition.cpp",
+                        "max_stars_repo_name": "blog-a1/Data_Structure",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 86
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_cpp_data_2727",
+                        "content": "\nInput:\ndigits = \\[1,2,3\\]\nOutput:\n\\[1,2,4\\]\nclass Solution {\npublic:\nvector<int> plusOne(vector<int>& digits) {\nint n=digits.size();\ndigits[n]++;\nfor(int i=n-1;i>=1;i--)\n{\nif(digits[i]>9)\n{\ndigits[i]%=10;\ndigits[i-1]++;\n}\n}\nif(digits[0]>9)\n{\ndigits.insert(digits.begin(),1);\ndigits[1]%=10;\n}\nreturn printNumbers(digits);\n}\n};\nclass Solution {\npublic:\nvector<int> plusOne(vector<int>& digits) {\nint n=digits.size();\ndigits[n-1]++;\nfor(int i=n-1;i>=1;i--)\n{\nif(digits[i]>9)\n{\ndigits[i]%=10;\ndigits[i-1]++;\n}\n}\nif(digits[0]>9)\n{\ndigits.insert(digits.begin(),1);\ndigits[1]%=10;\n}\nreturn digits;\n}\n};",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 47
+                },
+                {
+                        "id": "pretrain_cpp_data_2548254",
+                        "content": "<gh_stars>1-10\nclass Solution {\npublic:\nvector<int> plusOne(vector<int>& digits) {\nif(digits.size() == 0) return vector<int> {1};\nint n = digits.size();\nif (digits[n-1] != 9){\ndigits[n-1] += 1;\nreturn digits;\n}\ndigits[n-1] += 1;\nfor(int i=n-1; i>=1; i--){\ndigits[i-1] += digits[i]/10;\ndigits[i] = digits[i]%10;\n}\nif(digits[0]/10 != 0){\ndigits[0] = digits[0]%10;\ndigits.insert(digits.begin() + 0, 1);\n}\nreturn digits;\n}\n};",
+                        "max_stars_repo_path": "0066.PlusOne/main.cpp",
+                        "max_stars_repo_name": "SumanSudhir/LeetCode",
+                        "max_stars_count": 1.0,
+                        "__cluster__": 47
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_cpp_data_1713",
+                        "content": "\nInput:\ndigits = \\[1,2,3\\]\nOutput:\n\\[1,2,4\\]\nclass Solution {\npublic:\nvector<int> plusOne(vector<int>& digits) {\nint n=digits.size();\ndigits[n-1]++;\nfor(int i=n-1;i>=1;i--)\n{\nif(digits[i]>9)\n{\ndigits[i]%=10;\ndigits[i-1]++;\n}\n}\nif(digits[0]>9)\n{\ndigits.insert(digits.begin(),1);\ndigits[1]%=10;\n}\nreturn printNumbers(digits);\n}\n};\nclass Solution {\npublic:\nvector<int> plusOne(vector<int>& digits) {\nint n=digits.size();\ndigits[n-1]++;\nfor(int i=n-1;i>=1;i--)\n{\nif(digits[i]>9)\n{\ndigits[i]%=10;\ndigits[i-1]++;\n}\n}\nif(digits[0]>9)\n{\ndigits.insert(digits.begin(),1);\ndigits[1]%=10;\n}\nreturn digits;\n}\n};",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 47
+                },
+                {
+                        "id": "pretrain_cpp_data_2548254",
+                        "content": "<gh_stars>1-10\nclass Solution {\npublic:\nvector<int> plusOne(vector<int>& digits) {\nif(digits.size() == 0) return vector<int> {1};\nint n = digits.size();\nif (digits[n-1] != 9){\ndigits[n-1] += 1;\nreturn digits;\n}\ndigits[n-1] += 1;\nfor(int i=n-1; i>=1; i--){\ndigits[i-1] += digits[i]/10;\ndigits[i] = digits[i]%10;\n}\nif(digits[0]/10 != 0){\ndigits[0] = digits[0]%10;\ndigits.insert(digits.begin() + 0, 1);\n}\nreturn digits;\n}\n};",
+                        "max_stars_repo_path": "0066.PlusOne/main.cpp",
+                        "max_stars_repo_name": "SumanSudhir/LeetCode",
+                        "max_stars_count": 1.0,
+                        "__cluster__": 47
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_cpp_data_2851",
+                        "content": "\nInput:\ndigits = \\[1,2,3\\]\nOutput:\n\\[1,2,4\\]\nclass Solution {\npublic:\nvector<int> plusOne(vector<int>& digits) {\n/int n=digits.size();\ndigits[n]++;\nfor(int i=n-1;i>=1;i--)\n{\nif(digits[i]>9)\n{\ndigits[i]%=10;\ndigits[i-1]++;\n}\n}\nif(digits[0]>9)\n{\ndigits.insert(digits.begin(),1);\ndigits[1]%=10;\n}\nreturn digits;\n}\n};\nclass Solution {\npublic:\nvector<int> plusOne(vector<int>& digits) {\nint n=digits.size();\ndigits[n-1]++;\nfor(int i=n-1;i>=1;i--)\n{\nif(digits[i]>9)\n{\ndigits[i]%=10;\ndigits[i-1]++;\n}\n}\nif(digits[0]>9)\n{\ndigits.insert(digits.begin(),1);\ndigits[1]%=10;\n}\nreturn digits;\n}\n};",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 47
+                },
+                {
+                        "id": "pretrain_cpp_data_2548254",
+                        "content": "<gh_stars>1-10\nclass Solution {\npublic:\nvector<int> plusOne(vector<int>& digits) {\nif(digits.size() == 0) return vector<int> {1};\nint n = digits.size();\nif (digits[n-1] != 9){\ndigits[n-1] += 1;\nreturn digits;\n}\ndigits[n-1] += 1;\nfor(int i=n-1; i>=1; i--){\ndigits[i-1] += digits[i]/10;\ndigits[i] = digits[i]%10;\n}\nif(digits[0]/10 != 0){\ndigits[0] = digits[0]%10;\ndigits.insert(digits.begin() + 0, 1);\n}\nreturn digits;\n}\n};",
+                        "max_stars_repo_path": "0066.PlusOne/main.cpp",
+                        "max_stars_repo_name": "SumanSudhir/LeetCode",
+                        "max_stars_count": 1.0,
+                        "__cluster__": 47
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_cpp_data_2637",
+                        "content": "\nInput:\ndigits = \\[1,2,3\\]\nOutput:\n\\[1,2,4\\]\nclass Solution {\npublic:\nvector<int> plusOne(vector<int>& digits) {\n/int n=digits.size();\ndigits[n]++;\nfor(int i=n-1;i>=1;i--)\n{\nif(digits[i]>9)\n{\ndigits[i]%=10;\ndigits[i-1]++;\n}\n}\nif(digits[0]>9)\n{\ndigits.insert(digits.begin(),1);\ndigits[1]%=10;\n}\nreturn digits;\n}\n};\nclass Solution {\npublic:\nvector<int> plusOne(vector<int>& digits) {\nint n=digits.size();\ndigits[n-1]++;\nfor(int i=n-1;i>=1;i--)\n{\nif(digits[i]>9)\n{\ndigits[i]%=10;\ndigits[i-1]++;\n}\n}\nif(digits[0]>9)\n{\ndigits.insert(digits.begin(),1);\ndigits[1]%=10;\n}\nreturn digits;\n}\n};",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 47
+                },
+                {
+                        "id": "pretrain_cpp_data_2548254",
+                        "content": "<gh_stars>1-10\nclass Solution {\npublic:\nvector<int> plusOne(vector<int>& digits) {\nif(digits.size() == 0) return vector<int> {1};\nint n = digits.size();\nif (digits[n-1] != 9){\ndigits[n-1] += 1;\nreturn digits;\n}\ndigits[n-1] += 1;\nfor(int i=n-1; i>=1; i--){\ndigits[i-1] += digits[i]/10;\ndigits[i] = digits[i]%10;\n}\nif(digits[0]/10 != 0){\ndigits[0] = digits[0]%10;\ndigits.insert(digits.begin() + 0, 1);\n}\nreturn digits;\n}\n};",
+                        "max_stars_repo_path": "0066.PlusOne/main.cpp",
+                        "max_stars_repo_name": "SumanSudhir/LeetCode",
+                        "max_stars_count": 1.0,
+                        "__cluster__": 47
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_cpp_data_2719",
+                        "content": "\nInput:\ndigits = \\[1,2,3\\]\nOutput:\n\\[1,2,4\\]\nclass Solution {\npublic:\nvector<int> plusOne(vector<int>& digits) {\nint n=digits.size();\ndigits[n]++;\nfor(int i=n-1;i>=1;i--)\n{\nif(digits[i]>9)\n{\ndigits[i]%=10;\ndigits[i-1]++;\n}\n}\nif(digits[0]>9)\n{\ndigits.insert(digits.begin(),1);\ndigits[1]%=10;\n}\nreturn printNumbers(digits);\n}\n};\nclass Solution {\npublic:\nvector<int> plusOne(vector<int>& digits) {\nint n=digits.size();\ndigits[n-1]++;\nfor(int i=n-1;i>=1;i--)\n{\nif(digits[i]>9)\n{\ndigits[i]%=10;\ndigits[i-1]++;\n}\n}\nif(digits[0]>9)\n{\ndigits.insert(digits.begin(),1);\ndigits[1]%=10;\n}\nreturn digits;\n}\n};",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 47
+                },
+                {
+                        "id": "pretrain_cpp_data_2548254",
+                        "content": "<gh_stars>1-10\nclass Solution {\npublic:\nvector<int> plusOne(vector<int>& digits) {\nif(digits.size() == 0) return vector<int> {1};\nint n = digits.size();\nif (digits[n-1] != 9){\ndigits[n-1] += 1;\nreturn digits;\n}\ndigits[n-1] += 1;\nfor(int i=n-1; i>=1; i--){\ndigits[i-1] += digits[i]/10;\ndigits[i] = digits[i]%10;\n}\nif(digits[0]/10 != 0){\ndigits[0] = digits[0]%10;\ndigits.insert(digits.begin() + 0, 1);\n}\nreturn digits;\n}\n};",
+                        "max_stars_repo_path": "0066.PlusOne/main.cpp",
+                        "max_stars_repo_name": "SumanSudhir/LeetCode",
+                        "max_stars_count": 1.0,
+                        "__cluster__": 47
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_cpp_data_1681",
+                        "content": "\nInput:\nnums = \\[1,2,3,1\\]\nOutput:\n2\nclass Solution {\npublic:\nint findPeakElement(vector<int>& nums) {\nint n=nums.size();\nif(n==1)\n{\nreturn 0;\n}\nif(nums[0]>nums[1])\n{\nreturn 0;\n}\nif(nums[n-1]>nums[n-2])\n{\nreturn n-1;\n}\nint left=1;\nint right=n-2;\nwhile(left<=right)\n{\nint mid=(left+right)/2;\nif(nums[mid]>nums[mid-1]&& nums[mid]>nums[mid+1])\n{\nreturn mid;\n}\nelse if(nums[mid]<nums[mid-1])\n{\nleft=mid+1;\n}\nelse{\nright=mid-1;\n}\n}\nreturn -1;\n}\n};\nclass Solution {\npublic:\nint findPeakElement(vector<int>& nums) {\nint n=nums.size();\nif(n==1)\n{\nreturn 0;\n}\nif(nums[0]>nums[1])\n{\nreturn 0;\n}\nif(nums[n-1]>nums[n-2])\n{\nreturn n-1;\n}\nint left=1;\nint right=n-2;\nwhile(left<=right)\n{\nint mid=(left+right)/2;\nif(nums[mid]>nums[mid-1]&& nums[mid]>nums[mid+1])\n{\nreturn mid;\n}\nelse if(nums[mid]>nums[mid-1])\n{\nleft=mid+1;\n}\nelse{\nright=mid-1;\n}\n}\nreturn -1;\n}\n};",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 28
+                },
+                {
+                        "id": "pretrain_cpp_data_3452790",
+                        "content": "class Solution {\npublic:\nint search(vector<int>& nums, int target) {\nint left=0;\nint right = nums.size()-1;\nwhile(left<=right)\n{\nint mid = left+(right-left)/2;\nif(nums[mid]==target)\nreturn mid;\nif(nums[left] <= nums[mid])\n{\nif(target <= nums[mid] && target >= nums[left])\n{\nright=mid-1;\n}\nelse\n{\nleft=mid+1;\n}\n}\nelse\n{\nif(target >= nums[mid] && target <= nums[right])\n{\nleft=mid+1;\n}\nelse\n{\nright=mid-1;\n}\n}\n}\nreturn -1;\n}\n};",
+                        "max_stars_repo_path": "search-in-rotated-sorted-array/search-in-rotated-sorted-array.cpp",
+                        "max_stars_repo_name": "VaishantMakan/My-LeetCode-Solutions",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 28
+                },
+                {
+                        "real_dup": "0"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_cpp_data_1851",
+                        "content": "\nInput:\nnum = 3\nOutput:\n\"III \"\nclass Solution {\npublic:\nstring intToRoman(int num) {\nstring ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\nstring tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\nstring hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\nstring ths[]={\"\",\"M\",\"MM\",\"MMM\"};\nreturn ths[num/1000] + hrns[(num%1000)/100 + tens[(num%100)/10] + ones[num%10];\n}\n};\nclass Solution {\npublic:\nstring intToRoman(int num) {\nstring ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\nstring tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\nstring hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\nstring ths[]={\"\",\"M\",\"MM\",\"MMM\"};\nreturn ths[num/1000] + hrns[(num%1000)/100] + tens[(num%100)/10] + ones[num%10];\n}\n};",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 114
+                },
+                {
+                        "id": "pretrain_cpp_data_351663",
+                        "content": "<gh_stars>1-10\nclass Solution {\npublic:\nstring intToRoman(int num) {\nstring M[] = {\"\", \"M\", \"MM\", \"MMM\"};\nstring C[] = {\"\", \"C\", \"CC\", \"CCC\", \"CD\", \"D\", \"DC\", \"DCC\", \"DCCC\", \"CM\"};\nstring X[] = {\"\", \"X\", \"XX\", \"XXX\", \"XL\", \"L\", \"LX\", \"LXX\", \"LXXX\", \"XC\"};\nstring I[] = {\"\", \"I\", \"II\", \"III\", \"IV\", \"V\", \"VI\", \"VII\", \"VIII\", \"IX\"};\nreturn M[num/1000] + C[(num%1000)/100] + X[(num%100)/10] + I[num%10];\n}\n};",
+                        "max_stars_repo_path": "cpp/i2r.hpp",
+                        "max_stars_repo_name": "jieyaren/hello-world",
+                        "max_stars_count": 3.0,
+                        "__cluster__": 114
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_cpp_data_1851",
+                        "content": "\nInput:\nnum = 3\nOutput:\n\"III \"\nclass Solution {\npublic:\nstring intToRoman(int num) {\nstring ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\nstring tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\nstring hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\nstring ths[]={\"\",\"M\",\"MM\",\"MMM\"};\nreturn ths[num/1000] + hrns[(num%1000)/100 + tens[(num%100)/10] + ones[num%10];\n}\n};\nclass Solution {\npublic:\nstring intToRoman(int num) {\nstring ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\nstring tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\nstring hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\nstring ths[]={\"\",\"M\",\"MM\",\"MMM\"};\nreturn ths[num/1000] + hrns[(num%1000)/100] + tens[(num%100)/10] + ones[num%10];\n}\n};",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 114
+                },
+                {
+                        "id": "pretrain_cpp_data_374389",
+                        "content": "<gh_stars>1-10\n/* 12. Integer to Roman\nhttps://leetcode.com/problems/integer-to-roman/\n*/\nclass Solution {\npublic:\nstring intToRoman(int num) {\nstring ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\nstring tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\nstring hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\nstring ths[]={\"\",\"M\",\"MM\",\"MMM\"};\nreturn ths[num/1000] + hrns[(num%1000)/100] + tens[(num%100)/10] + ones[num%10];\n}\n};",
+                        "max_stars_repo_path": "Math/12_Integer_to_Roman.cpp",
+                        "max_stars_repo_name": "prashantsingh20/LeetCode-Solutions",
+                        "max_stars_count": 2.0,
+                        "__cluster__": 114
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "pretrain_cpp_data_4310225",
+                        "content": "class Solution {\npublic:\nstring intToRoman(int num) {\nchar* c[4][10]={\n{\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"},\n{\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"},\n{\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"},\n{\"\",\"M\",\"MM\",\"MMM\"}\n};\nstring roman;\nroman.append(c[3][num / 1000 % 10]);\nroman.append(c[2][num / 100 % 10]);\nroman.append(c[1][num / 10 % 10]);\nroman.append(c[0][num % 10]);\nreturn roman;\n}\n};",
+                        "max_stars_repo_path": "12. Integer to Roman.cpp",
+                        "max_stars_repo_name": "corn1ng/LeetCode-Solution",
+                        "max_stars_count": 6.0,
+                        "__cluster__": 114
+                },
+                {
+                        "id": "test_codeeditorbench_debug_plus_cpp_data_1851",
+                        "content": "\nInput:\nnum = 3\nOutput:\n\"III \"\nclass Solution {\npublic:\nstring intToRoman(int num) {\nstring ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\nstring tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\nstring hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\nstring ths[]={\"\",\"M\",\"MM\",\"MMM\"};\nreturn ths[num/1000] + hrns[(num%1000)/100 + tens[(num%100)/10] + ones[num%10];\n}\n};\nclass Solution {\npublic:\nstring intToRoman(int num) {\nstring ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\nstring tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\nstring hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\nstring ths[]={\"\",\"M\",\"MM\",\"MMM\"};\nreturn ths[num/1000] + hrns[(num%1000)/100] + tens[(num%100)/10] + ones[num%10];\n}\n};",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 114
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "pretrain_cpp_data_6059794",
+                        "content": "class Solution {\npublic:\nstring intToRoman(int num) {\nstring ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\nstring tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\nstring hundreds[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\nstring thousands[]={\"\",\"M\",\"MM\",\"MMM\"};\nreturn thousands[num/1000] + hundreds[(num%1000)/100] + tens[(num%100)/10] + ones[num%10];\n}\n};",
+                        "max_stars_repo_path": "integer-to-roman/integer-to-roman.cpp",
+                        "max_stars_repo_name": "VaishantMakan/My-LeetCode-Solutions",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 114
+                },
+                {
+                        "id": "test_codeeditorbench_debug_plus_cpp_data_1851",
+                        "content": "\nInput:\nnum = 3\nOutput:\n\"III \"\nclass Solution {\npublic:\nstring intToRoman(int num) {\nstring ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\nstring tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\nstring hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\nstring ths[]={\"\",\"M\",\"MM\",\"MMM\"};\nreturn ths[num/1000] + hrns[(num%1000)/100 + tens[(num%100)/10] + ones[num%10];\n}\n};\nclass Solution {\npublic:\nstring intToRoman(int num) {\nstring ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\nstring tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\nstring hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\nstring ths[]={\"\",\"M\",\"MM\",\"MMM\"};\nreturn ths[num/1000] + hrns[(num%1000)/100] + tens[(num%100)/10] + ones[num%10];\n}\n};",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 114
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "pretrain_cpp_data_3701500",
+                        "content": "class Solution {\nprivate:\nvector<string> ts = {\"\", \"M\", \"MM\", \"MMM\"};\nvector<string> hs = {\"\", \"C\", \"CC\", \"CCC\", \"CD\", \"D\", \"DC\", \"DCC\", \"DCCC\", \"CM\"};\nvector<string> te = {\"\", \"X\", \"XX\", \"XXX\", \"XL\", \"L\", \"LX\", \"LXX\", \"LXXX\", \"XC\"};\nvector<string> os = {\"\", \"I\", \"II\", \"III\", \"IV\", \"V\", \"VI\", \"VII\", \"VIII\", \"IX\"};\npublic:\nstring XXX(int num) {\nreturn ts[num / 1000] + hs[num / 100 % 10] + te[num / 10 % 10] + os[num % 10];\n}\n};\n",
+                        "max_stars_repo_path": "Dataset/Leetcode/valid/12/22.cpp",
+                        "max_stars_repo_name": "kkcookies99/UAST",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 114
+                },
+                {
+                        "id": "test_codeeditorbench_debug_plus_cpp_data_1851",
+                        "content": "\nInput:\nnum = 3\nOutput:\n\"III \"\nclass Solution {\npublic:\nstring intToRoman(int num) {\nstring ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\nstring tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\nstring hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\nstring ths[]={\"\",\"M\",\"MM\",\"MMM\"};\nreturn ths[num/1000] + hrns[(num%1000)/100 + tens[(num%100)/10] + ones[num%10];\n}\n};\nclass Solution {\npublic:\nstring intToRoman(int num) {\nstring ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\nstring tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\nstring hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\nstring ths[]={\"\",\"M\",\"MM\",\"MMM\"};\nreturn ths[num/1000] + hrns[(num%1000)/100] + tens[(num%100)/10] + ones[num%10];\n}\n};",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 114
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "pretrain_cpp_data_3760718",
+                        "content": "class Solution {\npublic:\nstring dic1[10] = {\"\", \"I\", \"II\", \"III\", \"IV\", \"V\", \"VI\", \"VII\", \"VIII\", \"IX\"};\nstring dic2[10] = {\"\", \"X\", \"XX\", \"XXX\", \"XL\", \"L\", \"LX\", \"LXX\", \"LXXX\", \"XC\"};\nstring dic3[10] = {\"\", \"C\", \"CC\", \"CCC\", \"CD\", \"D\", \"DC\", \"DCC\", \"DCCC\", \"CM\"};\nstring dic4[4] = {\"\", \"M\", \"MM\", \"MMM\"};\nstring intToRoman(int num) {\nstring result = \"\";\nresult += dic4[num / 1000];\nnum %= 1000;\nresult += dic3[num / 100];\nnum %= 100;\nresult += dic2[num / 10];\nnum %= 10;\nresult += dic1[num / 1];\nreturn result;\n}\n};",
+                        "max_stars_repo_path": "12-Integer-to-Roman.cpp",
+                        "max_stars_repo_name": "andy-sheng/leetcode",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 114
+                },
+                {
+                        "id": "test_codeeditorbench_debug_plus_cpp_data_1851",
+                        "content": "\nInput:\nnum = 3\nOutput:\n\"III \"\nclass Solution {\npublic:\nstring intToRoman(int num) {\nstring ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\nstring tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\nstring hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\nstring ths[]={\"\",\"M\",\"MM\",\"MMM\"};\nreturn ths[num/1000] + hrns[(num%1000)/100 + tens[(num%100)/10] + ones[num%10];\n}\n};\nclass Solution {\npublic:\nstring intToRoman(int num) {\nstring ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\nstring tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\nstring hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\nstring ths[]={\"\",\"M\",\"MM\",\"MMM\"};\nreturn ths[num/1000] + hrns[(num%1000)/100] + tens[(num%100)/10] + ones[num%10];\n}\n};",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 114
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "pretrain_cpp_data_4582449",
+                        "content": "class Solution {\npublic:\nstring intToRoman(int num) {\n// map<int, string> m = {\n//     {1, \"I\"}, {5, \"V\"}, {10, \"X\"}, {50, \"L\"}, {100, \"C\"}, {500, \"D\"}, {1000, \"M\"}\n// };\nstring thousand[] = {\"\", \"M\", \"MM\", \"MMM\"};\nstring hundred[] = {\"\", \"C\", \"CC\", \"CCC\", \"CD\", \"D\", \"DC\", \"DCC\", \"DCCC\", \"CM\"};\nstring ten[] = {\"\", \"X\", \"XX\", \"XXX\", \"XL\", \"L\", \"LX\", \"LXX\", \"LXXX\", \"XC\"};\nstring one[] = {\"\", \"I\", \"II\", \"III\", \"IV\", \"V\", \"VI\", \"VII\", \"VIII\", \"IX\"};\nreturn thousand[num/1000] + hundred[(num%1000)/100] + ten[(num%100)/10] + one[num%10];\n}\n};",
+                        "max_stars_repo_path": "Cpp/12_integer_to_roman/solution.cpp",
+                        "max_stars_repo_name": "zszyellow/leetcode",
+                        "max_stars_count": 1.0,
+                        "__cluster__": 114
+                },
+                {
+                        "id": "test_codeeditorbench_debug_plus_cpp_data_1851",
+                        "content": "\nInput:\nnum = 3\nOutput:\n\"III \"\nclass Solution {\npublic:\nstring intToRoman(int num) {\nstring ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\nstring tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\nstring hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\nstring ths[]={\"\",\"M\",\"MM\",\"MMM\"};\nreturn ths[num/1000] + hrns[(num%1000)/100 + tens[(num%100)/10] + ones[num%10];\n}\n};\nclass Solution {\npublic:\nstring intToRoman(int num) {\nstring ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\nstring tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\nstring hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\nstring ths[]={\"\",\"M\",\"MM\",\"MMM\"};\nreturn ths[num/1000] + hrns[(num%1000)/100] + tens[(num%100)/10] + ones[num%10];\n}\n};",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 114
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_cpp_data_1771",
+                        "content": "\nInput:\nnums = \\[2,2,1\\]\nOutput:\n1\nclass Solution {\npublic:\nint singleNumber(vector<int>& nums) {\nunordered_map<int,int> mp;\nfor(int i=0;i<nums.size();i++){\nmp[nums[i]]++;\n}\nfor(auto m:mp){\nif(m.second==1){\nreturn m.first;\n}\n}\nreturn getSolution(mp, nums.size());\n}\nint getSolution(unordered_map<int,int>& mp, int size);\n};\nclass Solution {\npublic:\nint singleNumber(vector<int>& nums) {\nunordered_map<int,int> mp;\nfor(int i=0;i<nums.size();i++){\nmp[nums[i]]++;\n}\nfor(auto m:mp){\nif(m.second==1){\nreturn m.first;\n}\n}\nreturn -1;\n}\n};",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 74
+                },
+                {
+                        "id": "pretrain_cpp_data_3011799",
+                        "content": "<gh_stars>1-10\nclass Solution {\npublic:\nint singleNumber(vector<int>& nums) {\nunordered_map<int, int> mp;\nfor(int i=0; i<nums.size(); i++)\n{\nmp[nums[i]]++;\n}\nfor(auto m : mp)\n{\nif(m.second==1)\nreturn m.first;\n}\nreturn 0;\n}\n};",
+                        "max_stars_repo_path": "single-number-ii/single-number-ii.cpp",
+                        "max_stars_repo_name": "sharmishtha2401/leetcode",
+                        "max_stars_count": 1.0,
+                        "__cluster__": 74
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_cpp_data_1768",
+                        "content": "\nInput:\nnums = \\[5,3,2,4\\]\nOutput:\n0\nclass Solution {\npublic:\nint minDifference(vector<int>& nums) {\nif(nums.size() <= 4 return 0;\nsort(nums.begin(), nums.end());\nint n = nums.size();\nreturn min({nums[n - 4] - nums[0], nums[n - 1] - nums[3], nums[n - 3] - nums[1], nums[n - 2] - nums[2]});\n}\n};\nclass Solution {\npublic:\nint minDifference(vector<int>& nums) {\nif(nums.size() <= 4) return 0;\nsort(nums.begin(), nums.end());\nint n = nums.size();\nreturn min({nums[n - 4] - nums[0], nums[n - 1] - nums[3], nums[n - 3] - nums[1], nums[n - 2] - nums[2]});\n}\n};",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 73
+                },
+                {
+                        "id": "pretrain_cpp_data_3891218",
+                        "content": "<gh_stars>0\nclass Solution {\npublic:\nint minDifference(vector<int>& nums) {\nif (nums.size() <= 4) {\nreturn 0;\n}\nconst auto len{nums.size()};\nsort(nums.begin(), nums.end());\nreturn min({nums[len - 1] - nums[3], nums[len - 4] - nums[0], nums[len - 2] - nums[2], nums[len - 3] - nums[1]});\n}\n};",
+                        "max_stars_repo_path": "cpp/medium/minimum_difference_between_largest_and_smallest_value_in_three_moves.cpp",
+                        "max_stars_repo_name": "adamlm/leetcode-solutions",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 73
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_cpp_data_2802",
+                        "content": "\nInput:\nnums = \\[5,3,2,4\\]\nOutput:\n0\nclass Solution {\npublic:\nint minDifference(vector<int>& nums) {\nif(nums.size() <= 4 return 0;\nsort(nums.begin(), nums.end());\nint n = nums.size()\nreturn min({nums[n - 4] - nums[0], nums[n - 1] - nums[3], nums[n - 3] - nums[1], nums[n - 2] - nums[2]});\n}\n};\nclass Solution {\npublic:\nint minDifference(vector<int>& nums) {\nif(nums.size() <= 4) return 0;\nsort(nums.begin(), nums.end());\nint n = nums.size();\nreturn min({nums[n - 4] - nums[0], nums[n - 1] - nums[3], nums[n - 3] - nums[1], nums[n - 2] - nums[2]});\n}\n};",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 73
+                },
+                {
+                        "id": "pretrain_cpp_data_3891218",
+                        "content": "<gh_stars>0\nclass Solution {\npublic:\nint minDifference(vector<int>& nums) {\nif (nums.size() <= 4) {\nreturn 0;\n}\nconst auto len{nums.size()};\nsort(nums.begin(), nums.end());\nreturn min({nums[len - 1] - nums[3], nums[len - 4] - nums[0], nums[len - 2] - nums[2], nums[len - 3] - nums[1]});\n}\n};",
+                        "max_stars_repo_path": "cpp/medium/minimum_difference_between_largest_and_smallest_value_in_three_moves.cpp",
+                        "max_stars_repo_name": "adamlm/leetcode-solutions",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 73
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_cpp_data_1851",
+                        "content": "\nInput:\nnum = 3\nOutput:\n\"III \"\nclass Solution {\npublic:\nstring intToRoman(int num) {\nstring ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\nstring tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\nstring hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\nstring ths[]={\"\",\"M\",\"MM\",\"MMM\"};\nreturn ths[num/1000] + hrns[(num%1000)/100 + tens[(num%100)/10] + ones[num%10];\n}\n};\nclass Solution {\npublic:\nstring intToRoman(int num) {\nstring ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\nstring tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\nstring hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\nstring ths[]={\"\",\"M\",\"MM\",\"MMM\"};\nreturn ths[num/1000] + hrns[(num%1000)/100] + tens[(num%100)/10] + ones[num%10];\n}\n};",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 114
+                },
+                {
+                        "id": "pretrain_cpp_data_4611145",
+                        "content": "<gh_stars>0\nclass Solution {\npublic:\nstring intToRoman(int num) {\nconst vector<string> M{\"\", \"M\", \"MM\", \"MMM\"};\nconst vector<string> C{\"\",  \"C\",  \"CC\",  \"CCC\",  \"CD\",\n\"D\", \"DC\", \"DCC\", \"DCCC\", \"CM\"};\nconst vector<string> X{\"\",  \"X\",  \"XX\",  \"XXX\",  \"XL\",\n\"L\", \"LX\", \"LXX\", \"LXXX\", \"XC\"};\nconst vector<string> I{\"\",  \"I\",  \"II\",  \"III\",  \"IV\",\n\"V\", \"VI\", \"VII\", \"VIII\", \"IX\"};\nreturn M[num / 1000] + C[num % 1000 / 100] + X[num % 100 / 10] +\nI[num % 10];\n}\n};",
+                        "max_stars_repo_path": "Leetcode/0012. Integer to Roman/0012-2.cpp",
+                        "max_stars_repo_name": "Next-Gen-UI/Code-Dynamics",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 114
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_cpp_data_2727",
+                        "content": "\nInput:\ndigits = \\[1,2,3\\]\nOutput:\n\\[1,2,4\\]\nclass Solution {\npublic:\nvector<int> plusOne(vector<int>& digits) {\nint n=digits.size();\ndigits[n]++;\nfor(int i=n-1;i>=1;i--)\n{\nif(digits[i]>9)\n{\ndigits[i]%=10;\ndigits[i-1]++;\n}\n}\nif(digits[0]>9)\n{\ndigits.insert(digits.begin(),1);\ndigits[1]%=10;\n}\nreturn printNumbers(digits);\n}\n};\nclass Solution {\npublic:\nvector<int> plusOne(vector<int>& digits) {\nint n=digits.size();\ndigits[n-1]++;\nfor(int i=n-1;i>=1;i--)\n{\nif(digits[i]>9)\n{\ndigits[i]%=10;\ndigits[i-1]++;\n}\n}\nif(digits[0]>9)\n{\ndigits.insert(digits.begin(),1);\ndigits[1]%=10;\n}\nreturn digits;\n}\n};",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 47
+                },
+                {
+                        "id": "pretrain_cpp_data_3160732",
+                        "content": "class Solution {\npublic:\nvector<int> plusOne(vector<int>& digits) {\nint n = (int)digits.size();\nfor(int i = n - 1; i >= 0; --i) {\nif(digits[i] < 9) {\ndigits[i] += 1;\nreturn digits;\n}\ndigits[i] = 0;\n}\ndigits.insert(digits.begin(), 1);\nreturn digits;\n}\n};",
+                        "max_stars_repo_path": "LeetCode-Challenges/2020/7. July/Week1/Plus_One/solution.cpp",
+                        "max_stars_repo_name": "Ashwanigupta9125/code-DS-ALGO",
+                        "max_stars_count": 36.0,
+                        "__cluster__": 47
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_cpp_data_1713",
+                        "content": "\nInput:\ndigits = \\[1,2,3\\]\nOutput:\n\\[1,2,4\\]\nclass Solution {\npublic:\nvector<int> plusOne(vector<int>& digits) {\nint n=digits.size();\ndigits[n-1]++;\nfor(int i=n-1;i>=1;i--)\n{\nif(digits[i]>9)\n{\ndigits[i]%=10;\ndigits[i-1]++;\n}\n}\nif(digits[0]>9)\n{\ndigits.insert(digits.begin(),1);\ndigits[1]%=10;\n}\nreturn printNumbers(digits);\n}\n};\nclass Solution {\npublic:\nvector<int> plusOne(vector<int>& digits) {\nint n=digits.size();\ndigits[n-1]++;\nfor(int i=n-1;i>=1;i--)\n{\nif(digits[i]>9)\n{\ndigits[i]%=10;\ndigits[i-1]++;\n}\n}\nif(digits[0]>9)\n{\ndigits.insert(digits.begin(),1);\ndigits[1]%=10;\n}\nreturn digits;\n}\n};",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 47
+                },
+                {
+                        "id": "pretrain_cpp_data_3160732",
+                        "content": "class Solution {\npublic:\nvector<int> plusOne(vector<int>& digits) {\nint n = (int)digits.size();\nfor(int i = n - 1; i >= 0; --i) {\nif(digits[i] < 9) {\ndigits[i] += 1;\nreturn digits;\n}\ndigits[i] = 0;\n}\ndigits.insert(digits.begin(), 1);\nreturn digits;\n}\n};",
+                        "max_stars_repo_path": "LeetCode-Challenges/2020/7. July/Week1/Plus_One/solution.cpp",
+                        "max_stars_repo_name": "Ashwanigupta9125/code-DS-ALGO",
+                        "max_stars_count": 36.0,
+                        "__cluster__": 47
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_cpp_data_2851",
+                        "content": "\nInput:\ndigits = \\[1,2,3\\]\nOutput:\n\\[1,2,4\\]\nclass Solution {\npublic:\nvector<int> plusOne(vector<int>& digits) {\n/int n=digits.size();\ndigits[n]++;\nfor(int i=n-1;i>=1;i--)\n{\nif(digits[i]>9)\n{\ndigits[i]%=10;\ndigits[i-1]++;\n}\n}\nif(digits[0]>9)\n{\ndigits.insert(digits.begin(),1);\ndigits[1]%=10;\n}\nreturn digits;\n}\n};\nclass Solution {\npublic:\nvector<int> plusOne(vector<int>& digits) {\nint n=digits.size();\ndigits[n-1]++;\nfor(int i=n-1;i>=1;i--)\n{\nif(digits[i]>9)\n{\ndigits[i]%=10;\ndigits[i-1]++;\n}\n}\nif(digits[0]>9)\n{\ndigits.insert(digits.begin(),1);\ndigits[1]%=10;\n}\nreturn digits;\n}\n};",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 47
+                },
+                {
+                        "id": "pretrain_cpp_data_3160732",
+                        "content": "class Solution {\npublic:\nvector<int> plusOne(vector<int>& digits) {\nint n = (int)digits.size();\nfor(int i = n - 1; i >= 0; --i) {\nif(digits[i] < 9) {\ndigits[i] += 1;\nreturn digits;\n}\ndigits[i] = 0;\n}\ndigits.insert(digits.begin(), 1);\nreturn digits;\n}\n};",
+                        "max_stars_repo_path": "LeetCode-Challenges/2020/7. July/Week1/Plus_One/solution.cpp",
+                        "max_stars_repo_name": "Ashwanigupta9125/code-DS-ALGO",
+                        "max_stars_count": 36.0,
+                        "__cluster__": 47
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_cpp_data_2637",
+                        "content": "\nInput:\ndigits = \\[1,2,3\\]\nOutput:\n\\[1,2,4\\]\nclass Solution {\npublic:\nvector<int> plusOne(vector<int>& digits) {\n/int n=digits.size();\ndigits[n]++;\nfor(int i=n-1;i>=1;i--)\n{\nif(digits[i]>9)\n{\ndigits[i]%=10;\ndigits[i-1]++;\n}\n}\nif(digits[0]>9)\n{\ndigits.insert(digits.begin(),1);\ndigits[1]%=10;\n}\nreturn digits;\n}\n};\nclass Solution {\npublic:\nvector<int> plusOne(vector<int>& digits) {\nint n=digits.size();\ndigits[n-1]++;\nfor(int i=n-1;i>=1;i--)\n{\nif(digits[i]>9)\n{\ndigits[i]%=10;\ndigits[i-1]++;\n}\n}\nif(digits[0]>9)\n{\ndigits.insert(digits.begin(),1);\ndigits[1]%=10;\n}\nreturn digits;\n}\n};",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 47
+                },
+                {
+                        "id": "pretrain_cpp_data_3160732",
+                        "content": "class Solution {\npublic:\nvector<int> plusOne(vector<int>& digits) {\nint n = (int)digits.size();\nfor(int i = n - 1; i >= 0; --i) {\nif(digits[i] < 9) {\ndigits[i] += 1;\nreturn digits;\n}\ndigits[i] = 0;\n}\ndigits.insert(digits.begin(), 1);\nreturn digits;\n}\n};",
+                        "max_stars_repo_path": "LeetCode-Challenges/2020/7. July/Week1/Plus_One/solution.cpp",
+                        "max_stars_repo_name": "Ashwanigupta9125/code-DS-ALGO",
+                        "max_stars_count": 36.0,
+                        "__cluster__": 47
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_cpp_data_2719",
+                        "content": "\nInput:\ndigits = \\[1,2,3\\]\nOutput:\n\\[1,2,4\\]\nclass Solution {\npublic:\nvector<int> plusOne(vector<int>& digits) {\nint n=digits.size();\ndigits[n]++;\nfor(int i=n-1;i>=1;i--)\n{\nif(digits[i]>9)\n{\ndigits[i]%=10;\ndigits[i-1]++;\n}\n}\nif(digits[0]>9)\n{\ndigits.insert(digits.begin(),1);\ndigits[1]%=10;\n}\nreturn printNumbers(digits);\n}\n};\nclass Solution {\npublic:\nvector<int> plusOne(vector<int>& digits) {\nint n=digits.size();\ndigits[n-1]++;\nfor(int i=n-1;i>=1;i--)\n{\nif(digits[i]>9)\n{\ndigits[i]%=10;\ndigits[i-1]++;\n}\n}\nif(digits[0]>9)\n{\ndigits.insert(digits.begin(),1);\ndigits[1]%=10;\n}\nreturn digits;\n}\n};",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 47
+                },
+                {
+                        "id": "pretrain_cpp_data_3160732",
+                        "content": "class Solution {\npublic:\nvector<int> plusOne(vector<int>& digits) {\nint n = (int)digits.size();\nfor(int i = n - 1; i >= 0; --i) {\nif(digits[i] < 9) {\ndigits[i] += 1;\nreturn digits;\n}\ndigits[i] = 0;\n}\ndigits.insert(digits.begin(), 1);\nreturn digits;\n}\n};",
+                        "max_stars_repo_path": "LeetCode-Challenges/2020/7. July/Week1/Plus_One/solution.cpp",
+                        "max_stars_repo_name": "Ashwanigupta9125/code-DS-ALGO",
+                        "max_stars_count": 36.0,
+                        "__cluster__": 47
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_cpp_data_1898",
+                        "content": "\nInput:\nnums = \\[1,2,3,1\\]\nOutput:\n2\nclass Solution {\npublic:\nint findPeakElement(vector<int>& nums) {\nint n=nums.size();\nif(n==1)\n{\nreturn 0;\n}\nif(nums[0]>nums[1])\n{\nreturn 0;\n}\nvector<int> emptyVector;\nif(emptyVector[n-1]>emptyVector[n-2])\n{\nreturn n-1;\n}\nint left=1;\nint right=n-2;\nwhile(left<=right)\n{\nint mid=(left+right)/2;\nif(nums[mid]>nums[mid-1]&& nums[mid]>nums[mid+1])\n{\nreturn mid;\n}\nelse if(nums[mid]>nums[mid-1])\n{\nleft=mid+1;\n}\nelse{\nright=mid-1;\n}\n}\nreturn -1;\n}\n};\nclass Solution {\npublic:\nint findPeakElement(vector<int>& nums) {\nint n=nums.size();\nif(n==1)\n{\nreturn 0;\n}\nif(nums[0]>nums[1])\n{\nreturn 0;\n}\nif(nums[n-1]>nums[n-2])\n{\nreturn n-1;\n}\nint left=1;\nint right=n-2;\nwhile(left<=right)\n{\nint mid=(left+right)/2;\nif(nums[mid]>nums[mid-1]&& nums[mid]>nums[mid+1])\n{\nreturn mid;\n}\nelse if(nums[mid]>nums[mid-1])\n{\nleft=mid+1;\n}\nelse{\nright=mid-1;\n}\n}\nreturn -1;\n}\n};",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 28
+                },
+                {
+                        "id": "pretrain_cpp_data_4748075",
+                        "content": "class Solution {\npublic:\nint findPeakElement(vector<int>& nums) {\nint left=0,right=nums.size()-1;\nwhile(left<right)\n{\nint mid=(left+right)/2;\nif(nums[mid]>nums[mid+1])\n{\nright=mid;\n}\nelse\n{\nleft=mid+1;\n}\n}\nreturn left;\n}\n};",
+                        "max_stars_repo_path": "162.\u5bfb\u627e\u5cf0\u503c/findPeakElement.cpp",
+                        "max_stars_repo_name": "YichengZhong/Top-Interview-Questions",
+                        "max_stars_count": 1.0,
+                        "__cluster__": 28
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_cpp_data_2646",
+                        "content": "\nInput:\nnums = \\[1,2,3,1\\]\nOutput:\n2\nclass Solution {\npublic:\nint findPeakElement(vector<int>& nums) {\nint n nums.size();\nif(n=1)\n{\nreturn 0;\n}\nif(nums[0]>nums[1])\n{\nreturn 0;\n}\nvector<int> emptyVector;\nif(emptyVector[n-1]>emptyVector[n-2])\n{\nreturn n-1;\n}\nint left=1;\nint right=n-2;\nwhile(left<=right)\n{\nint mid=(left+right)/2;\nif(nums[mid]>nums[mid-1]&& nums[mid]>nums[mid+1])\n{\nreturn mid;\n}\nelse if(nums[mid]>nums[mid-1])\n{\nleft=mid+1;\n}\nelse{\nright=mid-1;\n}\n}\nreturn -1;\n}\n};\nclass Solution {\npublic:\nint findPeakElement(vector<int>& nums) {\nint n=nums.size();\nif(n==1)\n{\nreturn 0;\n}\nif(nums[0]>nums[1])\n{\nreturn 0;\n}\nif(nums[n-1]>nums[n-2])\n{\nreturn n-1;\n}\nint left=1;\nint right=n-2;\nwhile(left<=right)\n{\nint mid=(left+right)/2;\nif(nums[mid]>nums[mid-1]&& nums[mid]>nums[mid+1])\n{\nreturn mid;\n}\nelse if(nums[mid]>nums[mid-1])\n{\nleft=mid+1;\n}\nelse{\nright=mid-1;\n}\n}\nreturn -1;\n}\n};",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 28
+                },
+                {
+                        "id": "pretrain_cpp_data_4748075",
+                        "content": "class Solution {\npublic:\nint findPeakElement(vector<int>& nums) {\nint left=0,right=nums.size()-1;\nwhile(left<right)\n{\nint mid=(left+right)/2;\nif(nums[mid]>nums[mid+1])\n{\nright=mid;\n}\nelse\n{\nleft=mid+1;\n}\n}\nreturn left;\n}\n};",
+                        "max_stars_repo_path": "162.\u5bfb\u627e\u5cf0\u503c/findPeakElement.cpp",
+                        "max_stars_repo_name": "YichengZhong/Top-Interview-Questions",
+                        "max_stars_count": 1.0,
+                        "__cluster__": 28
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_cpp_data_2809",
+                        "content": "\nInput:\nnums = \\[1,2,3,1\\]\nOutput:\n2\nclass Solution {\npublic:\nint findPeakElement(vector<int>& nums) {\nint n=nums.size();\nif(n=1)\n{\nreturn 0;\n}\nif(nums[0]>nums[1])\n{\nreturn 0;\n}\nvector<int> emptyVector;\nif(emptyVector[n-1]>emptyVector[n-2])\n{\nreturn n-1;\n}\nint left=1;\nint right=n-2;\nwhile(left<=right)\n{\nint mid=(left+right)/2;\nif(nums[mid]>nums[mid-1]&& nums[mid]>nums[mid+1])\n{\nreturn mid;\n}\nelse if(nums[mid]>nums[mid-1])\n{\nleft=mid+1;\n}\nelse{\nright=mid-1;\n}\n}\nreturn -1;\n}\n};\nclass Solution {\npublic:\nint findPeakElement(vector<int>& nums) {\nint n=nums.size();\nif(n==1)\n{\nreturn 0;\n}\nif(nums[0]>nums[1])\n{\nreturn 0;\n}\nif(nums[n-1]>nums[n-2])\n{\nreturn n-1;\n}\nint left=1;\nint right=n-2;\nwhile(left<=right)\n{\nint mid=(left+right)/2;\nif(nums[mid]>nums[mid-1]&& nums[mid]>nums[mid+1])\n{\nreturn mid;\n}\nelse if(nums[mid]>nums[mid-1])\n{\nleft=mid+1;\n}\nelse{\nright=mid-1;\n}\n}\nreturn -1;\n}\n};",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 28
+                },
+                {
+                        "id": "pretrain_cpp_data_4748075",
+                        "content": "class Solution {\npublic:\nint findPeakElement(vector<int>& nums) {\nint left=0,right=nums.size()-1;\nwhile(left<right)\n{\nint mid=(left+right)/2;\nif(nums[mid]>nums[mid+1])\n{\nright=mid;\n}\nelse\n{\nleft=mid+1;\n}\n}\nreturn left;\n}\n};",
+                        "max_stars_repo_path": "162.\u5bfb\u627e\u5cf0\u503c/findPeakElement.cpp",
+                        "max_stars_repo_name": "YichengZhong/Top-Interview-Questions",
+                        "max_stars_count": 1.0,
+                        "__cluster__": 28
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_cpp_data_1681",
+                        "content": "\nInput:\nnums = \\[1,2,3,1\\]\nOutput:\n2\nclass Solution {\npublic:\nint findPeakElement(vector<int>& nums) {\nint n=nums.size();\nif(n==1)\n{\nreturn 0;\n}\nif(nums[0]>nums[1])\n{\nreturn 0;\n}\nif(nums[n-1]>nums[n-2])\n{\nreturn n-1;\n}\nint left=1;\nint right=n-2;\nwhile(left<=right)\n{\nint mid=(left+right)/2;\nif(nums[mid]>nums[mid-1]&& nums[mid]>nums[mid+1])\n{\nreturn mid;\n}\nelse if(nums[mid]<nums[mid-1])\n{\nleft=mid+1;\n}\nelse{\nright=mid-1;\n}\n}\nreturn -1;\n}\n};\nclass Solution {\npublic:\nint findPeakElement(vector<int>& nums) {\nint n=nums.size();\nif(n==1)\n{\nreturn 0;\n}\nif(nums[0]>nums[1])\n{\nreturn 0;\n}\nif(nums[n-1]>nums[n-2])\n{\nreturn n-1;\n}\nint left=1;\nint right=n-2;\nwhile(left<=right)\n{\nint mid=(left+right)/2;\nif(nums[mid]>nums[mid-1]&& nums[mid]>nums[mid+1])\n{\nreturn mid;\n}\nelse if(nums[mid]>nums[mid-1])\n{\nleft=mid+1;\n}\nelse{\nright=mid-1;\n}\n}\nreturn -1;\n}\n};",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0.0,
+                        "__cluster__": 28
+                },
+                {
+                        "id": "pretrain_cpp_data_4748075",
+                        "content": "class Solution {\npublic:\nint findPeakElement(vector<int>& nums) {\nint left=0,right=nums.size()-1;\nwhile(left<right)\n{\nint mid=(left+right)/2;\nif(nums[mid]>nums[mid+1])\n{\nright=mid;\n}\nelse\n{\nleft=mid+1;\n}\n}\nreturn left;\n}\n};",
+                        "max_stars_repo_path": "162.\u5bfb\u627e\u5cf0\u503c/findPeakElement.cpp",
+                        "max_stars_repo_name": "YichengZhong/Top-Interview-Questions",
+                        "max_stars_count": 1.0,
+                        "__cluster__": 28
+                },
+                {
+                        "real_dup": "2"
+                }
+        ]
+]

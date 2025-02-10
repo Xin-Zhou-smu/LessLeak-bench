@@ -1,0 +1,2142 @@
+[
+        {
+                "data_len": 93
+        },
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2109",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz)\nelif i%3==0:\narr.append(\"Fizz)\nelif i%5==0:\narr.append(\"Buzz)\nelse:\narr.append(str(i))\nreturn arr\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn arr",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_5122177",
+                        "content": "class Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nres = []\nfor i in range(1,n+1):\nif i%3==0 and i%5== 0:\nres.append('FizzBuzz')\nelif i%3==0:\nres.append('Fizz')\nelif i%5==0:\nres.append('Buzz')\nelse:\nres.append(str(i))\nreturn res",
+                        "max_stars_repo_name": "wasim92007/leetcode",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "412_fizz_buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2109",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz)\nelif i%3==0:\narr.append(\"Fizz)\nelif i%5==0:\narr.append(\"Buzz)\nelse:\narr.append(str(i))\nreturn arr\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn arr",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_3585003",
+                        "content": "class Solution:\nres = []\ndef fizzBuzz(self, n: int) -> List[str]:\nself.res =[]\nfor i in range(1,n+1):\ns = \"\"\nif i % 3 == 0:\ns += \"Fizz\"\nif i % 5 == 0:\ns += \"Buzz\"\nif i % 3 != 0 and i % 5 != 0:\ns += str(i)\nself.res.append(s)\nreturn self.res\n",
+                        "max_stars_repo_name": "zainkai/LeetCodeChallenges",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "Completed/python3/412.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2039",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(0,n+1):\nif i % 3==0 and  i % 5==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i % 3==0 and  i % 5==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_5122177",
+                        "content": "class Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nres = []\nfor i in range(1,n+1):\nif i%3==0 and i%5== 0:\nres.append('FizzBuzz')\nelif i%3==0:\nres.append('Fizz')\nelif i%5==0:\nres.append('Buzz')\nelse:\nres.append(str(i))\nreturn res",
+                        "max_stars_repo_name": "wasim92007/leetcode",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "412_fizz_buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2039",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(0,n+1):\nif i % 3==0 and  i % 5==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i % 3==0 and  i % 5==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_3585003",
+                        "content": "class Solution:\nres = []\ndef fizzBuzz(self, n: int) -> List[str]:\nself.res =[]\nfor i in range(1,n+1):\ns = \"\"\nif i % 3 == 0:\ns += \"Fizz\"\nif i % 5 == 0:\ns += \"Buzz\"\nif i % 3 != 0 and i % 5 != 0:\ns += str(i)\nself.res.append(s)\nreturn self.res\n",
+                        "max_stars_repo_name": "zainkai/LeetCodeChallenges",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "Completed/python3/412.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2297",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(0,n+1):\nif i % 3 = 0 and  i % 5 = 0 :\narr.append(\"FizzBuzz\")\nelif i % 3 = 0:\narr.append(\"Fizz\")\nelif i % 5 = 0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i % 3==0 and  i % 5==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_5122177",
+                        "content": "class Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nres = []\nfor i in range(1,n+1):\nif i%3==0 and i%5== 0:\nres.append('FizzBuzz')\nelif i%3==0:\nres.append('Fizz')\nelif i%5==0:\nres.append('Buzz')\nelse:\nres.append(str(i))\nreturn res",
+                        "max_stars_repo_name": "wasim92007/leetcode",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "412_fizz_buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2297",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(0,n+1):\nif i % 3 = 0 and  i % 5 = 0 :\narr.append(\"FizzBuzz\")\nelif i % 3 = 0:\narr.append(\"Fizz\")\nelif i % 5 = 0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i % 3==0 and  i % 5==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_3585003",
+                        "content": "class Solution:\nres = []\ndef fizzBuzz(self, n: int) -> List[str]:\nself.res =[]\nfor i in range(1,n+1):\ns = \"\"\nif i % 3 == 0:\ns += \"Fizz\"\nif i % 5 == 0:\ns += \"Buzz\"\nif i % 3 != 0 and i % 5 != 0:\ns += str(i)\nself.res.append(s)\nreturn self.res\n",
+                        "max_stars_repo_name": "zainkai/LeetCodeChallenges",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "Completed/python3/412.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2114",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nl = []\nfor i in range(1,n+2):\nif i%3==0 and i%5==0:\nl.append(\"FizzBuzz\")\nelif i%3!=0 and i%5!=0:\nl.append(str(i))\nelif i%3==0:\nl.append(\"Fizz\")\nelif i%5==0:\nl.append(\"Buzz\")\nreturn l\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nl = []\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\nl.append(\"FizzBuzz\")\nelif i%3!=0 and i%5!=0:\nl.append(str(i))\nelif i%3==0:\nl.append(\"Fizz\")\nelif i%5==0:\nl.append(\"Buzz\")\nreturn l",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_5122177",
+                        "content": "class Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nres = []\nfor i in range(1,n+1):\nif i%3==0 and i%5== 0:\nres.append('FizzBuzz')\nelif i%3==0:\nres.append('Fizz')\nelif i%5==0:\nres.append('Buzz')\nelse:\nres.append(str(i))\nreturn res",
+                        "max_stars_repo_name": "wasim92007/leetcode",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "412_fizz_buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2114",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nl = []\nfor i in range(1,n+2):\nif i%3==0 and i%5==0:\nl.append(\"FizzBuzz\")\nelif i%3!=0 and i%5!=0:\nl.append(str(i))\nelif i%3==0:\nl.append(\"Fizz\")\nelif i%5==0:\nl.append(\"Buzz\")\nreturn l\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nl = []\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\nl.append(\"FizzBuzz\")\nelif i%3!=0 and i%5!=0:\nl.append(str(i))\nelif i%3==0:\nl.append(\"Fizz\")\nelif i%5==0:\nl.append(\"Buzz\")\nreturn l",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_3585003",
+                        "content": "class Solution:\nres = []\ndef fizzBuzz(self, n: int) -> List[str]:\nself.res =[]\nfor i in range(1,n+1):\ns = \"\"\nif i % 3 == 0:\ns += \"Fizz\"\nif i % 5 == 0:\ns += \"Buzz\"\nif i % 3 != 0 and i % 5 != 0:\ns += str(i)\nself.res.append(s)\nreturn self.res\n",
+                        "max_stars_repo_name": "zainkai/LeetCodeChallenges",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "Completed/python3/412.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2236",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nl = []\nfor i in range(1,n+2):\nif i%3==0 and i%5==0:\nl.append(\"FizzBuzz\")\nelif i%3!=0 and i%5!=0:\nl.append(str(i))\nelif i%3==0:\nl.append(self.fizz())\nelif i%5==0:\nl.append(self.buzz())\nreturn l\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nl = []\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\nl.append(\"FizzBuzz\")\nelif i%3!=0 and i%5!=0:\nl.append(str(i))\nelif i%3==0:\nl.append(\"Fizz\")\nelif i%5==0:\nl.append(\"Buzz\")\nreturn l",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_5122177",
+                        "content": "class Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nres = []\nfor i in range(1,n+1):\nif i%3==0 and i%5== 0:\nres.append('FizzBuzz')\nelif i%3==0:\nres.append('Fizz')\nelif i%5==0:\nres.append('Buzz')\nelse:\nres.append(str(i))\nreturn res",
+                        "max_stars_repo_name": "wasim92007/leetcode",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "412_fizz_buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2064",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn results\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn arr",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_5122177",
+                        "content": "class Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nres = []\nfor i in range(1,n+1):\nif i%3==0 and i%5== 0:\nres.append('FizzBuzz')\nelif i%3==0:\nres.append('Fizz')\nelif i%5==0:\nres.append('Buzz')\nelse:\nres.append(str(i))\nreturn res",
+                        "max_stars_repo_name": "wasim92007/leetcode",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "412_fizz_buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2260",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(0,n+1):\nif i % 3==0 and  i % k==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i % 3==0 and  i % 5==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_5122177",
+                        "content": "class Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nres = []\nfor i in range(1,n+1):\nif i%3==0 and i%5== 0:\nres.append('FizzBuzz')\nelif i%3==0:\nres.append('Fizz')\nelif i%5==0:\nres.append('Buzz')\nelse:\nres.append(str(i))\nreturn res",
+                        "max_stars_repo_name": "wasim92007/leetcode",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "412_fizz_buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2336",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nself.helperMethod(n, arr)\nreturn arr\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn arr",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_5122177",
+                        "content": "class Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nres = []\nfor i in range(1,n+1):\nif i%3==0 and i%5== 0:\nres.append('FizzBuzz')\nelif i%3==0:\nres.append('Fizz')\nelif i%5==0:\nres.append('Buzz')\nelse:\nres.append(str(i))\nreturn res",
+                        "max_stars_repo_name": "wasim92007/leetcode",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "412_fizz_buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2161",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nself.helperMethod(n, arr)\nreturn arr\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn arr",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_5122177",
+                        "content": "class Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nres = []\nfor i in range(1,n+1):\nif i%3==0 and i%5== 0:\nres.append('FizzBuzz')\nelif i%3==0:\nres.append('Fizz')\nelif i%5==0:\nres.append('Buzz')\nelse:\nres.append(str(i))\nreturn res",
+                        "max_stars_repo_name": "wasim92007/leetcode",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "412_fizz_buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_1926",
+                        "content": "\nInput:\ns =  \"xyzzaz \"\nOutput:\n1\nclass Solution:\ndef countGoodSubstrings(self, s: str) -> int:\ncount=0\nfor i in range(len(s)-2):\nx=s[i:i+3]\nif x.count(x[0])=1 and x.count(x[1])==1 and x.count(x[2])==1:\ncount+=1\nreturn count\nclass Solution:\ndef countGoodSubstrings(self, s: str) -> int:\ncount=0\nfor i in range(len(s)-2):\nx=s[i:i+3]\nif x.count(x[0])==1 and x.count(x[1])==1 and x.count(x[2])==1:\ncount+=1\nreturn count",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 0
+                },
+                {
+                        "id": "pretrain_python_data_5229691",
+                        "content": "class solution:\ndef countGoodSubstrings(self, s: str) -> int:\ncount = 0\nfor i in range(len(s) - 2):\nss = s[i: i + 3]\nif ss[0] != ss[1] and ss[0] != ss[2] and ss[1] != ss[2]:\ncount += 1\nreturn count",
+                        "max_stars_repo_name": "r3a10god/DSA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "Techniques/Sliding Window/substringOfSizeThreeWithDistinctCharacters.py",
+                        "__cluster__": 0
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_1986",
+                        "content": "\nInput:\ns =  \"xyzzaz \"\nOutput:\n1\nclass Solution:\ndef countGoodSubstrings(self, s: str) -> int:\ncount = 0\nfor i in range(len(s) - 2):\nx = s[i: i + 2]\nif x.count(x[0]) == 1 and x.count(x[1]) == 1 and x.count(x[2]) == 1:\ncount += 1\nreturn count\nclass Solution:\ndef countGoodSubstrings(self, s: str) -> int:\ncount=0\nfor i in range(len(s)-2):\nx=s[i:i+3]\nif x.count(x[0])==1 and x.count(x[1])==1 and x.count(x[2])==1:\ncount+=1\nreturn count",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 0
+                },
+                {
+                        "id": "pretrain_python_data_5229691",
+                        "content": "class solution:\ndef countGoodSubstrings(self, s: str) -> int:\ncount = 0\nfor i in range(len(s) - 2):\nss = s[i: i + 3]\nif ss[0] != ss[1] and ss[0] != ss[2] and ss[1] != ss[2]:\ncount += 1\nreturn count",
+                        "max_stars_repo_name": "r3a10god/DSA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "Techniques/Sliding Window/substringOfSizeThreeWithDistinctCharacters.py",
+                        "__cluster__": 0
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2039",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(0,n+1):\nif i % 3==0 and  i % 5==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i % 3==0 and  i % 5==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_5353381",
+                        "content": "class Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nres = [0]*n\nfor i in range(1, n+1):\nif i%3 == 0:\nif i%5 == 0:\nres[i-1] = \"FizzBuzz\"\nelse:\nres[i-1] = \"Fizz\"\nelif i%5 == 0:\nres[i-1] = \"Buzz\"\nelse:\nres[i-1] = str(i)\nreturn res",
+                        "max_stars_repo_name": "shaurya-src/code-leet",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "fizz-buzz/fizz-buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2260",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(0,n+1):\nif i % 3==0 and  i % k==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i % 3==0 and  i % 5==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_5353381",
+                        "content": "class Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nres = [0]*n\nfor i in range(1, n+1):\nif i%3 == 0:\nif i%5 == 0:\nres[i-1] = \"FizzBuzz\"\nelse:\nres[i-1] = \"Fizz\"\nelif i%5 == 0:\nres[i-1] = \"Buzz\"\nelse:\nres[i-1] = str(i)\nreturn res",
+                        "max_stars_repo_name": "shaurya-src/code-leet",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "fizz-buzz/fizz-buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2297",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(0,n+1):\nif i % 3 = 0 and  i % 5 = 0 :\narr.append(\"FizzBuzz\")\nelif i % 3 = 0:\narr.append(\"Fizz\")\nelif i % 5 = 0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i % 3==0 and  i % 5==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_5353381",
+                        "content": "class Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nres = [0]*n\nfor i in range(1, n+1):\nif i%3 == 0:\nif i%5 == 0:\nres[i-1] = \"FizzBuzz\"\nelse:\nres[i-1] = \"Fizz\"\nelif i%5 == 0:\nres[i-1] = \"Buzz\"\nelse:\nres[i-1] = str(i)\nreturn res",
+                        "max_stars_repo_name": "shaurya-src/code-leet",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "fizz-buzz/fizz-buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2161",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nself.helperMethod(n, arr)\nreturn arr\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn arr",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_5353381",
+                        "content": "class Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nres = [0]*n\nfor i in range(1, n+1):\nif i%3 == 0:\nif i%5 == 0:\nres[i-1] = \"FizzBuzz\"\nelse:\nres[i-1] = \"Fizz\"\nelif i%5 == 0:\nres[i-1] = \"Buzz\"\nelse:\nres[i-1] = str(i)\nreturn res",
+                        "max_stars_repo_name": "shaurya-src/code-leet",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "fizz-buzz/fizz-buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2109",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz)\nelif i%3==0:\narr.append(\"Fizz)\nelif i%5==0:\narr.append(\"Buzz)\nelse:\narr.append(str(i))\nreturn arr\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn arr",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_5353381",
+                        "content": "class Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nres = [0]*n\nfor i in range(1, n+1):\nif i%3 == 0:\nif i%5 == 0:\nres[i-1] = \"FizzBuzz\"\nelse:\nres[i-1] = \"Fizz\"\nelif i%5 == 0:\nres[i-1] = \"Buzz\"\nelse:\nres[i-1] = str(i)\nreturn res",
+                        "max_stars_repo_name": "shaurya-src/code-leet",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "fizz-buzz/fizz-buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2336",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nself.helperMethod(n, arr)\nreturn arr\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn arr",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_5353381",
+                        "content": "class Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nres = [0]*n\nfor i in range(1, n+1):\nif i%3 == 0:\nif i%5 == 0:\nres[i-1] = \"FizzBuzz\"\nelse:\nres[i-1] = \"Fizz\"\nelif i%5 == 0:\nres[i-1] = \"Buzz\"\nelse:\nres[i-1] = str(i)\nreturn res",
+                        "max_stars_repo_name": "shaurya-src/code-leet",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "fizz-buzz/fizz-buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2114",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nl = []\nfor i in range(1,n+2):\nif i%3==0 and i%5==0:\nl.append(\"FizzBuzz\")\nelif i%3!=0 and i%5!=0:\nl.append(str(i))\nelif i%3==0:\nl.append(\"Fizz\")\nelif i%5==0:\nl.append(\"Buzz\")\nreturn l\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nl = []\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\nl.append(\"FizzBuzz\")\nelif i%3!=0 and i%5!=0:\nl.append(str(i))\nelif i%3==0:\nl.append(\"Fizz\")\nelif i%5==0:\nl.append(\"Buzz\")\nreturn l",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_5353381",
+                        "content": "class Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nres = [0]*n\nfor i in range(1, n+1):\nif i%3 == 0:\nif i%5 == 0:\nres[i-1] = \"FizzBuzz\"\nelse:\nres[i-1] = \"Fizz\"\nelif i%5 == 0:\nres[i-1] = \"Buzz\"\nelse:\nres[i-1] = str(i)\nreturn res",
+                        "max_stars_repo_name": "shaurya-src/code-leet",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "fizz-buzz/fizz-buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2064",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn results\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn arr",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_5353381",
+                        "content": "class Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nres = [0]*n\nfor i in range(1, n+1):\nif i%3 == 0:\nif i%5 == 0:\nres[i-1] = \"FizzBuzz\"\nelse:\nres[i-1] = \"Fizz\"\nelif i%5 == 0:\nres[i-1] = \"Buzz\"\nelse:\nres[i-1] = str(i)\nreturn res",
+                        "max_stars_repo_name": "shaurya-src/code-leet",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "fizz-buzz/fizz-buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2039",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(0,n+1):\nif i % 3==0 and  i % 5==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i % 3==0 and  i % 5==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_8739626",
+                        "content": "class Solution:\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\nl = []\nif n < 1:\nreturn l\nfor i in range(1, n+1):\nif i % 3 == 0:\nif i % 5 == 0:\nl.append(\"FizzBuzz\")\nelse:\nl.append(\"Fizz\")\nelif i % 5 == 0:\nl.append(\"Buzz\")\nelse:\nl.append(str(i))\nreturn l",
+                        "max_stars_repo_name": "vedantc6/LCode",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "Session1_2018/fizzBuzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2260",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(0,n+1):\nif i % 3==0 and  i % k==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i % 3==0 and  i % 5==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_8739626",
+                        "content": "class Solution:\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\nl = []\nif n < 1:\nreturn l\nfor i in range(1, n+1):\nif i % 3 == 0:\nif i % 5 == 0:\nl.append(\"FizzBuzz\")\nelse:\nl.append(\"Fizz\")\nelif i % 5 == 0:\nl.append(\"Buzz\")\nelse:\nl.append(str(i))\nreturn l",
+                        "max_stars_repo_name": "vedantc6/LCode",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "Session1_2018/fizzBuzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2297",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(0,n+1):\nif i % 3 = 0 and  i % 5 = 0 :\narr.append(\"FizzBuzz\")\nelif i % 3 = 0:\narr.append(\"Fizz\")\nelif i % 5 = 0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i % 3==0 and  i % 5==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_8739626",
+                        "content": "class Solution:\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\nl = []\nif n < 1:\nreturn l\nfor i in range(1, n+1):\nif i % 3 == 0:\nif i % 5 == 0:\nl.append(\"FizzBuzz\")\nelse:\nl.append(\"Fizz\")\nelif i % 5 == 0:\nl.append(\"Buzz\")\nelse:\nl.append(str(i))\nreturn l",
+                        "max_stars_repo_name": "vedantc6/LCode",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "Session1_2018/fizzBuzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2109",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz)\nelif i%3==0:\narr.append(\"Fizz)\nelif i%5==0:\narr.append(\"Buzz)\nelse:\narr.append(str(i))\nreturn arr\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn arr",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_8739626",
+                        "content": "class Solution:\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\nl = []\nif n < 1:\nreturn l\nfor i in range(1, n+1):\nif i % 3 == 0:\nif i % 5 == 0:\nl.append(\"FizzBuzz\")\nelse:\nl.append(\"Fizz\")\nelif i % 5 == 0:\nl.append(\"Buzz\")\nelse:\nl.append(str(i))\nreturn l",
+                        "max_stars_repo_name": "vedantc6/LCode",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "Session1_2018/fizzBuzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2064",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn results\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn arr",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_8739626",
+                        "content": "class Solution:\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\nl = []\nif n < 1:\nreturn l\nfor i in range(1, n+1):\nif i % 3 == 0:\nif i % 5 == 0:\nl.append(\"FizzBuzz\")\nelse:\nl.append(\"Fizz\")\nelif i % 5 == 0:\nl.append(\"Buzz\")\nelse:\nl.append(str(i))\nreturn l",
+                        "max_stars_repo_name": "vedantc6/LCode",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "Session1_2018/fizzBuzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2114",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nl = []\nfor i in range(1,n+2):\nif i%3==0 and i%5==0:\nl.append(\"FizzBuzz\")\nelif i%3!=0 and i%5!=0:\nl.append(str(i))\nelif i%3==0:\nl.append(\"Fizz\")\nelif i%5==0:\nl.append(\"Buzz\")\nreturn l\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nl = []\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\nl.append(\"FizzBuzz\")\nelif i%3!=0 and i%5!=0:\nl.append(str(i))\nelif i%3==0:\nl.append(\"Fizz\")\nelif i%5==0:\nl.append(\"Buzz\")\nreturn l",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_8739626",
+                        "content": "class Solution:\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\nl = []\nif n < 1:\nreturn l\nfor i in range(1, n+1):\nif i % 3 == 0:\nif i % 5 == 0:\nl.append(\"FizzBuzz\")\nelse:\nl.append(\"Fizz\")\nelif i % 5 == 0:\nl.append(\"Buzz\")\nelse:\nl.append(str(i))\nreturn l",
+                        "max_stars_repo_name": "vedantc6/LCode",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "Session1_2018/fizzBuzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2236",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nl = []\nfor i in range(1,n+2):\nif i%3==0 and i%5==0:\nl.append(\"FizzBuzz\")\nelif i%3!=0 and i%5!=0:\nl.append(str(i))\nelif i%3==0:\nl.append(self.fizz())\nelif i%5==0:\nl.append(self.buzz())\nreturn l\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nl = []\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\nl.append(\"FizzBuzz\")\nelif i%3!=0 and i%5!=0:\nl.append(str(i))\nelif i%3==0:\nl.append(\"Fizz\")\nelif i%5==0:\nl.append(\"Buzz\")\nreturn l",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_8739626",
+                        "content": "class Solution:\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\nl = []\nif n < 1:\nreturn l\nfor i in range(1, n+1):\nif i % 3 == 0:\nif i % 5 == 0:\nl.append(\"FizzBuzz\")\nelse:\nl.append(\"Fizz\")\nelif i % 5 == 0:\nl.append(\"Buzz\")\nelse:\nl.append(str(i))\nreturn l",
+                        "max_stars_repo_name": "vedantc6/LCode",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "Session1_2018/fizzBuzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2336",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nself.helperMethod(n, arr)\nreturn arr\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn arr",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_8739626",
+                        "content": "class Solution:\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\nl = []\nif n < 1:\nreturn l\nfor i in range(1, n+1):\nif i % 3 == 0:\nif i % 5 == 0:\nl.append(\"FizzBuzz\")\nelse:\nl.append(\"Fizz\")\nelif i % 5 == 0:\nl.append(\"Buzz\")\nelse:\nl.append(str(i))\nreturn l",
+                        "max_stars_repo_name": "vedantc6/LCode",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "Session1_2018/fizzBuzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2161",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nself.helperMethod(n, arr)\nreturn arr\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn arr",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_8739626",
+                        "content": "class Solution:\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\nl = []\nif n < 1:\nreturn l\nfor i in range(1, n+1):\nif i % 3 == 0:\nif i % 5 == 0:\nl.append(\"FizzBuzz\")\nelse:\nl.append(\"Fizz\")\nelif i % 5 == 0:\nl.append(\"Buzz\")\nelse:\nl.append(str(i))\nreturn l",
+                        "max_stars_repo_name": "vedantc6/LCode",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "Session1_2018/fizzBuzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2083",
+                        "content": "\nInput:\ncandyType = \\[1,1,2,2,3,3\\]\nOutput:\n3\nclass Solution:\ndef distributeCandies(self, candyType: List[int]) -> int:\nreturn max(len(candyType)//2, len(set(candyType)))\nclass Solution:\ndef distributeCandies(self, candyType: List[int]) -> int:\nreturn min(len(candyType)//2, len(set(candyType)))",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 51
+                },
+                {
+                        "id": "pretrain_python_data_8848735",
+                        "content": "class Solution:\ndef distributeCandies(self, candyType: List[int]) -> int:\nreturn min( len(set(candyType)) ,len(candyType)//2)\n",
+                        "max_stars_repo_name": "changmeng72/leecode_python3",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "easy/575-distribute-candies.py",
+                        "__cluster__": 51
+                },
+                {
+                        "real_dup": 3
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2039",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(0,n+1):\nif i % 3==0 and  i % 5==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i % 3==0 and  i % 5==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_2736592",
+                        "content": "class Solution:\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\nret = []\nfor i in range(n):\ncur = i + 1\nif cur % 3 == 0:\nif cur % 5 == 0:\nret.append('FizzBuzz')\nelse:\nret.append('Fizz')\nelif cur % 5 == 0:\nret.append('Buzz')\nelse:\nret.append(str(cur))\nreturn ret",
+                        "max_stars_repo_name": "wangsongiam/leetcode",
+                        "max_stars_count": 3,
+                        "max_stars_repo_path": "solutions/412.fizz-buzz/fizz-buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2260",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(0,n+1):\nif i % 3==0 and  i % k==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i % 3==0 and  i % 5==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_2736592",
+                        "content": "class Solution:\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\nret = []\nfor i in range(n):\ncur = i + 1\nif cur % 3 == 0:\nif cur % 5 == 0:\nret.append('FizzBuzz')\nelse:\nret.append('Fizz')\nelif cur % 5 == 0:\nret.append('Buzz')\nelse:\nret.append(str(cur))\nreturn ret",
+                        "max_stars_repo_name": "wangsongiam/leetcode",
+                        "max_stars_count": 3,
+                        "max_stars_repo_path": "solutions/412.fizz-buzz/fizz-buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2297",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(0,n+1):\nif i % 3 = 0 and  i % 5 = 0 :\narr.append(\"FizzBuzz\")\nelif i % 3 = 0:\narr.append(\"Fizz\")\nelif i % 5 = 0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i % 3==0 and  i % 5==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_2736592",
+                        "content": "class Solution:\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\nret = []\nfor i in range(n):\ncur = i + 1\nif cur % 3 == 0:\nif cur % 5 == 0:\nret.append('FizzBuzz')\nelse:\nret.append('Fizz')\nelif cur % 5 == 0:\nret.append('Buzz')\nelse:\nret.append(str(cur))\nreturn ret",
+                        "max_stars_repo_name": "wangsongiam/leetcode",
+                        "max_stars_count": 3,
+                        "max_stars_repo_path": "solutions/412.fizz-buzz/fizz-buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2109",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz)\nelif i%3==0:\narr.append(\"Fizz)\nelif i%5==0:\narr.append(\"Buzz)\nelse:\narr.append(str(i))\nreturn arr\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn arr",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_2736592",
+                        "content": "class Solution:\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\nret = []\nfor i in range(n):\ncur = i + 1\nif cur % 3 == 0:\nif cur % 5 == 0:\nret.append('FizzBuzz')\nelse:\nret.append('Fizz')\nelif cur % 5 == 0:\nret.append('Buzz')\nelse:\nret.append(str(cur))\nreturn ret",
+                        "max_stars_repo_name": "wangsongiam/leetcode",
+                        "max_stars_count": 3,
+                        "max_stars_repo_path": "solutions/412.fizz-buzz/fizz-buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2064",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn results\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn arr",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_2736592",
+                        "content": "class Solution:\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\nret = []\nfor i in range(n):\ncur = i + 1\nif cur % 3 == 0:\nif cur % 5 == 0:\nret.append('FizzBuzz')\nelse:\nret.append('Fizz')\nelif cur % 5 == 0:\nret.append('Buzz')\nelse:\nret.append(str(cur))\nreturn ret",
+                        "max_stars_repo_name": "wangsongiam/leetcode",
+                        "max_stars_count": 3,
+                        "max_stars_repo_path": "solutions/412.fizz-buzz/fizz-buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2336",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nself.helperMethod(n, arr)\nreturn arr\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn arr",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_2736592",
+                        "content": "class Solution:\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\nret = []\nfor i in range(n):\ncur = i + 1\nif cur % 3 == 0:\nif cur % 5 == 0:\nret.append('FizzBuzz')\nelse:\nret.append('Fizz')\nelif cur % 5 == 0:\nret.append('Buzz')\nelse:\nret.append(str(cur))\nreturn ret",
+                        "max_stars_repo_name": "wangsongiam/leetcode",
+                        "max_stars_count": 3,
+                        "max_stars_repo_path": "solutions/412.fizz-buzz/fizz-buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2161",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nself.helperMethod(n, arr)\nreturn arr\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn arr",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_2736592",
+                        "content": "class Solution:\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\nret = []\nfor i in range(n):\ncur = i + 1\nif cur % 3 == 0:\nif cur % 5 == 0:\nret.append('FizzBuzz')\nelse:\nret.append('Fizz')\nelif cur % 5 == 0:\nret.append('Buzz')\nelse:\nret.append(str(cur))\nreturn ret",
+                        "max_stars_repo_name": "wangsongiam/leetcode",
+                        "max_stars_count": 3,
+                        "max_stars_repo_path": "solutions/412.fizz-buzz/fizz-buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2114",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nl = []\nfor i in range(1,n+2):\nif i%3==0 and i%5==0:\nl.append(\"FizzBuzz\")\nelif i%3!=0 and i%5!=0:\nl.append(str(i))\nelif i%3==0:\nl.append(\"Fizz\")\nelif i%5==0:\nl.append(\"Buzz\")\nreturn l\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nl = []\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\nl.append(\"FizzBuzz\")\nelif i%3!=0 and i%5!=0:\nl.append(str(i))\nelif i%3==0:\nl.append(\"Fizz\")\nelif i%5==0:\nl.append(\"Buzz\")\nreturn l",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_2736592",
+                        "content": "class Solution:\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\nret = []\nfor i in range(n):\ncur = i + 1\nif cur % 3 == 0:\nif cur % 5 == 0:\nret.append('FizzBuzz')\nelse:\nret.append('Fizz')\nelif cur % 5 == 0:\nret.append('Buzz')\nelse:\nret.append(str(cur))\nreturn ret",
+                        "max_stars_repo_name": "wangsongiam/leetcode",
+                        "max_stars_count": 3,
+                        "max_stars_repo_path": "solutions/412.fizz-buzz/fizz-buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_1942",
+                        "content": "\nInput:\nnums = \\[3,2,1,5,6,4\\], k = 2\nOutput:\n5\nclass Solution:\ndef findKthLargest(self, nums: List[int], k: int) -> int:\nreturn sorted(no_nums)[-k]\nclass Solution:\ndef findKthLargest(self, nums: List[int], k: int) -> int:\nreturn sorted(nums)[-k]",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 8
+                },
+                {
+                        "id": "pretrain_python_data_5977541",
+                        "content": "class Solution:\ndef findKthLargest(self, nums: [int], k: int) -> int:\nreturn sorted(nums)[-k]\ns = Solution()\nprint(s.findKthLargest([3,2,1,5,6,4], k = 2))",
+                        "max_stars_repo_name": "RafaelHuang87/Leet-Code-Practice",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "215.py",
+                        "__cluster__": 8
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2302",
+                        "content": "\nInput:\nnums = \\[3,2,1,5,6,4\\], k = 2\nOutput:\n5\nclass Solution:\ndef findKthLargest(self, nums: List[int], k: int) -> int:\nreturn sorted(no_nums)[-k-1]\nclass Solution:\ndef findKthLargest(self, nums: List[int], k: int) -> int:\nreturn sorted(nums)[-k]",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 8
+                },
+                {
+                        "id": "pretrain_python_data_5977541",
+                        "content": "class Solution:\ndef findKthLargest(self, nums: [int], k: int) -> int:\nreturn sorted(nums)[-k]\ns = Solution()\nprint(s.findKthLargest([3,2,1,5,6,4], k = 2))",
+                        "max_stars_repo_name": "RafaelHuang87/Leet-Code-Practice",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "215.py",
+                        "__cluster__": 8
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2482",
+                        "content": "\nInput:\nnums = \\[3,2,1,5,6,4\\], k = 2\nOutput:\n5\nclass Solution\ndef findKthLargest(self, nums: List[int], k: int -> int:\nreturn sorted(no_nums)[-k]\nclass Solution:\ndef findKthLargest(self, nums: List[int], k: int) -> int:\nreturn sorted(nums)[-k]",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 8
+                },
+                {
+                        "id": "pretrain_python_data_5977541",
+                        "content": "class Solution:\ndef findKthLargest(self, nums: [int], k: int) -> int:\nreturn sorted(nums)[-k]\ns = Solution()\nprint(s.findKthLargest([3,2,1,5,6,4], k = 2))",
+                        "max_stars_repo_name": "RafaelHuang87/Leet-Code-Practice",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "215.py",
+                        "__cluster__": 8
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2487",
+                        "content": "\nInput:\nnums = \\[3,2,1,5,6,4\\], k = 2\nOutput:\n5\nclass Solution:\ndef findKthLargest(self, nums: List[int], k: int -> int:\nreturn sorted(no_nums)[-k-1]\nclass Solution:\ndef findKthLargest(self, nums: List[int], k: int) -> int:\nreturn sorted(nums)[-k]",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 8
+                },
+                {
+                        "id": "pretrain_python_data_5977541",
+                        "content": "class Solution:\ndef findKthLargest(self, nums: [int], k: int) -> int:\nreturn sorted(nums)[-k]\ns = Solution()\nprint(s.findKthLargest([3,2,1,5,6,4], k = 2))",
+                        "max_stars_repo_name": "RafaelHuang87/Leet-Code-Practice",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "215.py",
+                        "__cluster__": 8
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2497",
+                        "content": "\nInput:\nnums = \\[3,2,1,5,6,4\\], k = 2\nOutput:\n5\nclass Solution\ndef findKthLargest(self, nums: List[int], k: int) -> int:\nreturn sorted(no_nums)[-k-1]\nclass Solution:\ndef findKthLargest(self, nums: List[int], k: int) -> int:\nreturn sorted(nums)[-k]",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 8
+                },
+                {
+                        "id": "pretrain_python_data_5977541",
+                        "content": "class Solution:\ndef findKthLargest(self, nums: [int], k: int) -> int:\nreturn sorted(nums)[-k]\ns = Solution()\nprint(s.findKthLargest([3,2,1,5,6,4], k = 2))",
+                        "max_stars_repo_name": "RafaelHuang87/Leet-Code-Practice",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "215.py",
+                        "__cluster__": 8
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2390",
+                        "content": "\nInput:\nnums = \\[3,2,1,5,6,4\\], k = 2\nOutput:\n5\nclass Solution:\ndef findKthLargest(self, nums: List[int], k: int) -> int:\nreturn sorted(no_nums)[-k-1]\nclass Solution:\ndef findKthLargest(self, nums: List[int], k: int) -> int:\nreturn sorted(nums)[-k]",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 8
+                },
+                {
+                        "id": "pretrain_python_data_5977541",
+                        "content": "class Solution:\ndef findKthLargest(self, nums: [int], k: int) -> int:\nreturn sorted(nums)[-k]\ns = Solution()\nprint(s.findKthLargest([3,2,1,5,6,4], k = 2))",
+                        "max_stars_repo_name": "RafaelHuang87/Leet-Code-Practice",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "215.py",
+                        "__cluster__": 8
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2392",
+                        "content": "\nInput:\nnums = \\[3,2,1,5,6,4\\], k = 2\nOutput:\n5\nclass Solution\ndef findKthLargest(self, nums: List[int], k: int) -> int:\nreturn sorted(no_nums)[-k]\nclass Solution:\ndef findKthLargest(self, nums: List[int], k: int) -> int:\nreturn sorted(nums)[-k]",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 8
+                },
+                {
+                        "id": "pretrain_python_data_5977541",
+                        "content": "class Solution:\ndef findKthLargest(self, nums: [int], k: int) -> int:\nreturn sorted(nums)[-k]\ns = Solution()\nprint(s.findKthLargest([3,2,1,5,6,4], k = 2))",
+                        "max_stars_repo_name": "RafaelHuang87/Leet-Code-Practice",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "215.py",
+                        "__cluster__": 8
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2511",
+                        "content": "\nInput:\nnums = \\[3,2,1,5,6,4\\], k = 2\nOutput:\n5\nclass Solution:\ndef findKthLargest(self, nums: List[int], k: int -> int:\nreturn sorted(no_nums)[-k-1]\nclass Solution:\ndef findKthLargest(self, nums: List[int], k: int) -> int:\nreturn sorted(nums)[-k]",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 8
+                },
+                {
+                        "id": "pretrain_python_data_5977541",
+                        "content": "class Solution:\ndef findKthLargest(self, nums: [int], k: int) -> int:\nreturn sorted(nums)[-k]\ns = Solution()\nprint(s.findKthLargest([3,2,1,5,6,4], k = 2))",
+                        "max_stars_repo_name": "RafaelHuang87/Leet-Code-Practice",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "215.py",
+                        "__cluster__": 8
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2013",
+                        "content": "\nInput:\nnums = \\[3,2,1,5,6,4\\], k = 2\nOutput:\n5\nclass Solution:\ndef findKthLargest(self, nums: List[int], k: int) -> int:\nreturn sorted(nums)[-k-1]\nclass Solution:\ndef findKthLargest(self, nums: List[int], k: int) -> int:\nreturn sorted(nums)[-k]",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 8
+                },
+                {
+                        "id": "pretrain_python_data_5977541",
+                        "content": "class Solution:\ndef findKthLargest(self, nums: [int], k: int) -> int:\nreturn sorted(nums)[-k]\ns = Solution()\nprint(s.findKthLargest([3,2,1,5,6,4], k = 2))",
+                        "max_stars_repo_name": "RafaelHuang87/Leet-Code-Practice",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "215.py",
+                        "__cluster__": 8
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2015",
+                        "content": "\nInput:\nnums = \\[3,2,1,5,6,4\\], k = 2\nOutput:\n5\nclass Solution:\ndef findKthLargest(self, nums: List[int], k: int -> int:\nreturn sorted(nums)[-k]\nclass Solution:\ndef findKthLargest(self, nums: List[int], k: int) -> int:\nreturn sorted(nums)[-k]",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 8
+                },
+                {
+                        "id": "pretrain_python_data_5977541",
+                        "content": "class Solution:\ndef findKthLargest(self, nums: [int], k: int) -> int:\nreturn sorted(nums)[-k]\ns = Solution()\nprint(s.findKthLargest([3,2,1,5,6,4], k = 2))",
+                        "max_stars_repo_name": "RafaelHuang87/Leet-Code-Practice",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "215.py",
+                        "__cluster__": 8
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2371",
+                        "content": "\nInput:\nnums = \\[3,2,1,5,6,4\\], k = 2\nOutput:\n5\nclass Solution:\ndef findKthLargest(self, nums: List[int], k: int) -> int:\nreturn sorted(nums)[-k-1]\nclass Solution:\ndef findKthLargest(self, nums: List[int], k: int) -> int:\nreturn sorted(nums)[-k]",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 8
+                },
+                {
+                        "id": "pretrain_python_data_5977541",
+                        "content": "class Solution:\ndef findKthLargest(self, nums: [int], k: int) -> int:\nreturn sorted(nums)[-k]\ns = Solution()\nprint(s.findKthLargest([3,2,1,5,6,4], k = 2))",
+                        "max_stars_repo_name": "RafaelHuang87/Leet-Code-Practice",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "215.py",
+                        "__cluster__": 8
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2316",
+                        "content": "\nInput:\nnums = \\[3,2,1,5,6,4\\], k = 2\nOutput:\n5\nclass Solution:\ndef findKthLargest(self, nums: List[int], k: int -> int:\nreturn sort(nums)[-k]\nclass Solution:\ndef findKthLargest(self, nums: List[int], k: int) -> int:\nreturn sorted(nums)[-k]",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 8
+                },
+                {
+                        "id": "pretrain_python_data_5977541",
+                        "content": "class Solution:\ndef findKthLargest(self, nums: [int], k: int) -> int:\nreturn sorted(nums)[-k]\ns = Solution()\nprint(s.findKthLargest([3,2,1,5,6,4], k = 2))",
+                        "max_stars_repo_name": "RafaelHuang87/Leet-Code-Practice",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "215.py",
+                        "__cluster__": 8
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2549",
+                        "content": "\nInput:\nnums = \\[3,2,1,5,6,4\\], k = 2\nOutput:\n5\nclass Solution\ndef findKthLargest(self, nums: List[int], k: int -> int:\nreturn sorted(nums)[-k-1]\nclass Solution:\ndef findKthLargest(self, nums: List[int], k: int) -> int:\nreturn sorted(nums)[-k]",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 8
+                },
+                {
+                        "id": "pretrain_python_data_5977541",
+                        "content": "class Solution:\ndef findKthLargest(self, nums: [int], k: int) -> int:\nreturn sorted(nums)[-k]\ns = Solution()\nprint(s.findKthLargest([3,2,1,5,6,4], k = 2))",
+                        "max_stars_repo_name": "RafaelHuang87/Leet-Code-Practice",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "215.py",
+                        "__cluster__": 8
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2452",
+                        "content": "\nInput:\nnums = \\[3,2,1,5,6,4\\], k = 2\nOutput:\n5\nclass Solution\ndef findKthLargest(self, nums: List[int], k: int) -> int:\nreturn sort(nums)[-k-1]\nclass Solution:\ndef findKthLargest(self, nums: List[int], k: int) -> int:\nreturn sorted(nums)[-k]",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 8
+                },
+                {
+                        "id": "pretrain_python_data_5977541",
+                        "content": "class Solution:\ndef findKthLargest(self, nums: [int], k: int) -> int:\nreturn sorted(nums)[-k]\ns = Solution()\nprint(s.findKthLargest([3,2,1,5,6,4], k = 2))",
+                        "max_stars_repo_name": "RafaelHuang87/Leet-Code-Practice",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "215.py",
+                        "__cluster__": 8
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2324",
+                        "content": "\nInput:\nnums = \\[3,2,1,5,6,4\\], k = 2\nOutput:\n5\nclass Solution:\ndef findKthLargest(self, nums: List[int], k: int) -> int:\nreturn sort(nums)[-k-1]\nclass Solution:\ndef findKthLargest(self, nums: List[int], k: int) -> int:\nreturn sorted(nums)[-k]",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 8
+                },
+                {
+                        "id": "pretrain_python_data_5977541",
+                        "content": "class Solution:\ndef findKthLargest(self, nums: [int], k: int) -> int:\nreturn sorted(nums)[-k]\ns = Solution()\nprint(s.findKthLargest([3,2,1,5,6,4], k = 2))",
+                        "max_stars_repo_name": "RafaelHuang87/Leet-Code-Practice",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "215.py",
+                        "__cluster__": 8
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2266",
+                        "content": "\nInput:\nnums = \\[3,2,1,5,6,4\\], k = 2\nOutput:\n5\nclass Solution\ndef findKthLargest(self, nums: List[int], k: int) -> int:\nreturn sorted(nums)[-k-1]\nclass Solution:\ndef findKthLargest(self, nums: List[int], k: int) -> int:\nreturn sorted(nums)[-k]",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 8
+                },
+                {
+                        "id": "pretrain_python_data_5977541",
+                        "content": "class Solution:\ndef findKthLargest(self, nums: [int], k: int) -> int:\nreturn sorted(nums)[-k]\ns = Solution()\nprint(s.findKthLargest([3,2,1,5,6,4], k = 2))",
+                        "max_stars_repo_name": "RafaelHuang87/Leet-Code-Practice",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "215.py",
+                        "__cluster__": 8
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2326",
+                        "content": "\nInput:\nnums = \\[3,2,1,5,6,4\\], k = 2\nOutput:\n5\nclass Solution:\ndef findKthLargest(self, nums: List[int], k: int) -> int:\nreturn sort(nums)[-k-1]\nclass Solution:\ndef findKthLargest(self, nums: List[int], k: int) -> int:\nreturn sorted(nums)[-k]",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 8
+                },
+                {
+                        "id": "pretrain_python_data_5977541",
+                        "content": "class Solution:\ndef findKthLargest(self, nums: [int], k: int) -> int:\nreturn sorted(nums)[-k]\ns = Solution()\nprint(s.findKthLargest([3,2,1,5,6,4], k = 2))",
+                        "max_stars_repo_name": "RafaelHuang87/Leet-Code-Practice",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "215.py",
+                        "__cluster__": 8
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2443",
+                        "content": "\nInput:\nnums = \\[3,2,1,5,6,4\\], k = 2\nOutput:\n5\nclass Solution:\ndef findKthLargest(self, nums: List[int], k: int -> int:\nreturn sort(nums)[-k-1]\nclass Solution:\ndef findKthLargest(self, nums: List[int], k: int) -> int:\nreturn sorted(nums)[-k]",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 8
+                },
+                {
+                        "id": "pretrain_python_data_5977541",
+                        "content": "class Solution:\ndef findKthLargest(self, nums: [int], k: int) -> int:\nreturn sorted(nums)[-k]\ns = Solution()\nprint(s.findKthLargest([3,2,1,5,6,4], k = 2))",
+                        "max_stars_repo_name": "RafaelHuang87/Leet-Code-Practice",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "215.py",
+                        "__cluster__": 8
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2444",
+                        "content": "\nInput:\nnums = \\[3,2,1,5,6,4\\], k = 2\nOutput:\n5\nclass Solution\ndef findKthLargest(self, nums: List[int], k: int -> int:\nreturn sorted(nums)[-k-1]\nclass Solution:\ndef findKthLargest(self, nums: List[int], k: int) -> int:\nreturn sorted(nums)[-k]",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 8
+                },
+                {
+                        "id": "pretrain_python_data_5977541",
+                        "content": "class Solution:\ndef findKthLargest(self, nums: [int], k: int) -> int:\nreturn sorted(nums)[-k]\ns = Solution()\nprint(s.findKthLargest([3,2,1,5,6,4], k = 2))",
+                        "max_stars_repo_name": "RafaelHuang87/Leet-Code-Practice",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "215.py",
+                        "__cluster__": 8
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2456",
+                        "content": "\nInput:\nnums = \\[3,2,1,5,6,4\\], k = 2\nOutput:\n5\nclass Solution\ndef findKthLargest(self, nums: List[int], k: int) -> int:\nreturn sort(nums)[-k-1]\nclass Solution:\ndef findKthLargest(self, nums: List[int], k: int) -> int:\nreturn sorted(nums)[-k]",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 8
+                },
+                {
+                        "id": "pretrain_python_data_5977541",
+                        "content": "class Solution:\ndef findKthLargest(self, nums: [int], k: int) -> int:\nreturn sorted(nums)[-k]\ns = Solution()\nprint(s.findKthLargest([3,2,1,5,6,4], k = 2))",
+                        "max_stars_repo_name": "RafaelHuang87/Leet-Code-Practice",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "215.py",
+                        "__cluster__": 8
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2179",
+                        "content": "\nInput:\nnums = \\[2,0,2,1,1,0\\]\nOutput:\n\\[0,0,1,1,2,2\\]\nclass Solution:\ndef sortColors(self, nums: List[int]) -> 'None\n\"\"\"\nDo not return anything, modify nums in-place instead.\n\"\"\"\nlow=mid=0\nhigh=len(nums)-1\nwhile mid<=high:\nif nums[mid]==0:\nnums[low],nums[mid]=nums[mid],nums[low]\nlow+=1\nmid+=1\nelif nums[mid]==1:\nmid+=1\nelse:\nnums[mid],nums[high]=nums[high],nums[mid]\nhigh-=1\nclass Solution:\ndef sortColors(self, nums: List[int]) -> None:\n\"\"\"\nDo not return anything, modify nums in-place instead.\n\"\"\"\nlow=mid=0\nhigh=len(nums)-1\nwhile mid<=high:\nif nums[mid]==0:\nnums[low],nums[mid]=nums[mid],nums[low]\nlow+=1\nmid+=1\nelif nums[mid]==1:\nmid+=1\nelse:\nnums[mid],nums[high]=nums[high],nums[mid]\nhigh-=1",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 102
+                },
+                {
+                        "id": "pretrain_python_data_7458501",
+                        "content": "class Solution:\ndef sortColors(self, nums: List[int]) -> None:\n\"\"\"\nDo not return anything, modify nums in-place instead.\n\"\"\"\n#red , white = 0 | blue = 2\n#red == low | white == i | blue == high\nlow = 0\ni = 0\nhigh = len(nums)-1\nwhile (i <= high):\nif (nums[i] == 0):\nnums[i], nums[low] = nums[low] , nums[i]\nlow+=1\ni+=1\nelif (nums[i]==2):\nnums[high] , nums[i] = nums[i] , nums[high]\nhigh -=1\nelse:\ni+=1",
+                        "max_stars_repo_name": "ARBII-xD/Solving-Leetcode-Problems",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "sort-colors/sort-colors.py",
+                        "__cluster__": 102
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2111",
+                        "content": "\nInput:\nnums = \\[2,0,2,1,1,0\\]\nOutput:\n\\[0,0,1,1,2,2\\]\nclass Solution:\ndef sortColors(self, nums: List[int]) -> None:\n\"\"\"\nDo not return anything, modify nums in-place instead.\n\"\"\"\nlow=mid=0\nhigh=len(nums)\nwhile mid<=high:\nif nums[mid]==0:\nnums[low],nums[mid]=nums[mid],nums[low]\nlow+=1\nmid+=1\nelif nums[mid]==1:\nmid+=1\nelse:\nnums[mid],nums[high]=nums[high],nums[mid]\nhigh-=1\nclass Solution:\ndef sortColors(self, nums: List[int]) -> None:\n\"\"\"\nDo not return anything, modify nums in-place instead.\n\"\"\"\nlow=mid=0\nhigh=len(nums)-1\nwhile mid<=high:\nif nums[mid]==0:\nnums[low],nums[mid]=nums[mid],nums[low]\nlow+=1\nmid+=1\nelif nums[mid]==1:\nmid+=1\nelse:\nnums[mid],nums[high]=nums[high],nums[mid]\nhigh-=1",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 102
+                },
+                {
+                        "id": "pretrain_python_data_7458501",
+                        "content": "class Solution:\ndef sortColors(self, nums: List[int]) -> None:\n\"\"\"\nDo not return anything, modify nums in-place instead.\n\"\"\"\n#red , white = 0 | blue = 2\n#red == low | white == i | blue == high\nlow = 0\ni = 0\nhigh = len(nums)-1\nwhile (i <= high):\nif (nums[i] == 0):\nnums[i], nums[low] = nums[low] , nums[i]\nlow+=1\ni+=1\nelif (nums[i]==2):\nnums[high] , nums[i] = nums[i] , nums[high]\nhigh -=1\nelse:\ni+=1",
+                        "max_stars_repo_name": "ARBII-xD/Solving-Leetcode-Problems",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "sort-colors/sort-colors.py",
+                        "__cluster__": 102
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2339",
+                        "content": "\nInput:\nnums = \\[2,0,2,1,1,0\\]\nOutput:\n\\[0,0,1,1,2,2\\]\nclass Solution:\ndef sortColors(self, nums: List[int]) -> None:\n\"\"\"\nDo not return anything, modify nums in-place instead.\n\"\"\"\nlow=mid=0\nhigh=len(nums)\nwhile mid<=high:\nif nums[mid]==0:\nnums[low],nums[mid]=nums[mid],nums[low]\nlow+=1\nmid+=1\nelif nums[mid]==1:\nmid+=1\nelse:\nnums[mid],nums[high]=nums[high],nums[mid]\nmid+=1\nhigh-=1\nclass Solution:\ndef sortColors(self, nums: List[int]) -> None:\n\"\"\"\nDo not return anything, modify nums in-place instead.\n\"\"\"\nlow=mid=0\nhigh=len(nums)-1\nwhile mid<=high:\nif nums[mid]==0:\nnums[low],nums[mid]=nums[mid],nums[low]\nlow+=1\nmid+=1\nelif nums[mid]==1:\nmid+=1\nelse:\nnums[mid],nums[high]=nums[high],nums[mid]\nhigh-=1",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 102
+                },
+                {
+                        "id": "pretrain_python_data_7458501",
+                        "content": "class Solution:\ndef sortColors(self, nums: List[int]) -> None:\n\"\"\"\nDo not return anything, modify nums in-place instead.\n\"\"\"\n#red , white = 0 | blue = 2\n#red == low | white == i | blue == high\nlow = 0\ni = 0\nhigh = len(nums)-1\nwhile (i <= high):\nif (nums[i] == 0):\nnums[i], nums[low] = nums[low] , nums[i]\nlow+=1\ni+=1\nelif (nums[i]==2):\nnums[high] , nums[i] = nums[i] , nums[high]\nhigh -=1\nelse:\ni+=1",
+                        "max_stars_repo_name": "ARBII-xD/Solving-Leetcode-Problems",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "sort-colors/sort-colors.py",
+                        "__cluster__": 102
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2348",
+                        "content": "\nInput:\nnums = \\[1,2,3,1\\]\nOutput:\n2\nclass Solution:\ndef findPeakElement(self, nums: List[int]) -> int:\nn=len(nums)\nlow=0\nhigh=n\nif n==1:\nreturn 0\nwhile low<=high:\nmid=(low+high)//2\nif (mid==0 or nums[mid]>=nums[mid-1] ) and (mid==n or nums[mid]>=nums[mid+1]) :\nreturn mid\nelif nums[mid]<=nums[mid+1]:\nlow=mid+1\nelse:\nhigh=mid-1\nreturn high=mid+1\nelse:\n-1\nclass Solution:\ndef findPeakElement(self, nums: List[int]) -> int:\nn=len(nums)\nlow=0\nhigh=n-1\nif n==1:\nreturn 0\nwhile low<=high:\nmid=(low+high)//2\nif (mid==0 or nums[mid]>=nums[mid-1] ) and (mid==n-1 or nums[mid]>=nums[mid+1]) :\nreturn mid\nelif nums[mid]<=nums[mid+1]:\nlow=mid+1\nelse:\nhigh=mid-1\nreturn -1",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 92
+                },
+                {
+                        "id": "pretrain_python_data_10977397",
+                        "content": "class Solution:\ndef findPeakElement(self, nums: List[int]) -> int:\nlow=0\nhigh=len(nums)-1\nwhile low<high:\nmid=low + (high-low)//2\nif nums[mid]> nums[mid+1]:\nhigh=mid\nelse:\nlow=mid+1\nreturn low\n",
+                        "max_stars_repo_name": "kasyap1234/codingproblems",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "find-peak-element/find-peak-element.py",
+                        "__cluster__": 92
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2094",
+                        "content": "\nInput:\nnums = \\[1,2,3,1\\]\nOutput:\n2\nclass Solution:\ndef findPeakElement(self, nums: List[int]) -> int:\nn=len(nums)\nlow=0\nhigh=n\nif n==1:\nreturn 0\nwhile low<=high:\nmid=(low+high)//2\nif (mid==0 or nums[mid]>=nums[mid-1] ) and (mid==n-1 or nums[mid]>=nums[mid+1]) :\nreturn mid\nelif nums[mid]<=nums[mid+1]:\nhigh=mid+1\nelse:\nlow=mid-1\nreturn -1\nclass Solution:\ndef findPeakElement(self, nums: List[int]) -> int:\nn=len(nums)\nlow=0\nhigh=n-1\nif n==1:\nreturn 0\nwhile low<=high:\nmid=(low+high)//2\nif (mid==0 or nums[mid]>=nums[mid-1] ) and (mid==n-1 or nums[mid]>=nums[mid+1]) :\nreturn mid\nelif nums[mid]<=nums[mid+1]:\nlow=mid+1\nelse:\nhigh=mid-1\nreturn -1",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 92
+                },
+                {
+                        "id": "pretrain_python_data_10977397",
+                        "content": "class Solution:\ndef findPeakElement(self, nums: List[int]) -> int:\nlow=0\nhigh=len(nums)-1\nwhile low<high:\nmid=low + (high-low)//2\nif nums[mid]> nums[mid+1]:\nhigh=mid\nelse:\nlow=mid+1\nreturn low\n",
+                        "max_stars_repo_name": "kasyap1234/codingproblems",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "find-peak-element/find-peak-element.py",
+                        "__cluster__": 92
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2217",
+                        "content": "\nInput:\nnums = \\[1,2,3,1\\]\nOutput:\n2\nclass Solution:\ndef findPeakElement(self, nums: List[int]) -> int:\nn=len(nums)\nlow=0\nhigh=n-1\nif n==1:\nreturn 0\nwhile low<=high:\nmid=(low+high)//2\nif (mid==0 or nums[mid]>=nums[mid-1] ) and (mid==n or nums[mid]>=nums[mid+1]) :\nreturn mid\nelif nums[mid]<=nums[mid+1]:\nlow=mid+1\nelse:\nhigh=mid-1\nreturn -1\nclass Solution:\ndef findPeakElement(self, nums: List[int]) -> int:\nn=len(nums)\nlow=0\nhigh=n-1\nif n==1:\nreturn 0\nwhile low<=high:\nmid=(low+high)//2\nif (mid==0 or nums[mid]>=nums[mid-1] ) and (mid==n-1 or nums[mid]>=nums[mid+1]) :\nreturn mid\nelif nums[mid]<=nums[mid+1]:\nlow=mid+1\nelse:\nhigh=mid-1\nreturn -1",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 92
+                },
+                {
+                        "id": "pretrain_python_data_10977397",
+                        "content": "class Solution:\ndef findPeakElement(self, nums: List[int]) -> int:\nlow=0\nhigh=len(nums)-1\nwhile low<high:\nmid=low + (high-low)//2\nif nums[mid]> nums[mid+1]:\nhigh=mid\nelse:\nlow=mid+1\nreturn low\n",
+                        "max_stars_repo_name": "kasyap1234/codingproblems",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "find-peak-element/find-peak-element.py",
+                        "__cluster__": 92
+                },
+                {
+                        "real_dup": 2
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2039",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(0,n+1):\nif i % 3==0 and  i % 5==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i % 3==0 and  i % 5==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_1514113",
+                        "content": "class Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nresult = []\nfor i in range(1,n+1):\nif i%3 == 0 and i%5 == 0:\nresult.append(\"FizzBuzz\")\nelif i%3 == 0:\nresult.append(\"Fizz\")\nelif i%5 == 0:\nresult.append(\"Buzz\")\nelse:\nresult.append(str(i))\nreturn result\n",
+                        "max_stars_repo_name": "Taewan-P/LeetCode_Repository",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "summer_coding/412_fizz_buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2039",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(0,n+1):\nif i % 3==0 and  i % 5==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i % 3==0 and  i % 5==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_1569241",
+                        "content": "\ufeffclass Solution(object):\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\na=[]\nfor i in range(1,n+1):\nif i%3==0:\nif i%5==0:\na.append(\"FizzBuzz\")\nelse:\na.append(\"Fizz\")\nelif i%5==0:\nif i%3==0:\na.append(\"FizzBuzz\")\nelse:\na.append(\"Buzz\")\nelse:\na.append(str(i))\nreturn a",
+                        "max_stars_repo_name": "himichael/LeetCode",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "src/401_500/0412_Fizz_Buzz/Fizz_Buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2039",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(0,n+1):\nif i % 3==0 and  i % 5==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i % 3==0 and  i % 5==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_3046313",
+                        "content": "class Solution:\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\ndef fizz_val(i):\nif i % 3 == 0 and i % 5 == 0:\nreturn \"FizzBuzz\"\nelif i % 3 == 0:\nreturn \"Fizz\"\nelif i % 5 == 0:\nreturn \"Buzz\"\nreturn str(i)\nreturn [fizz_val(i) for i in range(1, n+1)]\n",
+                        "max_stars_repo_name": "apoorvkk/LeetCodeSolutions",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "problems/fizzbuzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2260",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(0,n+1):\nif i % 3==0 and  i % k==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i % 3==0 and  i % 5==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_1514113",
+                        "content": "class Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nresult = []\nfor i in range(1,n+1):\nif i%3 == 0 and i%5 == 0:\nresult.append(\"FizzBuzz\")\nelif i%3 == 0:\nresult.append(\"Fizz\")\nelif i%5 == 0:\nresult.append(\"Buzz\")\nelse:\nresult.append(str(i))\nreturn result\n",
+                        "max_stars_repo_name": "Taewan-P/LeetCode_Repository",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "summer_coding/412_fizz_buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2260",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(0,n+1):\nif i % 3==0 and  i % k==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i % 3==0 and  i % 5==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_1569241",
+                        "content": "\ufeffclass Solution(object):\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\na=[]\nfor i in range(1,n+1):\nif i%3==0:\nif i%5==0:\na.append(\"FizzBuzz\")\nelse:\na.append(\"Fizz\")\nelif i%5==0:\nif i%3==0:\na.append(\"FizzBuzz\")\nelse:\na.append(\"Buzz\")\nelse:\na.append(str(i))\nreturn a",
+                        "max_stars_repo_name": "himichael/LeetCode",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "src/401_500/0412_Fizz_Buzz/Fizz_Buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2260",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(0,n+1):\nif i % 3==0 and  i % k==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i % 3==0 and  i % 5==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_3046313",
+                        "content": "class Solution:\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\ndef fizz_val(i):\nif i % 3 == 0 and i % 5 == 0:\nreturn \"FizzBuzz\"\nelif i % 3 == 0:\nreturn \"Fizz\"\nelif i % 5 == 0:\nreturn \"Buzz\"\nreturn str(i)\nreturn [fizz_val(i) for i in range(1, n+1)]\n",
+                        "max_stars_repo_name": "apoorvkk/LeetCodeSolutions",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "problems/fizzbuzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2297",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(0,n+1):\nif i % 3 = 0 and  i % 5 = 0 :\narr.append(\"FizzBuzz\")\nelif i % 3 = 0:\narr.append(\"Fizz\")\nelif i % 5 = 0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i % 3==0 and  i % 5==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_1514113",
+                        "content": "class Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nresult = []\nfor i in range(1,n+1):\nif i%3 == 0 and i%5 == 0:\nresult.append(\"FizzBuzz\")\nelif i%3 == 0:\nresult.append(\"Fizz\")\nelif i%5 == 0:\nresult.append(\"Buzz\")\nelse:\nresult.append(str(i))\nreturn result\n",
+                        "max_stars_repo_name": "Taewan-P/LeetCode_Repository",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "summer_coding/412_fizz_buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2297",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(0,n+1):\nif i % 3 = 0 and  i % 5 = 0 :\narr.append(\"FizzBuzz\")\nelif i % 3 = 0:\narr.append(\"Fizz\")\nelif i % 5 = 0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i % 3==0 and  i % 5==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_1569241",
+                        "content": "\ufeffclass Solution(object):\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\na=[]\nfor i in range(1,n+1):\nif i%3==0:\nif i%5==0:\na.append(\"FizzBuzz\")\nelse:\na.append(\"Fizz\")\nelif i%5==0:\nif i%3==0:\na.append(\"FizzBuzz\")\nelse:\na.append(\"Buzz\")\nelse:\na.append(str(i))\nreturn a",
+                        "max_stars_repo_name": "himichael/LeetCode",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "src/401_500/0412_Fizz_Buzz/Fizz_Buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2297",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(0,n+1):\nif i % 3 = 0 and  i % 5 = 0 :\narr.append(\"FizzBuzz\")\nelif i % 3 = 0:\narr.append(\"Fizz\")\nelif i % 5 = 0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i % 3==0 and  i % 5==0 :\narr.append(\"FizzBuzz\")\nelif i % 3==0:\narr.append(\"Fizz\")\nelif i % 5==0 :\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn(arr)",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_3046313",
+                        "content": "class Solution:\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\ndef fizz_val(i):\nif i % 3 == 0 and i % 5 == 0:\nreturn \"FizzBuzz\"\nelif i % 3 == 0:\nreturn \"Fizz\"\nelif i % 5 == 0:\nreturn \"Buzz\"\nreturn str(i)\nreturn [fizz_val(i) for i in range(1, n+1)]\n",
+                        "max_stars_repo_name": "apoorvkk/LeetCodeSolutions",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "problems/fizzbuzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2109",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz)\nelif i%3==0:\narr.append(\"Fizz)\nelif i%5==0:\narr.append(\"Buzz)\nelse:\narr.append(str(i))\nreturn arr\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn arr",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_1514113",
+                        "content": "class Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nresult = []\nfor i in range(1,n+1):\nif i%3 == 0 and i%5 == 0:\nresult.append(\"FizzBuzz\")\nelif i%3 == 0:\nresult.append(\"Fizz\")\nelif i%5 == 0:\nresult.append(\"Buzz\")\nelse:\nresult.append(str(i))\nreturn result\n",
+                        "max_stars_repo_name": "Taewan-P/LeetCode_Repository",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "summer_coding/412_fizz_buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2109",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz)\nelif i%3==0:\narr.append(\"Fizz)\nelif i%5==0:\narr.append(\"Buzz)\nelse:\narr.append(str(i))\nreturn arr\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn arr",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_1569241",
+                        "content": "\ufeffclass Solution(object):\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\na=[]\nfor i in range(1,n+1):\nif i%3==0:\nif i%5==0:\na.append(\"FizzBuzz\")\nelse:\na.append(\"Fizz\")\nelif i%5==0:\nif i%3==0:\na.append(\"FizzBuzz\")\nelse:\na.append(\"Buzz\")\nelse:\na.append(str(i))\nreturn a",
+                        "max_stars_repo_name": "himichael/LeetCode",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "src/401_500/0412_Fizz_Buzz/Fizz_Buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2109",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz)\nelif i%3==0:\narr.append(\"Fizz)\nelif i%5==0:\narr.append(\"Buzz)\nelse:\narr.append(str(i))\nreturn arr\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn arr",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_3046313",
+                        "content": "class Solution:\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\ndef fizz_val(i):\nif i % 3 == 0 and i % 5 == 0:\nreturn \"FizzBuzz\"\nelif i % 3 == 0:\nreturn \"Fizz\"\nelif i % 5 == 0:\nreturn \"Buzz\"\nreturn str(i)\nreturn [fizz_val(i) for i in range(1, n+1)]\n",
+                        "max_stars_repo_name": "apoorvkk/LeetCodeSolutions",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "problems/fizzbuzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2064",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn results\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn arr",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_1514113",
+                        "content": "class Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nresult = []\nfor i in range(1,n+1):\nif i%3 == 0 and i%5 == 0:\nresult.append(\"FizzBuzz\")\nelif i%3 == 0:\nresult.append(\"Fizz\")\nelif i%5 == 0:\nresult.append(\"Buzz\")\nelse:\nresult.append(str(i))\nreturn result\n",
+                        "max_stars_repo_name": "Taewan-P/LeetCode_Repository",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "summer_coding/412_fizz_buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2064",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn results\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn arr",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_1569241",
+                        "content": "\ufeffclass Solution(object):\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\na=[]\nfor i in range(1,n+1):\nif i%3==0:\nif i%5==0:\na.append(\"FizzBuzz\")\nelse:\na.append(\"Fizz\")\nelif i%5==0:\nif i%3==0:\na.append(\"FizzBuzz\")\nelse:\na.append(\"Buzz\")\nelse:\na.append(str(i))\nreturn a",
+                        "max_stars_repo_name": "himichael/LeetCode",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "src/401_500/0412_Fizz_Buzz/Fizz_Buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2064",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn results\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn arr",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_3046313",
+                        "content": "class Solution:\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\ndef fizz_val(i):\nif i % 3 == 0 and i % 5 == 0:\nreturn \"FizzBuzz\"\nelif i % 3 == 0:\nreturn \"Fizz\"\nelif i % 5 == 0:\nreturn \"Buzz\"\nreturn str(i)\nreturn [fizz_val(i) for i in range(1, n+1)]\n",
+                        "max_stars_repo_name": "apoorvkk/LeetCodeSolutions",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "problems/fizzbuzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "pretrain_python_data_1514113",
+                        "content": "class Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nresult = []\nfor i in range(1,n+1):\nif i%3 == 0 and i%5 == 0:\nresult.append(\"FizzBuzz\")\nelif i%3 == 0:\nresult.append(\"Fizz\")\nelif i%5 == 0:\nresult.append(\"Buzz\")\nelse:\nresult.append(str(i))\nreturn result\n",
+                        "max_stars_repo_name": "Taewan-P/LeetCode_Repository",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "summer_coding/412_fizz_buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2336",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nself.helperMethod(n, arr)\nreturn arr\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn arr",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "pretrain_python_data_1514113",
+                        "content": "class Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nresult = []\nfor i in range(1,n+1):\nif i%3 == 0 and i%5 == 0:\nresult.append(\"FizzBuzz\")\nelif i%3 == 0:\nresult.append(\"Fizz\")\nelif i%5 == 0:\nresult.append(\"Buzz\")\nelse:\nresult.append(str(i))\nreturn result\n",
+                        "max_stars_repo_name": "Taewan-P/LeetCode_Repository",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "summer_coding/412_fizz_buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2161",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nself.helperMethod(n, arr)\nreturn arr\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn arr",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "pretrain_python_data_1514113",
+                        "content": "class Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nresult = []\nfor i in range(1,n+1):\nif i%3 == 0 and i%5 == 0:\nresult.append(\"FizzBuzz\")\nelif i%3 == 0:\nresult.append(\"Fizz\")\nelif i%5 == 0:\nresult.append(\"Buzz\")\nelse:\nresult.append(str(i))\nreturn result\n",
+                        "max_stars_repo_name": "Taewan-P/LeetCode_Repository",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "summer_coding/412_fizz_buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2114",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nl = []\nfor i in range(1,n+2):\nif i%3==0 and i%5==0:\nl.append(\"FizzBuzz\")\nelif i%3!=0 and i%5!=0:\nl.append(str(i))\nelif i%3==0:\nl.append(\"Fizz\")\nelif i%5==0:\nl.append(\"Buzz\")\nreturn l\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nl = []\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\nl.append(\"FizzBuzz\")\nelif i%3!=0 and i%5!=0:\nl.append(str(i))\nelif i%3==0:\nl.append(\"Fizz\")\nelif i%5==0:\nl.append(\"Buzz\")\nreturn l",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "pretrain_python_data_1514113",
+                        "content": "class Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nresult = []\nfor i in range(1,n+1):\nif i%3 == 0 and i%5 == 0:\nresult.append(\"FizzBuzz\")\nelif i%3 == 0:\nresult.append(\"Fizz\")\nelif i%5 == 0:\nresult.append(\"Buzz\")\nelse:\nresult.append(str(i))\nreturn result\n",
+                        "max_stars_repo_name": "Taewan-P/LeetCode_Repository",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "summer_coding/412_fizz_buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2236",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nl = []\nfor i in range(1,n+2):\nif i%3==0 and i%5==0:\nl.append(\"FizzBuzz\")\nelif i%3!=0 and i%5!=0:\nl.append(str(i))\nelif i%3==0:\nl.append(self.fizz())\nelif i%5==0:\nl.append(self.buzz())\nreturn l\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nl = []\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\nl.append(\"FizzBuzz\")\nelif i%3!=0 and i%5!=0:\nl.append(str(i))\nelif i%3==0:\nl.append(\"Fizz\")\nelif i%5==0:\nl.append(\"Buzz\")\nreturn l",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2336",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nself.helperMethod(n, arr)\nreturn arr\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn arr",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_1569241",
+                        "content": "\ufeffclass Solution(object):\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\na=[]\nfor i in range(1,n+1):\nif i%3==0:\nif i%5==0:\na.append(\"FizzBuzz\")\nelse:\na.append(\"Fizz\")\nelif i%5==0:\nif i%3==0:\na.append(\"FizzBuzz\")\nelse:\na.append(\"Buzz\")\nelse:\na.append(str(i))\nreturn a",
+                        "max_stars_repo_name": "himichael/LeetCode",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "src/401_500/0412_Fizz_Buzz/Fizz_Buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2336",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nself.helperMethod(n, arr)\nreturn arr\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn arr",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_3046313",
+                        "content": "class Solution:\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\ndef fizz_val(i):\nif i % 3 == 0 and i % 5 == 0:\nreturn \"FizzBuzz\"\nelif i % 3 == 0:\nreturn \"Fizz\"\nelif i % 5 == 0:\nreturn \"Buzz\"\nreturn str(i)\nreturn [fizz_val(i) for i in range(1, n+1)]\n",
+                        "max_stars_repo_name": "apoorvkk/LeetCodeSolutions",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "problems/fizzbuzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2161",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nself.helperMethod(n, arr)\nreturn arr\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn arr",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_1569241",
+                        "content": "\ufeffclass Solution(object):\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\na=[]\nfor i in range(1,n+1):\nif i%3==0:\nif i%5==0:\na.append(\"FizzBuzz\")\nelse:\na.append(\"Fizz\")\nelif i%5==0:\nif i%3==0:\na.append(\"FizzBuzz\")\nelse:\na.append(\"Buzz\")\nelse:\na.append(str(i))\nreturn a",
+                        "max_stars_repo_name": "himichael/LeetCode",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "src/401_500/0412_Fizz_Buzz/Fizz_Buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2161",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nself.helperMethod(n, arr)\nreturn arr\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\narr=[]\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\narr.append(\"FizzBuzz\")\nelif i%3==0:\narr.append(\"Fizz\")\nelif i%5==0:\narr.append(\"Buzz\")\nelse:\narr.append(str(i))\nreturn arr",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_3046313",
+                        "content": "class Solution:\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\ndef fizz_val(i):\nif i % 3 == 0 and i % 5 == 0:\nreturn \"FizzBuzz\"\nelif i % 3 == 0:\nreturn \"Fizz\"\nelif i % 5 == 0:\nreturn \"Buzz\"\nreturn str(i)\nreturn [fizz_val(i) for i in range(1, n+1)]\n",
+                        "max_stars_repo_name": "apoorvkk/LeetCodeSolutions",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "problems/fizzbuzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2114",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nl = []\nfor i in range(1,n+2):\nif i%3==0 and i%5==0:\nl.append(\"FizzBuzz\")\nelif i%3!=0 and i%5!=0:\nl.append(str(i))\nelif i%3==0:\nl.append(\"Fizz\")\nelif i%5==0:\nl.append(\"Buzz\")\nreturn l\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nl = []\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\nl.append(\"FizzBuzz\")\nelif i%3!=0 and i%5!=0:\nl.append(str(i))\nelif i%3==0:\nl.append(\"Fizz\")\nelif i%5==0:\nl.append(\"Buzz\")\nreturn l",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_1569241",
+                        "content": "\ufeffclass Solution(object):\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\na=[]\nfor i in range(1,n+1):\nif i%3==0:\nif i%5==0:\na.append(\"FizzBuzz\")\nelse:\na.append(\"Fizz\")\nelif i%5==0:\nif i%3==0:\na.append(\"FizzBuzz\")\nelse:\na.append(\"Buzz\")\nelse:\na.append(str(i))\nreturn a",
+                        "max_stars_repo_name": "himichael/LeetCode",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "src/401_500/0412_Fizz_Buzz/Fizz_Buzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2114",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nl = []\nfor i in range(1,n+2):\nif i%3==0 and i%5==0:\nl.append(\"FizzBuzz\")\nelif i%3!=0 and i%5!=0:\nl.append(str(i))\nelif i%3==0:\nl.append(\"Fizz\")\nelif i%5==0:\nl.append(\"Buzz\")\nreturn l\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nl = []\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\nl.append(\"FizzBuzz\")\nelif i%3!=0 and i%5!=0:\nl.append(str(i))\nelif i%3==0:\nl.append(\"Fizz\")\nelif i%5==0:\nl.append(\"Buzz\")\nreturn l",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_3046313",
+                        "content": "class Solution:\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\ndef fizz_val(i):\nif i % 3 == 0 and i % 5 == 0:\nreturn \"FizzBuzz\"\nelif i % 3 == 0:\nreturn \"Fizz\"\nelif i % 5 == 0:\nreturn \"Buzz\"\nreturn str(i)\nreturn [fizz_val(i) for i in range(1, n+1)]\n",
+                        "max_stars_repo_name": "apoorvkk/LeetCodeSolutions",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "problems/fizzbuzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_codeeditorbench_debug_plus_python_data_2236",
+                        "content": "\nInput:\nn = 3\nOutput:\n\\[\"1\",\"2\",\"Fizz\"\\]\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nl = []\nfor i in range(1,n+2):\nif i%3==0 and i%5==0:\nl.append(\"FizzBuzz\")\nelif i%3!=0 and i%5!=0:\nl.append(str(i))\nelif i%3==0:\nl.append(self.fizz())\nelif i%5==0:\nl.append(self.buzz())\nreturn l\nclass Solution:\ndef fizzBuzz(self, n: int) -> List[str]:\nl = []\nfor i in range(1,n+1):\nif i%3==0 and i%5==0:\nl.append(\"FizzBuzz\")\nelif i%3!=0 and i%5!=0:\nl.append(str(i))\nelif i%3==0:\nl.append(\"Fizz\")\nelif i%5==0:\nl.append(\"Buzz\")\nreturn l",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 57
+                },
+                {
+                        "id": "pretrain_python_data_3046313",
+                        "content": "class Solution:\ndef fizzBuzz(self, n):\n\"\"\"\n:type n: int\n:rtype: List[str]\n\"\"\"\ndef fizz_val(i):\nif i % 3 == 0 and i % 5 == 0:\nreturn \"FizzBuzz\"\nelif i % 3 == 0:\nreturn \"Fizz\"\nelif i % 5 == 0:\nreturn \"Buzz\"\nreturn str(i)\nreturn [fizz_val(i) for i in range(1, n+1)]\n",
+                        "max_stars_repo_name": "apoorvkk/LeetCodeSolutions",
+                        "max_stars_count": 1,
+                        "max_stars_repo_path": "problems/fizzbuzz.py",
+                        "__cluster__": 57
+                },
+                {
+                        "real_dup": "2"
+                }
+        ]
+]

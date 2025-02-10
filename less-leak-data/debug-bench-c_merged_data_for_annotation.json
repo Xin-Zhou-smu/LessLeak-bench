@@ -1,0 +1,578 @@
+[
+        {
+                "data_len": 25
+        },
+        [
+                {
+                        "id": "test_debug-bench_data_2121",
+                        "content": "You are given an integer array prices where prices[i] is the price of a given stock on the ith day.\nOn each day, you may decide to buy and/or sell the stock. You can only hold at most one share of the stock at any time. However, you can buy it then immediately sell it on the same day.\nFind and return the maximum profit you can achieve.\nclass Solution {\npublic int maxProfit(int[] prices) {\nint profit=0;\nfor(int i=0; i<prices.length; i++){\nif(prices[i]>prices[i-1]){\nprofit+=prices[i]-prices[i-1];\n}\n}\nreturn profit;\n}\n}\nThe loop starts from index 0, this will cause an ArrayIndexOutOfBoundsException for prices[i-1] at i=0.\nclass Solution {\npublic int maxProfit(int[] prices) {\nint profit=0;\nfor(int i=1; i<prices.length; i++){\nif(prices[i]>prices[i-1]){\nprofit+=prices[i]-prices[i-1];\n}\n}\nreturn profit;\n}\n}\n# Complexity\\n- Time complexity: O(n)\\n\\n- Space complexity: O(1)\\n\\n# Code\\n```\\nclass Solution {\\n    public int maxProfit(int[] prices) {\\n        int profit=0;\\n        for(int i=1; i<prices.length; i++){\\n            if(prices[i]>prices[i-1]){\\n                profit+=prices[i]-prices[i-1];\\n            }\\n        }\\n        return profit;\\n    }\\n}\\n```",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 1822
+                },
+                {
+                        "id": "pretrain_cpp_data_186131",
+                        "content": "// Leetcode - best time to buy and sell stocks\n// You are given an integer array prices where prices[i] is the price of a given stock on the ith day.\n// On each day, you may decide to buy and/or sell the stock. You can only hold at most one share of the stock at any time. However, you can buy it then immediately sell it on the same day.\n// Find and return the maximum profit you can achieve.\nclass Solution {\npublic:\nint maxProfit(vector<int>& prices) {\nif( prices.size() == 0) return 0;\nint profit = 0;\nfor(int i=0;i<prices.size()-1;i++){\nif(prices[i]<prices[i+1]){\nprofit += prices[i+1]-prices[i];\n}\n}\nreturn profit;\n}\n};",
+                        "max_stars_count": 2.0,
+                        "max_stars_repo_name": "nitishkalra/Coding-Problems-Solved",
+                        "max_stars_repo_path": "Arrays/Best time to buy and sell stocks ||.cpp",
+                        "__cluster__": 1822
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_debug-bench_data_1823",
+                        "content": "You are given an integer array prices where prices[i] is the price of a given stock on the ith day.\nOn each day, you may decide to buy and/or sell the stock. You can only hold at most one share of the stock at any time. However, you can buy it then immediately sell it on the same day.\nFind and return the maximum profit you can achieve.\nclass Solution {\npublic int maxProfit(int[] prices) {\nint profit=0\nfor(int i=1; i<prices.length; i++){\nif(prices[i]>prices[i-1]){\nprofit+=prices[i]-prices[i-1];\n}\n}\nreturn profit;\n}\n}\nThe code is missing a semicolon after the initialization of the variable \"profit\".\nclass Solution {\npublic int maxProfit(int[] prices) {\nint profit=0;\nfor(int i=1; i<prices.length; i++){\nif(prices[i]>prices[i-1]){\nprofit+=prices[i]-prices[i-1];\n}\n}\nreturn profit;\n}\n}\n# Complexity\\n- Time complexity: O(n)\\n\\n- Space complexity: O(1)\\n\\n# Code\\n```\\nclass Solution {\\n    public int maxProfit(int[] prices) {\\n        int profit=0;\\n        for(int i=1; i<prices.length; i++){\\n            if(prices[i]>prices[i-1]){\\n                profit+=prices[i]-prices[i-1];\\n            }\\n        }\\n        return profit;\\n    }\\n}\\n```",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 1822
+                },
+                {
+                        "id": "pretrain_cpp_data_186131",
+                        "content": "// Leetcode - best time to buy and sell stocks\n// You are given an integer array prices where prices[i] is the price of a given stock on the ith day.\n// On each day, you may decide to buy and/or sell the stock. You can only hold at most one share of the stock at any time. However, you can buy it then immediately sell it on the same day.\n// Find and return the maximum profit you can achieve.\nclass Solution {\npublic:\nint maxProfit(vector<int>& prices) {\nif( prices.size() == 0) return 0;\nint profit = 0;\nfor(int i=0;i<prices.size()-1;i++){\nif(prices[i]<prices[i+1]){\nprofit += prices[i+1]-prices[i];\n}\n}\nreturn profit;\n}\n};",
+                        "max_stars_count": 2.0,
+                        "max_stars_repo_name": "nitishkalra/Coding-Problems-Solved",
+                        "max_stars_repo_path": "Arrays/Best time to buy and sell stocks ||.cpp",
+                        "__cluster__": 1822
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_debug-bench_data_37",
+                        "content": "Roman numerals are represented by seven different symbols:\u00a0I, V, X, L, C, D and M.\nSymbol       Value\nI             1\nV             5\nX             10\nL             50\nC             100\nD             500\nM             1000\nFor example,\u00a02 is written as II\u00a0in Roman numeral, just two one's added together. 12 is written as\u00a0XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.\nRoman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:\nI can be placed before V (5) and X (10) to make 4 and 9.\nX can be placed before L (50) and C (100) to make 40 and 90.\nC can be placed before D (500) and M (1000) to make 400 and 900.\nGiven an integer, convert it to a roman numeral.\nclass Solution {\npublic:\nstring intToRoman(int num) {\nstring ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\nstring tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\nstring hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\nstring ths[]={\"\",\"M\",\"MM\",\"MMM\"}\nreturn ths[num/1000] + hrns[(num%1000)/100] + tens[(num%100)/10] + ones[num%10];\n}\n};\nMissing semicolon at the end of the array declaration might cause compilation failure.\nclass Solution {\npublic:\nstring intToRoman(int num) {\nstring ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\nstring tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\nstring hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\nstring ths[]={\"\",\"M\",\"MM\",\"MMM\"};\nreturn ths[num/1000] + hrns[(num%1000)/100] + tens[(num%100)/10] + ones[num%10];\n}\n};\n\\n\\n# Code\\n```\\nclass Solution {\\npublic:\\n    string intToRoman(int num) {\\n        string ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\\n        string tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\\n        string hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\\n        string ths[]={\"\",\"M\",\"MM\",\"MMM\"};\\n        \\n        return ths[num/1000] + hrns[(num%1000)/100] + tens[(num%100)/10] + ones[num%10];\\n    }\\n};\\n```\\n\\n# ***Please Upvote if it helps \\u2764\\uFE0F***",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 36
+                },
+                {
+                        "id": "pretrain_cpp_data_4194555",
+                        "content": "<gh_stars>1-10\n/*Roman numerals are represented by seven different symbols: I, V, X, L, C, D\nand M.\nSymbol       Value\nI             1\nV             5\nX             10\nL             50\nC             100\nD             500\nM             1000\nFor example, two is written as II in Roman numeral, just two one's added\ntogether. Twelve is written as, XII, which is simply X + II. The number twenty\nseven is written as XXVII, which is XX + V + II.\nRoman numerals are usually written largest to smallest from left to right.\nHowever, the numeral for four is not IIII. Instead, the number four is written\nas IV. Because the one is before the five we subtract it making four. The same\nprinciple applies to the number nine, which is written as IX. There are six\ninstances where subtraction is used:\nI can be placed before V (5) and X (10) to make 4 and 9.\nX can be placed before L (50) and C (100) to make 40 and 90.\nC can be placed before D (500) and M (1000) to make 400 and 900.\nGiven an integer, convert it to a roman numeral. Input is guaranteed to be\nwithin the range from 1 to 3999.*/\nclass Solution {\npublic:\nstring intToRoman(int num) {\nvector<string> m = {\"\", \"M\", \"MM\", \"MMM\"};\nvector<string> h = {\"\",  \"C\",  \"CC\",  \"CCC\",  \"CD\",\n\"D\", \"DC\", \"DCC\", \"DCCC\", \"CM\"};\nvector<string> t = {\"\",  \"X\",  \"XX\",  \"XXX\",  \"XL\",\n\"L\", \"LX\", \"LXX\", \"LXXX\", \"XC\"};\nvector<string> o = {\"\",  \"I\",  \"II\",  \"III\",  \"IV\",\n\"V\", \"VI\", \"VII\", \"VIII\", \"IX\"};\nint thousand = num / 1000;\nint hundred = (num % 1000) / 100;\nint tens = (num % 100) / 10;\nint ones = num % 10;\nstring ans = m[thousand] + h[hundred] + t[tens] + o[ones];\nreturn ans;\n}\n};",
+                        "max_stars_count": 1.0,
+                        "max_stars_repo_name": "archit-1997/LeetCode",
+                        "max_stars_repo_path": "topic_wise/strings/IntegertoRoman.cpp",
+                        "__cluster__": 36
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_debug-bench_data_784",
+                        "content": "Roman numerals are represented by seven different symbols:\u00a0I, V, X, L, C, D and M.\nSymbol       Value\nI             1\nV             5\nX             10\nL             50\nC             100\nD             500\nM             1000\nFor example,\u00a02 is written as II\u00a0in Roman numeral, just two one's added together. 12 is written as\u00a0XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.\nRoman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:\nI can be placed before V (5) and X (10) to make 4 and 9.\nX can be placed before L (50) and C (100) to make 40 and 90.\nC can be placed before D (500) and M (1000) to make 400 and 900.\nGiven an integer, convert it to a roman numeral.\nclass Solution {\npublic:\nstring intToRoman(int num) {\nstring ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\nstring tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\nstring hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\nstring ths[]={\"\",\"M\",\"MM\",\"MMM\"};\nreturn ths[num/1000] + hrns[(num%1000)/100 + tens[(num%100)/10] + ones[num%10];\n}\n};\nThe mismatched parentheses have changed the execution order of the array indexing and concatenation.\nclass Solution {\npublic:\nstring intToRoman(int num) {\nstring ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\nstring tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\nstring hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\nstring ths[]={\"\",\"M\",\"MM\",\"MMM\"};\nreturn ths[num/1000] + hrns[(num%1000)/100] + tens[(num%100)/10] + ones[num%10];\n}\n};\n\\n\\n# Code\\n```\\nclass Solution {\\npublic:\\n    string intToRoman(int num) {\\n        string ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\\n        string tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\\n        string hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\\n        string ths[]={\"\",\"M\",\"MM\",\"MMM\"};\\n        \\n        return ths[num/1000] + hrns[(num%1000)/100] + tens[(num%100)/10] + ones[num%10];\\n    }\\n};\\n```\\n\\n# ***Please Upvote if it helps \\u2764\\uFE0F***",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 36
+                },
+                {
+                        "id": "pretrain_cpp_data_4194555",
+                        "content": "<gh_stars>1-10\n/*Roman numerals are represented by seven different symbols: I, V, X, L, C, D\nand M.\nSymbol       Value\nI             1\nV             5\nX             10\nL             50\nC             100\nD             500\nM             1000\nFor example, two is written as II in Roman numeral, just two one's added\ntogether. Twelve is written as, XII, which is simply X + II. The number twenty\nseven is written as XXVII, which is XX + V + II.\nRoman numerals are usually written largest to smallest from left to right.\nHowever, the numeral for four is not IIII. Instead, the number four is written\nas IV. Because the one is before the five we subtract it making four. The same\nprinciple applies to the number nine, which is written as IX. There are six\ninstances where subtraction is used:\nI can be placed before V (5) and X (10) to make 4 and 9.\nX can be placed before L (50) and C (100) to make 40 and 90.\nC can be placed before D (500) and M (1000) to make 400 and 900.\nGiven an integer, convert it to a roman numeral. Input is guaranteed to be\nwithin the range from 1 to 3999.*/\nclass Solution {\npublic:\nstring intToRoman(int num) {\nvector<string> m = {\"\", \"M\", \"MM\", \"MMM\"};\nvector<string> h = {\"\",  \"C\",  \"CC\",  \"CCC\",  \"CD\",\n\"D\", \"DC\", \"DCC\", \"DCCC\", \"CM\"};\nvector<string> t = {\"\",  \"X\",  \"XX\",  \"XXX\",  \"XL\",\n\"L\", \"LX\", \"LXX\", \"LXXX\", \"XC\"};\nvector<string> o = {\"\",  \"I\",  \"II\",  \"III\",  \"IV\",\n\"V\", \"VI\", \"VII\", \"VIII\", \"IX\"};\nint thousand = num / 1000;\nint hundred = (num % 1000) / 100;\nint tens = (num % 100) / 10;\nint ones = num % 10;\nstring ans = m[thousand] + h[hundred] + t[tens] + o[ones];\nreturn ans;\n}\n};",
+                        "max_stars_count": 1.0,
+                        "max_stars_repo_name": "archit-1997/LeetCode",
+                        "max_stars_repo_path": "topic_wise/strings/IntegertoRoman.cpp",
+                        "__cluster__": 36
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_debug-bench_data_835",
+                        "content": "Roman numerals are represented by seven different symbols:\u00a0I, V, X, L, C, D and M.\nSymbol       Value\nI             1\nV             5\nX             10\nL             50\nC             100\nD             500\nM             1000\nFor example,\u00a02 is written as II\u00a0in Roman numeral, just two one's added together. 12 is written as\u00a0XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.\nRoman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:\nI can be placed before V (5) and X (10) to make 4 and 9.\nX can be placed before L (50) and C (100) to make 40 and 90.\nC can be placed before D (500) and M (1000) to make 400 and 900.\nGiven an integer, convert it to a roman numeral.\nclass Solution {\npublic:\nstring intToRoman(int num) {\nstring ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\nstring tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\nstring hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\nstring ths[]={\"\",\"M\",\"MM\",\"MMM\"};\nreturn ths[num/10000] + hrns[(num%1000)/100] + tens[(num%100)/10] + ones[num%10];\n}\n};\nThe division in ths[num/10000] is incorrect, which results in an incorrect Roman numeral.\nclass Solution {\npublic:\nstring intToRoman(int num) {\nstring ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\nstring tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\nstring hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\nstring ths[]={\"\",\"M\",\"MM\",\"MMM\"};\nreturn ths[num/1000] + hrns[(num%1000)/100] + tens[(num%100)/10] + ones[num%10];\n}\n};\n\\n\\n# Code\\n```\\nclass Solution {\\npublic:\\n    string intToRoman(int num) {\\n        string ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\\n        string tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\\n        string hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\\n        string ths[]={\"\",\"M\",\"MM\",\"MMM\"};\\n        \\n        return ths[num/1000] + hrns[(num%1000)/100] + tens[(num%100)/10] + ones[num%10];\\n    }\\n};\\n```\\n\\n# ***Please Upvote if it helps \\u2764\\uFE0F***",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 36
+                },
+                {
+                        "id": "pretrain_cpp_data_4194555",
+                        "content": "<gh_stars>1-10\n/*Roman numerals are represented by seven different symbols: I, V, X, L, C, D\nand M.\nSymbol       Value\nI             1\nV             5\nX             10\nL             50\nC             100\nD             500\nM             1000\nFor example, two is written as II in Roman numeral, just two one's added\ntogether. Twelve is written as, XII, which is simply X + II. The number twenty\nseven is written as XXVII, which is XX + V + II.\nRoman numerals are usually written largest to smallest from left to right.\nHowever, the numeral for four is not IIII. Instead, the number four is written\nas IV. Because the one is before the five we subtract it making four. The same\nprinciple applies to the number nine, which is written as IX. There are six\ninstances where subtraction is used:\nI can be placed before V (5) and X (10) to make 4 and 9.\nX can be placed before L (50) and C (100) to make 40 and 90.\nC can be placed before D (500) and M (1000) to make 400 and 900.\nGiven an integer, convert it to a roman numeral. Input is guaranteed to be\nwithin the range from 1 to 3999.*/\nclass Solution {\npublic:\nstring intToRoman(int num) {\nvector<string> m = {\"\", \"M\", \"MM\", \"MMM\"};\nvector<string> h = {\"\",  \"C\",  \"CC\",  \"CCC\",  \"CD\",\n\"D\", \"DC\", \"DCC\", \"DCCC\", \"CM\"};\nvector<string> t = {\"\",  \"X\",  \"XX\",  \"XXX\",  \"XL\",\n\"L\", \"LX\", \"LXX\", \"LXXX\", \"XC\"};\nvector<string> o = {\"\",  \"I\",  \"II\",  \"III\",  \"IV\",\n\"V\", \"VI\", \"VII\", \"VIII\", \"IX\"};\nint thousand = num / 1000;\nint hundred = (num % 1000) / 100;\nint tens = (num % 100) / 10;\nint ones = num % 10;\nstring ans = m[thousand] + h[hundred] + t[tens] + o[ones];\nreturn ans;\n}\n};",
+                        "max_stars_count": 1.0,
+                        "max_stars_repo_name": "archit-1997/LeetCode",
+                        "max_stars_repo_path": "topic_wise/strings/IntegertoRoman.cpp",
+                        "__cluster__": 36
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_debug-bench_data_835",
+                        "content": "Roman numerals are represented by seven different symbols:\u00a0I, V, X, L, C, D and M.\nSymbol       Value\nI             1\nV             5\nX             10\nL             50\nC             100\nD             500\nM             1000\nFor example,\u00a02 is written as II\u00a0in Roman numeral, just two one's added together. 12 is written as\u00a0XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.\nRoman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:\nI can be placed before V (5) and X (10) to make 4 and 9.\nX can be placed before L (50) and C (100) to make 40 and 90.\nC can be placed before D (500) and M (1000) to make 400 and 900.\nGiven an integer, convert it to a roman numeral.\nclass Solution {\npublic:\nstring intToRoman(int num) {\nstring ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\nstring tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\nstring hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\nstring ths[]={\"\",\"M\",\"MM\",\"MMM\"};\nreturn ths[num/10000] + hrns[(num%1000)/100] + tens[(num%100)/10] + ones[num%10];\n}\n};\nThe division in ths[num/10000] is incorrect, which results in an incorrect Roman numeral.\nclass Solution {\npublic:\nstring intToRoman(int num) {\nstring ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\nstring tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\nstring hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\nstring ths[]={\"\",\"M\",\"MM\",\"MMM\"};\nreturn ths[num/1000] + hrns[(num%1000)/100] + tens[(num%100)/10] + ones[num%10];\n}\n};\n\\n\\n# Code\\n```\\nclass Solution {\\npublic:\\n    string intToRoman(int num) {\\n        string ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\\n        string tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\\n        string hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\\n        string ths[]={\"\",\"M\",\"MM\",\"MMM\"};\\n        \\n        return ths[num/1000] + hrns[(num%1000)/100] + tens[(num%100)/10] + ones[num%10];\\n    }\\n};\\n```\\n\\n# ***Please Upvote if it helps \\u2764\\uFE0F***",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 36
+                },
+                {
+                        "id": "pretrain_cpp_data_3439447",
+                        "content": "<gh_stars>0\n/*\nRoman numerals are represented by seven different symbols: I, V, X, L, C, D and M.\nSymbol       Value\nI             1\nV             5\nX             10\nL             50\nC             100\nD             500\nM             1000\nFor example, two is written as II in Roman numeral, just two one's added together. Twelve is written as, XII, which is simply X + II. The number twenty seven is written as XXVII, which is XX + V + II.\nRoman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:\nI can be placed before V (5) and X (10) to make 4 and 9.\nX can be placed before L (50) and C (100) to make 40 and 90.\nC can be placed before D (500) and M (1000) to make 400 and 900.\nGiven an integer, convert it to a roman numeral. Input is guaranteed to be within the range from 1 to 3999.\nExample 1:\nInput: 3\nOutput: \"III\"\nExample 2:\nInput: 4\nOutput: \"IV\"\nExample 3:\nInput: 9\nOutput: \"IX\"\nExample 4:\nInput: 58\nOutput: \"LVIII\"\nExplanation: L = 50, V = 5, III = 3.\nExample 5:\nInput: 1994\nOutput: \"MCMXCIV\"\nExplanation: M = 1000, CM = 900, XC = 90 and IV = 4.\n*/\n#include <iostream>\nusing namespace std;\nclass Solution {\npublic:\nstring intToRoman(int num) {\nstring M[] = {\"\", \"M\", \"MM\", \"MMM\"};\nstring C[] = {\"\", \"C\", \"CC\", \"CCC\", \"CD\", \"D\", \"DC\", \"DCC\", \"DCCC\", \"CM\"};\nstring X[] = {\"\", \"X\", \"XX\", \"XXX\", \"XL\", \"L\", \"LX\", \"LXX\", \"LXXX\", \"XC\"};\nstring I[] = {\"\", \"I\", \"II\", \"III\", \"IV\", \"V\", \"VI\", \"VII\", \"VIII\", \"IX\"};\nreturn M[num/1000] + C[(num%1000)/100] + X[(num%100)/10] + I[num%10];\n}\n};",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "apoorv-kulkarni/leetcode",
+                        "max_stars_repo_path": "integerToRoman.cpp",
+                        "__cluster__": 36
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_debug-bench_data_37",
+                        "content": "Roman numerals are represented by seven different symbols:\u00a0I, V, X, L, C, D and M.\nSymbol       Value\nI             1\nV             5\nX             10\nL             50\nC             100\nD             500\nM             1000\nFor example,\u00a02 is written as II\u00a0in Roman numeral, just two one's added together. 12 is written as\u00a0XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.\nRoman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:\nI can be placed before V (5) and X (10) to make 4 and 9.\nX can be placed before L (50) and C (100) to make 40 and 90.\nC can be placed before D (500) and M (1000) to make 400 and 900.\nGiven an integer, convert it to a roman numeral.\nclass Solution {\npublic:\nstring intToRoman(int num) {\nstring ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\nstring tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\nstring hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\nstring ths[]={\"\",\"M\",\"MM\",\"MMM\"}\nreturn ths[num/1000] + hrns[(num%1000)/100] + tens[(num%100)/10] + ones[num%10];\n}\n};\nMissing semicolon at the end of the array declaration might cause compilation failure.\nclass Solution {\npublic:\nstring intToRoman(int num) {\nstring ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\nstring tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\nstring hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\nstring ths[]={\"\",\"M\",\"MM\",\"MMM\"};\nreturn ths[num/1000] + hrns[(num%1000)/100] + tens[(num%100)/10] + ones[num%10];\n}\n};\n\\n\\n# Code\\n```\\nclass Solution {\\npublic:\\n    string intToRoman(int num) {\\n        string ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\\n        string tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\\n        string hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\\n        string ths[]={\"\",\"M\",\"MM\",\"MMM\"};\\n        \\n        return ths[num/1000] + hrns[(num%1000)/100] + tens[(num%100)/10] + ones[num%10];\\n    }\\n};\\n```\\n\\n# ***Please Upvote if it helps \\u2764\\uFE0F***",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 36
+                },
+                {
+                        "id": "pretrain_cpp_data_3439447",
+                        "content": "<gh_stars>0\n/*\nRoman numerals are represented by seven different symbols: I, V, X, L, C, D and M.\nSymbol       Value\nI             1\nV             5\nX             10\nL             50\nC             100\nD             500\nM             1000\nFor example, two is written as II in Roman numeral, just two one's added together. Twelve is written as, XII, which is simply X + II. The number twenty seven is written as XXVII, which is XX + V + II.\nRoman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:\nI can be placed before V (5) and X (10) to make 4 and 9.\nX can be placed before L (50) and C (100) to make 40 and 90.\nC can be placed before D (500) and M (1000) to make 400 and 900.\nGiven an integer, convert it to a roman numeral. Input is guaranteed to be within the range from 1 to 3999.\nExample 1:\nInput: 3\nOutput: \"III\"\nExample 2:\nInput: 4\nOutput: \"IV\"\nExample 3:\nInput: 9\nOutput: \"IX\"\nExample 4:\nInput: 58\nOutput: \"LVIII\"\nExplanation: L = 50, V = 5, III = 3.\nExample 5:\nInput: 1994\nOutput: \"MCMXCIV\"\nExplanation: M = 1000, CM = 900, XC = 90 and IV = 4.\n*/\n#include <iostream>\nusing namespace std;\nclass Solution {\npublic:\nstring intToRoman(int num) {\nstring M[] = {\"\", \"M\", \"MM\", \"MMM\"};\nstring C[] = {\"\", \"C\", \"CC\", \"CCC\", \"CD\", \"D\", \"DC\", \"DCC\", \"DCCC\", \"CM\"};\nstring X[] = {\"\", \"X\", \"XX\", \"XXX\", \"XL\", \"L\", \"LX\", \"LXX\", \"LXXX\", \"XC\"};\nstring I[] = {\"\", \"I\", \"II\", \"III\", \"IV\", \"V\", \"VI\", \"VII\", \"VIII\", \"IX\"};\nreturn M[num/1000] + C[(num%1000)/100] + X[(num%100)/10] + I[num%10];\n}\n};",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "apoorv-kulkarni/leetcode",
+                        "max_stars_repo_path": "integerToRoman.cpp",
+                        "__cluster__": 36
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_debug-bench_data_784",
+                        "content": "Roman numerals are represented by seven different symbols:\u00a0I, V, X, L, C, D and M.\nSymbol       Value\nI             1\nV             5\nX             10\nL             50\nC             100\nD             500\nM             1000\nFor example,\u00a02 is written as II\u00a0in Roman numeral, just two one's added together. 12 is written as\u00a0XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.\nRoman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:\nI can be placed before V (5) and X (10) to make 4 and 9.\nX can be placed before L (50) and C (100) to make 40 and 90.\nC can be placed before D (500) and M (1000) to make 400 and 900.\nGiven an integer, convert it to a roman numeral.\nclass Solution {\npublic:\nstring intToRoman(int num) {\nstring ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\nstring tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\nstring hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\nstring ths[]={\"\",\"M\",\"MM\",\"MMM\"};\nreturn ths[num/1000] + hrns[(num%1000)/100 + tens[(num%100)/10] + ones[num%10];\n}\n};\nThe mismatched parentheses have changed the execution order of the array indexing and concatenation.\nclass Solution {\npublic:\nstring intToRoman(int num) {\nstring ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\nstring tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\nstring hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\nstring ths[]={\"\",\"M\",\"MM\",\"MMM\"};\nreturn ths[num/1000] + hrns[(num%1000)/100] + tens[(num%100)/10] + ones[num%10];\n}\n};\n\\n\\n# Code\\n```\\nclass Solution {\\npublic:\\n    string intToRoman(int num) {\\n        string ones[] = {\"\",\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\",\"VIII\",\"IX\"};\\n        string tens[] = {\"\",\"X\",\"XX\",\"XXX\",\"XL\",\"L\",\"LX\",\"LXX\",\"LXXX\",\"XC\"};\\n        string hrns[] = {\"\",\"C\",\"CC\",\"CCC\",\"CD\",\"D\",\"DC\",\"DCC\",\"DCCC\",\"CM\"};\\n        string ths[]={\"\",\"M\",\"MM\",\"MMM\"};\\n        \\n        return ths[num/1000] + hrns[(num%1000)/100] + tens[(num%100)/10] + ones[num%10];\\n    }\\n};\\n```\\n\\n# ***Please Upvote if it helps \\u2764\\uFE0F***",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 36
+                },
+                {
+                        "id": "pretrain_cpp_data_3439447",
+                        "content": "<gh_stars>0\n/*\nRoman numerals are represented by seven different symbols: I, V, X, L, C, D and M.\nSymbol       Value\nI             1\nV             5\nX             10\nL             50\nC             100\nD             500\nM             1000\nFor example, two is written as II in Roman numeral, just two one's added together. Twelve is written as, XII, which is simply X + II. The number twenty seven is written as XXVII, which is XX + V + II.\nRoman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:\nI can be placed before V (5) and X (10) to make 4 and 9.\nX can be placed before L (50) and C (100) to make 40 and 90.\nC can be placed before D (500) and M (1000) to make 400 and 900.\nGiven an integer, convert it to a roman numeral. Input is guaranteed to be within the range from 1 to 3999.\nExample 1:\nInput: 3\nOutput: \"III\"\nExample 2:\nInput: 4\nOutput: \"IV\"\nExample 3:\nInput: 9\nOutput: \"IX\"\nExample 4:\nInput: 58\nOutput: \"LVIII\"\nExplanation: L = 50, V = 5, III = 3.\nExample 5:\nInput: 1994\nOutput: \"MCMXCIV\"\nExplanation: M = 1000, CM = 900, XC = 90 and IV = 4.\n*/\n#include <iostream>\nusing namespace std;\nclass Solution {\npublic:\nstring intToRoman(int num) {\nstring M[] = {\"\", \"M\", \"MM\", \"MMM\"};\nstring C[] = {\"\", \"C\", \"CC\", \"CCC\", \"CD\", \"D\", \"DC\", \"DCC\", \"DCCC\", \"CM\"};\nstring X[] = {\"\", \"X\", \"XX\", \"XXX\", \"XL\", \"L\", \"LX\", \"LXX\", \"LXXX\", \"XC\"};\nstring I[] = {\"\", \"I\", \"II\", \"III\", \"IV\", \"V\", \"VI\", \"VII\", \"VIII\", \"IX\"};\nreturn M[num/1000] + C[(num%1000)/100] + X[(num%100)/10] + I[num%10];\n}\n};",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "apoorv-kulkarni/leetcode",
+                        "max_stars_repo_path": "integerToRoman.cpp",
+                        "__cluster__": 36
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_debug-bench_data_79",
+                        "content": "You are given the root of a binary search tree (BST) and an integer val.\nFind the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null.\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root==None)\nreturn NULL;\nif(root->val==val);\n{\nreturn root;\n}\nif(root->val>val){\nreturn  searchBST(root->left,val);\n}\nreturn searchBST(root->right,val);\n}\n};\na mixture of statement separation, undefined keywords from other languages\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root==NULL)\nreturn NULL;\nif(root->val==val)\n{\nreturn root;\n}\nif(root->val>val){\nreturn  searchBST(root->left,val);\n}\nreturn searchBST(root->right,val);\n}\n};\n```\\nclass Solution {\\npublic:\\n    TreeNode* searchBST(TreeNode* root, int val) {\\n       if(root==NULL) \\n       return NULL;\\n       if(root->val==val)\\n       {\\n           return root;\\n       }\\n       if(root->val>val){\\n          return  searchBST(root->left,val);\\n       }\\n        return searchBST(root->right,val);\\n    }\\n};\\n```",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 31
+                },
+                {
+                        "id": "pretrain_cpp_data_2049033",
+                        "content": "<reponame>khushi-411/LeetCode\n/*You are given the root of a binary search tree (BST) and an integer val.\n* Find the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null. */\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root == NULL)\nreturn NULL;\nif(root -> val == val)\nreturn root;\nelse if(root -> val > val)\nreturn searchBST(root -> left, val);\nelse if(root -> val < val)\nreturn searchBST(root -> right, val);\nelse\nreturn NULL;\n}\n};",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "khushi-411/LeetCode",
+                        "max_stars_repo_path": "June-2020/Day-15.cpp",
+                        "__cluster__": 31
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_debug-bench_data_619",
+                        "content": "You are given the root of a binary search tree (BST) and an integer val.\nFind the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null.\nclass Solution {\npublic:\n/*\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root=NULL)\nreturn NULL;\nif(root->val==val)\n{\nreturn root;\n}\nif(root->val > val){\nreturn searchBST(root->right,val);\n}\nreturn searchBST(root->left,val);\n}\n*/\n};\na mixture of wrong comment mark, conditional statement error, colon missing\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root==NULL)\nreturn NULL;\nif(root->val==val)\n{\nreturn root;\n}\nif(root->val>val){\nreturn  searchBST(root->left,val);\n}\nreturn searchBST(root->right,val);\n}\n};\n```\\nclass Solution {\\npublic:\\n    TreeNode* searchBST(TreeNode* root, int val) {\\n       if(root==NULL) \\n       return NULL;\\n       if(root->val==val)\\n       {\\n           return root;\\n       }\\n       if(root->val>val){\\n          return  searchBST(root->left,val);\\n       }\\n        return searchBST(root->right,val);\\n    }\\n};\\n```",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 31
+                },
+                {
+                        "id": "pretrain_cpp_data_2049033",
+                        "content": "<reponame>khushi-411/LeetCode\n/*You are given the root of a binary search tree (BST) and an integer val.\n* Find the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null. */\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root == NULL)\nreturn NULL;\nif(root -> val == val)\nreturn root;\nelse if(root -> val > val)\nreturn searchBST(root -> left, val);\nelse if(root -> val < val)\nreturn searchBST(root -> right, val);\nelse\nreturn NULL;\n}\n};",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "khushi-411/LeetCode",
+                        "max_stars_repo_path": "June-2020/Day-15.cpp",
+                        "__cluster__": 31
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_debug-bench_data_556",
+                        "content": "You are given the root of a binary search tree (BST) and an integer val.\nFind the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null.\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root=NULL)\nreturn NULL;\nif(root->val==val);\n{\nreturn root;\n}\nif(root->val > val){\nreturn searchBST(root->right,val);\n}\nreturn searchBST(root->left,val);\n}\n};\na mixture of statement separation, conditional statement error, colon missing\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root==NULL)\nreturn NULL;\nif(root->val==val)\n{\nreturn root;\n}\nif(root->val>val){\nreturn  searchBST(root->left,val);\n}\nreturn searchBST(root->right,val);\n}\n};\n```\\nclass Solution {\\npublic:\\n    TreeNode* searchBST(TreeNode* root, int val) {\\n       if(root==NULL) \\n       return NULL;\\n       if(root->val==val)\\n       {\\n           return root;\\n       }\\n       if(root->val>val){\\n          return  searchBST(root->left,val);\\n       }\\n        return searchBST(root->right,val);\\n    }\\n};\\n```",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 31
+                },
+                {
+                        "id": "pretrain_cpp_data_2049033",
+                        "content": "<reponame>khushi-411/LeetCode\n/*You are given the root of a binary search tree (BST) and an integer val.\n* Find the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null. */\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root == NULL)\nreturn NULL;\nif(root -> val == val)\nreturn root;\nelse if(root -> val > val)\nreturn searchBST(root -> left, val);\nelse if(root -> val < val)\nreturn searchBST(root -> right, val);\nelse\nreturn NULL;\n}\n};",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "khushi-411/LeetCode",
+                        "max_stars_repo_path": "June-2020/Day-15.cpp",
+                        "__cluster__": 31
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_debug-bench_data_979",
+                        "content": "You are given the root of a binary search tree (BST) and an integer val.\nFind the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null.\nclass Solution {\npublic:\n/*\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root=NULL)\nreturn NULL;\nif(root->val==val);\n{\nreturn root;\n}\nif(root->val > val){\nreturn searchBST(root->right,val);\n}\nreturn searchBST(root->left,val);\n}\n*/\n};\na mixture of statement separation, wrong comment mark, conditional statement error, colon missing\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root==NULL)\nreturn NULL;\nif(root->val==val)\n{\nreturn root;\n}\nif(root->val>val){\nreturn  searchBST(root->left,val);\n}\nreturn searchBST(root->right,val);\n}\n};\n```\\nclass Solution {\\npublic:\\n    TreeNode* searchBST(TreeNode* root, int val) {\\n       if(root==NULL) \\n       return NULL;\\n       if(root->val==val)\\n       {\\n           return root;\\n       }\\n       if(root->val>val){\\n          return  searchBST(root->left,val);\\n       }\\n        return searchBST(root->right,val);\\n    }\\n};\\n```",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 31
+                },
+                {
+                        "id": "pretrain_cpp_data_2049033",
+                        "content": "<reponame>khushi-411/LeetCode\n/*You are given the root of a binary search tree (BST) and an integer val.\n* Find the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null. */\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root == NULL)\nreturn NULL;\nif(root -> val == val)\nreturn root;\nelse if(root -> val > val)\nreturn searchBST(root -> left, val);\nelse if(root -> val < val)\nreturn searchBST(root -> right, val);\nelse\nreturn NULL;\n}\n};",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "khushi-411/LeetCode",
+                        "max_stars_repo_path": "June-2020/Day-15.cpp",
+                        "__cluster__": 31
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_debug-bench_data_122",
+                        "content": "You are given the root of a binary search tree (BST) and an integer val.\nFind the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null.\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root=NULL)\nreturn NULL;\nif(root->val==val);\n{\nreturn root;\n}\nif(root->val>val){\nreturn  searchBST(root->left,val);\n}\nreturn searchBST(root->right,val);\n}\n};\na mixture of statement separation, colon missing\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root==NULL)\nreturn NULL;\nif(root->val==val)\n{\nreturn root;\n}\nif(root->val>val){\nreturn  searchBST(root->left,val);\n}\nreturn searchBST(root->right,val);\n}\n};\n```\\nclass Solution {\\npublic:\\n    TreeNode* searchBST(TreeNode* root, int val) {\\n       if(root==NULL) \\n       return NULL;\\n       if(root->val==val)\\n       {\\n           return root;\\n       }\\n       if(root->val>val){\\n          return  searchBST(root->left,val);\\n       }\\n        return searchBST(root->right,val);\\n    }\\n};\\n```",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 31
+                },
+                {
+                        "id": "pretrain_cpp_data_2049033",
+                        "content": "<reponame>khushi-411/LeetCode\n/*You are given the root of a binary search tree (BST) and an integer val.\n* Find the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null. */\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root == NULL)\nreturn NULL;\nif(root -> val == val)\nreturn root;\nelse if(root -> val > val)\nreturn searchBST(root -> left, val);\nelse if(root -> val < val)\nreturn searchBST(root -> right, val);\nelse\nreturn NULL;\n}\n};",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "khushi-411/LeetCode",
+                        "max_stars_repo_path": "June-2020/Day-15.cpp",
+                        "__cluster__": 31
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_debug-bench_data_512",
+                        "content": "You are given the root of a binary search tree (BST) and an integer val.\nFind the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null.\nclass Solution {\npublic:\n/*\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root==NULL)\nreturn NULL;\nif(root->val==val);\n{\nreturn root;\n}\nif(root->val > val){\nreturn searchBST(root->right,val);\n}\nreturn searchBST(root->left,val);\n}\n*/\n};\na mixture of statement separation, wrong comment mark, conditional statement error\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root==NULL)\nreturn NULL;\nif(root->val==val)\n{\nreturn root;\n}\nif(root->val>val){\nreturn  searchBST(root->left,val);\n}\nreturn searchBST(root->right,val);\n}\n};\n```\\nclass Solution {\\npublic:\\n    TreeNode* searchBST(TreeNode* root, int val) {\\n       if(root==NULL) \\n       return NULL;\\n       if(root->val==val)\\n       {\\n           return root;\\n       }\\n       if(root->val>val){\\n          return  searchBST(root->left,val);\\n       }\\n        return searchBST(root->right,val);\\n    }\\n};\\n```",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 31
+                },
+                {
+                        "id": "pretrain_cpp_data_2049033",
+                        "content": "<reponame>khushi-411/LeetCode\n/*You are given the root of a binary search tree (BST) and an integer val.\n* Find the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null. */\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root == NULL)\nreturn NULL;\nif(root -> val == val)\nreturn root;\nelse if(root -> val > val)\nreturn searchBST(root -> left, val);\nelse if(root -> val < val)\nreturn searchBST(root -> right, val);\nelse\nreturn NULL;\n}\n};",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "khushi-411/LeetCode",
+                        "max_stars_repo_path": "June-2020/Day-15.cpp",
+                        "__cluster__": 31
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_debug-bench_data_97",
+                        "content": "You are given the root of a binary search tree (BST) and an integer val.\nFind the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null.\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root==None)\nreturn NULL;\nif(root->val==val)\n{\nreturn root;\n}\nif(root->val>val)){\nreturn  searchBST(root->left,val);\n}\nreturn searchBST(root->right,val);\n}\n};\na mixture of undefined keywords from other languages, parentheses mismatch\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root==NULL)\nreturn NULL;\nif(root->val==val)\n{\nreturn root;\n}\nif(root->val>val){\nreturn  searchBST(root->left,val);\n}\nreturn searchBST(root->right,val);\n}\n};\n```\\nclass Solution {\\npublic:\\n    TreeNode* searchBST(TreeNode* root, int val) {\\n       if(root==NULL) \\n       return NULL;\\n       if(root->val==val)\\n       {\\n           return root;\\n       }\\n       if(root->val>val){\\n          return  searchBST(root->left,val);\\n       }\\n        return searchBST(root->right,val);\\n    }\\n};\\n```",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 31
+                },
+                {
+                        "id": "pretrain_cpp_data_2049033",
+                        "content": "<reponame>khushi-411/LeetCode\n/*You are given the root of a binary search tree (BST) and an integer val.\n* Find the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null. */\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root == NULL)\nreturn NULL;\nif(root -> val == val)\nreturn root;\nelse if(root -> val > val)\nreturn searchBST(root -> left, val);\nelse if(root -> val < val)\nreturn searchBST(root -> right, val);\nelse\nreturn NULL;\n}\n};",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "khushi-411/LeetCode",
+                        "max_stars_repo_path": "June-2020/Day-15.cpp",
+                        "__cluster__": 31
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_debug-bench_data_99",
+                        "content": "You are given the root of a binary search tree (BST) and an integer val.\nFind the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null.\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root=NULL)\nreturn NULL;\nif(root->val==val)\n{\nreturn root;\n}\nif(root->val>val)){\nreturn  searchBST(root->left,val);\n}\nreturn searchBST(root->right,val);\n}\n};\na mixture of colon missing, parentheses mismatch\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root==NULL)\nreturn NULL;\nif(root->val==val)\n{\nreturn root;\n}\nif(root->val>val){\nreturn  searchBST(root->left,val);\n}\nreturn searchBST(root->right,val);\n}\n};\n```\\nclass Solution {\\npublic:\\n    TreeNode* searchBST(TreeNode* root, int val) {\\n       if(root==NULL) \\n       return NULL;\\n       if(root->val==val)\\n       {\\n           return root;\\n       }\\n       if(root->val>val){\\n          return  searchBST(root->left,val);\\n       }\\n        return searchBST(root->right,val);\\n    }\\n};\\n```",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 31
+                },
+                {
+                        "id": "pretrain_cpp_data_2049033",
+                        "content": "<reponame>khushi-411/LeetCode\n/*You are given the root of a binary search tree (BST) and an integer val.\n* Find the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null. */\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root == NULL)\nreturn NULL;\nif(root -> val == val)\nreturn root;\nelse if(root -> val > val)\nreturn searchBST(root -> left, val);\nelse if(root -> val < val)\nreturn searchBST(root -> right, val);\nelse\nreturn NULL;\n}\n};",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "khushi-411/LeetCode",
+                        "max_stars_repo_path": "June-2020/Day-15.cpp",
+                        "__cluster__": 31
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_debug-bench_data_618",
+                        "content": "You are given the root of a binary search tree (BST) and an integer val.\nFind the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null.\nclass Solution {\npublic:\n/*\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root==NULL)\nreturn NULL;\nif(root->val==val);\n{\nreturn root;\n}\nif(root->val>val)){\nreturn  searchBST(root->left,val);\n}\nreturn searchBST(root->right,val);\n}\n*/\n};\na mixture of statement separation, wrong comment mark, parentheses mismatch\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root==NULL)\nreturn NULL;\nif(root->val==val)\n{\nreturn root;\n}\nif(root->val>val){\nreturn  searchBST(root->left,val);\n}\nreturn searchBST(root->right,val);\n}\n};\n```\\nclass Solution {\\npublic:\\n    TreeNode* searchBST(TreeNode* root, int val) {\\n       if(root==NULL) \\n       return NULL;\\n       if(root->val==val)\\n       {\\n           return root;\\n       }\\n       if(root->val>val){\\n          return  searchBST(root->left,val);\\n       }\\n        return searchBST(root->right,val);\\n    }\\n};\\n```",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 31
+                },
+                {
+                        "id": "pretrain_cpp_data_2049033",
+                        "content": "<reponame>khushi-411/LeetCode\n/*You are given the root of a binary search tree (BST) and an integer val.\n* Find the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null. */\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root == NULL)\nreturn NULL;\nif(root -> val == val)\nreturn root;\nelse if(root -> val > val)\nreturn searchBST(root -> left, val);\nelse if(root -> val < val)\nreturn searchBST(root -> right, val);\nelse\nreturn NULL;\n}\n};",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "khushi-411/LeetCode",
+                        "max_stars_repo_path": "June-2020/Day-15.cpp",
+                        "__cluster__": 31
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_debug-bench_data_682",
+                        "content": "You are given the root of a binary search tree (BST) and an integer val.\nFind the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null.\nclass Solution {\npublic:\n/*\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root==NULL)\nreturn NULL;\nif(root->val==val)\n{\nreturn root;\n}\nif(root->val > val)){\nreturn searchBST(root->right,val);\n}\nreturn searchBST(root->left,val);\n}\n*/\n};\na mixture of wrong comment mark, conditional statement error, parentheses mismatch\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root==NULL)\nreturn NULL;\nif(root->val==val)\n{\nreturn root;\n}\nif(root->val>val){\nreturn  searchBST(root->left,val);\n}\nreturn searchBST(root->right,val);\n}\n};\n```\\nclass Solution {\\npublic:\\n    TreeNode* searchBST(TreeNode* root, int val) {\\n       if(root==NULL) \\n       return NULL;\\n       if(root->val==val)\\n       {\\n           return root;\\n       }\\n       if(root->val>val){\\n          return  searchBST(root->left,val);\\n       }\\n        return searchBST(root->right,val);\\n    }\\n};\\n```",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 31
+                },
+                {
+                        "id": "pretrain_cpp_data_2049033",
+                        "content": "<reponame>khushi-411/LeetCode\n/*You are given the root of a binary search tree (BST) and an integer val.\n* Find the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null. */\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root == NULL)\nreturn NULL;\nif(root -> val == val)\nreturn root;\nelse if(root -> val > val)\nreturn searchBST(root -> left, val);\nelse if(root -> val < val)\nreturn searchBST(root -> right, val);\nelse\nreturn NULL;\n}\n};",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "khushi-411/LeetCode",
+                        "max_stars_repo_path": "June-2020/Day-15.cpp",
+                        "__cluster__": 31
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_debug-bench_data_907",
+                        "content": "You are given the root of a binary search tree (BST) and an integer val.\nFind the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null.\nclass Solution {\npublic:\n/*\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root=NULL)\nreturn NULL;\nif(root->val==val);\n{\nreturn root;\n}\nif(root->val>val)){\nreturn  searchBST(root->left,val);\n}\nreturn searchBST(root->right,val);\n}\n*/\n};\na mixture of statement separation, wrong comment mark, colon missing, parentheses mismatch\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root==NULL)\nreturn NULL;\nif(root->val==val)\n{\nreturn root;\n}\nif(root->val>val){\nreturn  searchBST(root->left,val);\n}\nreturn searchBST(root->right,val);\n}\n};\n```\\nclass Solution {\\npublic:\\n    TreeNode* searchBST(TreeNode* root, int val) {\\n       if(root==NULL) \\n       return NULL;\\n       if(root->val==val)\\n       {\\n           return root;\\n       }\\n       if(root->val>val){\\n          return  searchBST(root->left,val);\\n       }\\n        return searchBST(root->right,val);\\n    }\\n};\\n```",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 31
+                },
+                {
+                        "id": "pretrain_cpp_data_2049033",
+                        "content": "<reponame>khushi-411/LeetCode\n/*You are given the root of a binary search tree (BST) and an integer val.\n* Find the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null. */\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root == NULL)\nreturn NULL;\nif(root -> val == val)\nreturn root;\nelse if(root -> val > val)\nreturn searchBST(root -> left, val);\nelse if(root -> val < val)\nreturn searchBST(root -> right, val);\nelse\nreturn NULL;\n}\n};",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "khushi-411/LeetCode",
+                        "max_stars_repo_path": "June-2020/Day-15.cpp",
+                        "__cluster__": 31
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_debug-bench_data_973",
+                        "content": "You are given the root of a binary search tree (BST) and an integer val.\nFind the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null.\nclass Solution {\npublic:\n/*\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root==NULL)\nreturn NULL;\nif(root->val==val);\n{\nreturn root;\n}\nif(root->val > val)){\nreturn searchBST(root->right,val);\n}\nreturn searchBST(root->left,val);\n}\n*/\n};\na mixture of statement separation, wrong comment mark, conditional statement error, parentheses mismatch\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root==NULL)\nreturn NULL;\nif(root->val==val)\n{\nreturn root;\n}\nif(root->val>val){\nreturn  searchBST(root->left,val);\n}\nreturn searchBST(root->right,val);\n}\n};\n```\\nclass Solution {\\npublic:\\n    TreeNode* searchBST(TreeNode* root, int val) {\\n       if(root==NULL) \\n       return NULL;\\n       if(root->val==val)\\n       {\\n           return root;\\n       }\\n       if(root->val>val){\\n          return  searchBST(root->left,val);\\n       }\\n        return searchBST(root->right,val);\\n    }\\n};\\n```",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 31
+                },
+                {
+                        "id": "pretrain_cpp_data_2049033",
+                        "content": "<reponame>khushi-411/LeetCode\n/*You are given the root of a binary search tree (BST) and an integer val.\n* Find the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null. */\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root == NULL)\nreturn NULL;\nif(root -> val == val)\nreturn root;\nelse if(root -> val > val)\nreturn searchBST(root -> left, val);\nelse if(root -> val < val)\nreturn searchBST(root -> right, val);\nelse\nreturn NULL;\n}\n};",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "khushi-411/LeetCode",
+                        "max_stars_repo_path": "June-2020/Day-15.cpp",
+                        "__cluster__": 31
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_debug-bench_data_592",
+                        "content": "You are given the root of a binary search tree (BST) and an integer val.\nFind the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null.\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root=NULL)\nreturn NULL;\nif(root->val==val);\n{\nreturn root;\n}\nif(root->val>val)){\nreturn  searchBST(root->left,val);\n}\nreturn searchBST(root->right,val);\n}\n};\na mixture of statement separation, colon missing, parentheses mismatch\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root==NULL)\nreturn NULL;\nif(root->val==val)\n{\nreturn root;\n}\nif(root->val>val){\nreturn  searchBST(root->left,val);\n}\nreturn searchBST(root->right,val);\n}\n};\n```\\nclass Solution {\\npublic:\\n    TreeNode* searchBST(TreeNode* root, int val) {\\n       if(root==NULL) \\n       return NULL;\\n       if(root->val==val)\\n       {\\n           return root;\\n       }\\n       if(root->val>val){\\n          return  searchBST(root->left,val);\\n       }\\n        return searchBST(root->right,val);\\n    }\\n};\\n```",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 31
+                },
+                {
+                        "id": "pretrain_cpp_data_2049033",
+                        "content": "<reponame>khushi-411/LeetCode\n/*You are given the root of a binary search tree (BST) and an integer val.\n* Find the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null. */\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root == NULL)\nreturn NULL;\nif(root -> val == val)\nreturn root;\nelse if(root -> val > val)\nreturn searchBST(root -> left, val);\nelse if(root -> val < val)\nreturn searchBST(root -> right, val);\nelse\nreturn NULL;\n}\n};",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "khushi-411/LeetCode",
+                        "max_stars_repo_path": "June-2020/Day-15.cpp",
+                        "__cluster__": 31
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_debug-bench_data_1080",
+                        "content": "You are given the root of a binary search tree (BST) and an integer val.\nFind the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null.\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root=NULL)\nreturn NULL;\nif(root->val==val);\n{\nreturn root;\n}\nif(root->val > val)){\nreturn searchBST(root->right,val);\n}\nreturn searchBST(root->left,val);\n}\n};\na mixture of statement separation, conditional statement error, colon missing, parentheses mismatch\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root==NULL)\nreturn NULL;\nif(root->val==val)\n{\nreturn root;\n}\nif(root->val>val){\nreturn  searchBST(root->left,val);\n}\nreturn searchBST(root->right,val);\n}\n};\n```\\nclass Solution {\\npublic:\\n    TreeNode* searchBST(TreeNode* root, int val) {\\n       if(root==NULL) \\n       return NULL;\\n       if(root->val==val)\\n       {\\n           return root;\\n       }\\n       if(root->val>val){\\n          return  searchBST(root->left,val);\\n       }\\n        return searchBST(root->right,val);\\n    }\\n};\\n```",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 31
+                },
+                {
+                        "id": "pretrain_cpp_data_2049033",
+                        "content": "<reponame>khushi-411/LeetCode\n/*You are given the root of a binary search tree (BST) and an integer val.\n* Find the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null. */\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root == NULL)\nreturn NULL;\nif(root -> val == val)\nreturn root;\nelse if(root -> val > val)\nreturn searchBST(root -> left, val);\nelse if(root -> val < val)\nreturn searchBST(root -> right, val);\nelse\nreturn NULL;\n}\n};",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "khushi-411/LeetCode",
+                        "max_stars_repo_path": "June-2020/Day-15.cpp",
+                        "__cluster__": 31
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_debug-bench_data_32",
+                        "content": "You are given the root of a binary search tree (BST) and an integer val.\nFind the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null.\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root==NULL)\nreturn NULL;\nif(root->val==val);\n{\nreturn root;\n}\nif(root->val>val){\nreturn  searchBST(root->left,val);\n}\nreturn searchBST(root->right,val);\n}\n};\nThe semicolon after the second 'if' condition causes the method to always return root.\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root==NULL)\nreturn NULL;\nif(root->val==val)\n{\nreturn root;\n}\nif(root->val>val){\nreturn  searchBST(root->left,val);\n}\nreturn searchBST(root->right,val);\n}\n};\n```\\nclass Solution {\\npublic:\\n    TreeNode* searchBST(TreeNode* root, int val) {\\n       if(root==NULL) \\n       return NULL;\\n       if(root->val==val)\\n       {\\n           return root;\\n       }\\n       if(root->val>val){\\n          return  searchBST(root->left,val);\\n       }\\n        return searchBST(root->right,val);\\n    }\\n};\\n```",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 31
+                },
+                {
+                        "id": "pretrain_cpp_data_2049033",
+                        "content": "<reponame>khushi-411/LeetCode\n/*You are given the root of a binary search tree (BST) and an integer val.\n* Find the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null. */\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root == NULL)\nreturn NULL;\nif(root -> val == val)\nreturn root;\nelse if(root -> val > val)\nreturn searchBST(root -> left, val);\nelse if(root -> val < val)\nreturn searchBST(root -> right, val);\nelse\nreturn NULL;\n}\n};",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "khushi-411/LeetCode",
+                        "max_stars_repo_path": "June-2020/Day-15.cpp",
+                        "__cluster__": 31
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_debug-bench_data_745",
+                        "content": "You are given the root of a binary search tree (BST) and an integer val.\nFind the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null.\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root=NULL)\nreturn NULL;\nif(root->val==val)\n{\nreturn root;\n}\nif(root->val>val){\nreturn  searchBST(root->left,val);\n}\nreturn searchBST(root->right,val);\n}\n};\nThe code mistakenly assigns root to NULL rather than comparing root to NULL.\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root==NULL)\nreturn NULL;\nif(root->val==val)\n{\nreturn root;\n}\nif(root->val>val){\nreturn  searchBST(root->left,val);\n}\nreturn searchBST(root->right,val);\n}\n};\n```\\nclass Solution {\\npublic:\\n    TreeNode* searchBST(TreeNode* root, int val) {\\n       if(root==NULL) \\n       return NULL;\\n       if(root->val==val)\\n       {\\n           return root;\\n       }\\n       if(root->val>val){\\n          return  searchBST(root->left,val);\\n       }\\n        return searchBST(root->right,val);\\n    }\\n};\\n```",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 31
+                },
+                {
+                        "id": "pretrain_cpp_data_2049033",
+                        "content": "<reponame>khushi-411/LeetCode\n/*You are given the root of a binary search tree (BST) and an integer val.\n* Find the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null. */\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root == NULL)\nreturn NULL;\nif(root -> val == val)\nreturn root;\nelse if(root -> val > val)\nreturn searchBST(root -> left, val);\nelse if(root -> val < val)\nreturn searchBST(root -> right, val);\nelse\nreturn NULL;\n}\n};",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "khushi-411/LeetCode",
+                        "max_stars_repo_path": "June-2020/Day-15.cpp",
+                        "__cluster__": 31
+                },
+                {
+                        "real_dup": "2"
+                }
+        ],
+
+
+        [
+                {
+                        "id": "test_debug-bench_data_383",
+                        "content": "You are given the root of a binary search tree (BST) and an integer val.\nFind the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null.\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root==NULL)\nreturn NULL;\nif(root->val==val)\n{\nreturn root;\n}\nif(root->val > val){\nreturn searchBST(root->right,val);\n}\nreturn searchBST(root->left,val);\n}\n};\nThe code incorrectly searches the right subtree when value is less and vice versa.\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root==NULL)\nreturn NULL;\nif(root->val==val)\n{\nreturn root;\n}\nif(root->val>val){\nreturn  searchBST(root->left,val);\n}\nreturn searchBST(root->right,val);\n}\n};\n```\\nclass Solution {\\npublic:\\n    TreeNode* searchBST(TreeNode* root, int val) {\\n       if(root==NULL) \\n       return NULL;\\n       if(root->val==val)\\n       {\\n           return root;\\n       }\\n       if(root->val>val){\\n          return  searchBST(root->left,val);\\n       }\\n        return searchBST(root->right,val);\\n    }\\n};\\n```",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "NA",
+                        "max_stars_repo_path": "NA",
+                        "__cluster__": 31
+                },
+                {
+                        "id": "pretrain_cpp_data_2049033",
+                        "content": "<reponame>khushi-411/LeetCode\n/*You are given the root of a binary search tree (BST) and an integer val.\n* Find the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null. */\nclass Solution {\npublic:\nTreeNode* searchBST(TreeNode* root, int val) {\nif(root == NULL)\nreturn NULL;\nif(root -> val == val)\nreturn root;\nelse if(root -> val > val)\nreturn searchBST(root -> left, val);\nelse if(root -> val < val)\nreturn searchBST(root -> right, val);\nelse\nreturn NULL;\n}\n};",
+                        "max_stars_count": 0.0,
+                        "max_stars_repo_name": "khushi-411/LeetCode",
+                        "max_stars_repo_path": "June-2020/Day-15.cpp",
+                        "__cluster__": 31
+                },
+                {
+                        "real_dup": "2"
+                }
+        ]
+]

@@ -1,0 +1,26 @@
+[
+        {
+                "data_len": 1
+        },
+        [
+                {
+                        "id": "pretrain_java_data_6420260",
+                        "content": "boolean isPrime(int v) {\nif (v <= 1) {\nreturn false;\n}\nif (v <= 3) {\nreturn true;\n}\nif (((v & 1) == 0) || ((v % 3) == 0)) {\nreturn false;\n}\nfor (int m = 5, n = (int) sqrt(v); m <= n; m += 6) {\nif (((v % m) == 0) || ((v % (m + 2)) == 0)) {\nreturn false;\n}\n}\nreturn true;\n}",
+                        "max_stars_repo_path": "raw_dataset/66005450@isPrime@OK.java",
+                        "max_stars_repo_name": "zthang/code2vec_treelstm",
+                        "max_stars_count": 1,
+                        "__cluster__": 37
+                },
+                {
+                        "id": "test_g-transeval-java_data_38",
+                        "content": "boolean isComposite ( int n ) { if ( n <= 1 ) { return false ; } if ( n <= 3 ) { return false ; } if ( n % 2 == 0 || n % 3 == 0 ) { return true ; } for ( int i = 5 ; i * i <= n ; i = i + 6 ) { if ( n % i == 0 || n % ( i + 2 ) == 0 ) { return true ; } } return false ; }",
+                        "max_stars_repo_path": "NA",
+                        "max_stars_repo_name": "NA",
+                        "max_stars_count": 0,
+                        "__cluster__": 37
+                },
+                {
+                        "real_dup": "0"
+                }
+        ]
+]

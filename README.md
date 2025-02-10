@@ -8,7 +8,7 @@ We systematically investigated whether, and to what extent, popular SE benchmark
 a LLM’s pre-training data.
 
 <p align="center">
-  <img src="lessleak_framework.PNG" alt="Overview of This Study" width="50%">
+  <img src="lessleak_framework.PNG" alt="Overview of This Study" width="80%">
 </p>
 
 

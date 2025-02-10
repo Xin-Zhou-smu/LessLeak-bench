@@ -8,8 +8,9 @@ We systematically investigated whether, and to what extent, popular SE benchmark
 a LLM’s pre-training data.
 
 <p align="center">
-  ![Overview of This Study](lessleak_framework.png)
+  <img src="lessleak_framework.png" alt="Overview of This Study">
 </p>
+
 
 
 ## Python Library Installation

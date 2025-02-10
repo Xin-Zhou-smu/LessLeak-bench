@@ -32,7 +32,7 @@ pip install joblib
 
 Our study will compare the LLM's pre-training data and the SE benchmark data.
 The SE benchmark data is already uploaded to Huggingface and can be easily reused.
-For the detailed information about studied SE benchmark, please refer to the file 'SE_benchmark_info.xsxl'.
+For the detailed information about studied SE benchmark, please refer to the file 'SE_benchmark_info.xlsx'.
 
 However, as the pre-training data of LLM is huge, we require users to download the LLM's pre-training
 data in a local machine and then can run this repo.

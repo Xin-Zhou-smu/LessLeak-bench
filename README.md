@@ -32,30 +32,30 @@ pip install joblib
 
 Our study will compare the LLM's pre-training data and the SE benchmark data.
 The SE benchmark data is already uploaded to Huggingface and can be easily reused.
-For the detailed information about studied SE benchmark, please refer to the file 'SE_benchmark_info.xlsx'.
+
+For detailed information about the studied SE benchmark, please refer to the file 'SE_benchmark_info.xlsx'.
 
 However, as the pre-training data of LLM is huge, we require users to download the LLM's pre-training
 data in a local machine and then can run this repo.
 
-You can find the link to the LLM pre-training (StarCoder's pre-traning data) via: 
+You can find the link to the LLM pre-training (StarCoder's pre-training data) via: 
 
-Java: https://huggingface.co/datasets/bigcode/starcoderdata/tree/main/java
+Java: [link](https://huggingface.co/datasets/bigcode/starcoderdata/tree/main/java)
+ 
 
-Python: https://huggingface.co/datasets/bigcode/starcoderdata/tree/main/python
+Python: [link](https://huggingface.co/datasets/bigcode/starcoderdata/tree/main/python)
 
-C: https://huggingface.co/datasets/bigcode/starcoderdata/tree/main/c
+C: [link](https://huggingface.co/datasets/bigcode/starcoderdata/tree/main/c)
 
-C++: https://huggingface.co/datasets/bigcode/starcoderdata/tree/main/cpp
+C++: [link](https://huggingface.co/datasets/bigcode/starcoderdata/tree/main/cpp)
 
-Once you downlaod the pretraining data, please place them under the folder "1.starcoder_data".
+Once you download the pretraining data, please place them under the folder "1.starcoder_data".
 
 
 ## MinHash+LSH for Leakage Detection (With Access to LLM Pre-training Data)
 
 Our approach involved using an efficient near-duplicate data detection algorithm, MinHash+LSH, to identify potential duplicate pairs between the SE benchmarks and LLM’s pre-training
 dataset.
-
-
 
 Please run the following pipeline script (example for Java):
 

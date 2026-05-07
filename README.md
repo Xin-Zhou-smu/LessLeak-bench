@@ -7,6 +7,19 @@ In this study, we presents the first large-scale analysis of data leakage in 83 
 We systematically investigated whether, and to what extent, popular SE benchmark data samples were included in
 a LLM’s pre-training data.
 
+
+## 🤗 Dataset Release
+
+> [!IMPORTANT]
+> The dataset is available on Hugging Face:  
+> 👉 **[LessLeak-Bench](https://huggingface.co/datasets/26PaperSubmission/lessleak-bench)**
+
+<p align="left">
+  <a href="https://huggingface.co/datasets/26PaperSubmission/lessleak-bench">
+    <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" width="40"/>
+  </a>
+</p>
+
 <p align="center">
   <img src="lessleak_framework.PNG" alt="Overview of This Study" width="90%">
 </p>

@@ -10,7 +10,6 @@ a LLM’s pre-training data.
 
 ## 🤗 Dataset Release
 
-> [!IMPORTANT]
 > The dataset is available on Hugging Face:  
 > 👉 **[LessLeak-Bench](https://huggingface.co/datasets/26PaperSubmission/lessleak-bench)**
 

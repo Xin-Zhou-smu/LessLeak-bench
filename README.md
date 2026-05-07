@@ -1,7 +1,7 @@
-# LessLeak-Bench: A First Investigation of Data Leakage in LLMs Across 83 Software Engineering Benchmarks
+# Code for "LessLeak-Bench: An Investigation of Data Leakage in LLMs Across 83 Software Engineering Benchmarks"
 
-This is the replication package for the paper "LessLeak-Bench: A First Investigation of Data Leakage in
-LLMs Across 83 Software Engineering Benchmarks". 
+This is the replication package for the paper "LessLeak-Bench: An Investigation of Data Leakage in LLMs Across 83 Software Engineering Benchmarks". 
+
 
 In this study, we presents the first large-scale analysis of data leakage in 83 SE benchmarks concerning LLMs.
 We systematically investigated whether, and to what extent, popular SE benchmark data samples were included in
